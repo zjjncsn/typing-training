@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "id": "english-key-standard",
+  "title": "英文基础键位",
+  "language": "en",
+  "inputMode": "physical-keyboard",
+  "layout": "qwerty",
+  "lessons": [
+    {
+      "id": "english-key-standard-00",
+      "order": 1,
+      "title": "键盘布局(KeyBoard Layout)",
+      "content": "asdfg hjkl;lkjh gfdsa asdfg hjkl;lkjh ;lkjh\n';lkjh gfdsa asdfgh jkl;\" gfdsa hjkl;'\nzxcvb nm,./ /.,mn bvcxz zxcvb nm,. /.,mn bvcxz\n/.,mn bvcxz zxcvb nm<>? bvcxz nm,./\nqwert yuiop poiuy trewq qwert yuiop poiuy trewq\n[]poiuy trewq qwert yuiop{} trewq yuiop[]\n\nabcdefg hijklmn opqrst uvwxyz\nThe quick brown fox jumps over the lazy dog.\nThe quick brown fox jumps over the lazy dog.\n1234567 890-=\\`\nabcdefg hijklmn opqrst uvwxyz\nABCDEFG HIJKLMN OPQ RST UVW XYZ\nzyxwvu tsrqpo nmlkjih gfedcba\n`12345 67890-= ~!@#$% ^&*()_+\n,<.>/?\\| ;:'\"[{]}\nabcdefg hijklmn opqrst uvwxyz\nABCDEFG HIJKLMN OPQRST UVWXYZ\n`12345 67890-= ~!@#$% ^&*()_+\n,<.>/?\\| ;:'\"[{]}",
+      "source": "Data/English/T_Character/Standard/00.txt"
+    },
+    {
+      "id": "english-key-standard-01",
+      "order": 2,
+      "title": "手指分区练习",
+      "content": "FGRTBV GFTRF54 FG%$ VBTGB 4RFV$ 5TGB%\nVBTRGF $%GF 45FRTFG BGTBV $VFR4 %BGT5\n%BGT5 $VFR4 BGTBV $%GF 45FRTFG VBTRGF\nJHYUMN  HJUYNM YHNMJU76 UJM67 ^&67\nJHYUMN  NMUYHJ HJUYNM MNYUJH 76&^\nYHNMJU76 67UJMNHY UJM67^&67 76&^76MJU\n76&^ 76MJU 67UJMNHY MNYUJH  NMUYHJ\n\nDECDEC CDE3# DECDEC CDE3#\n#3EDC CEDCED #3EDC CEDCED\nDECDEC CEDCED  CDE3# DECDEC CDE3#\n#3EDC CEDCED #3EDC CEDCED\nIKK, KKII8, <<8*IK IK,<8* \nIKK, KKII8, <<8*IK IK,<8* \n8IIKK, KKI, *8<,KI KI*8<<, \nIKK, KKII8, <<8*IK IK,<8* \nIKK, KKII8, <<8*IK IK,<8* \n8IIKK, KKI, *8<,KI KI*8<<, \n\nSASAWQXZ SASAWX 21SA! 21@ @\nAS@12 SAASQW WQSAAS 21@SA\nXZSASAWQ QWASASZX\nXZSASAWX XWASASZX\n12!`~@21 12@~`!21\n\nASDW WASD WASD ASDW ESDA\nASDW WASD DSAW WDSA\nWASD ASDW WDSA DSAW\nESDA  ADSE ESDA ADSE\n\nPO OP LOOP POOL POLL POLO\nPO OP LOOP POOL POLL POLO\nPOOR PPT PH  (<>) (<>)  {}[]() \n<> ,.{ } [ ] \\ | [;[; ]]:: [;]; ;];[ [:[: ]:]:\n''\"\"' ;;\\\\ \\\\:: |:|: ||;; \\\\|| \\||\\ ? /?//?\n=-__ += 0+9=9+0 =-__ += 8+9=9+8",
+      "source": "Data/English/T_Character/Standard/01.txt"
+    },
+    {
+      "id": "english-key-standard-02",
+      "order": 3,
+      "title": "键位纠错练习",
+      "content": "RGGTGG\nRGGTGG\nGGTGGR\nGGTGGR\nRTGGGB\nRTGGGB\nBGGGTR\nBGGGTR\nGTFGFG\nGTFGFG\nGFGFTG\nGFGFTG\nFGTGGG\nFGTGGG\nGGGTGF\nGGGTGF\nRRBGBB\nRRBGBB\nBBGBRR\nBBGBRR\nBGGGBB\nBGGGBB\nBBGGGB\nBBGGGB\nFGGTFG\nFGGTFG\nGFTGGF\nGFTGGF\nTGFBGT\nTGFBGT\nTGBFGT\nTGBFGT\nTTTGGG\nTTTGGG\nGGGTTT\nGGGTTT",
+      "source": "Data/English/T_Character/Standard/02.TXT"
+    },
+    {
+      "id": "english-key-standard-03",
+      "order": 4,
+      "title": "键位课程一：asdf jkl；",
+      "content": "asdf jkl asdf jkl asdf jkl asas sasa sdsd dsds\nsdfdf dfdf dfjdfj fjfj fjk fjkjkjk jkljkl jkljkl falkfalk fa\nlk sada sada sads sads falk falk asal asal sasl\nsasl fall fall afll afll flal flal alflalfl lads lads\nlads lads lads sad dad sad dad sad dad sads\nsads dada dada ask alas ask alas ask alas ask\nalas ask alas ask alas dad as sad dad as\nsad dad as sad lad lass lad lass lad lass\nlad alfa alfa alfalfa lafalfa alfa alfa alfalfa lafalfa add\nsalad add add salad add dad as sad dad as\nsad as jaffa salad jaffa salad add jaffa add salad\nfalsk jaffa kafka salsa kafka salsa kafka salsa sal skal\nsa sal skal sa sal skal \nasdf jkl; asdf jkl; asdf jkl;\nasas sasa  sdsd dsds sdfdf dfdf \ndfjdfj fjfj fjk fjk jkjk \njkljkl jkljkl jklkl kl; kl; \na;a; j;j; ;;ll ll;; sada sada sads sads\nfalk falk fja; fja; asal asal sasl sasl\nfall fall afll fall afll afll\nflal flal alfl flal alfl alfl\nlads lads lads lads lads\nsad dad sad dad sad dad\nsads sads dada dada afj; afj; sdk; sdk;\nask alas ask alas ask alas\ndad as sad dad as sad dad as sad\nlad lass lad lass lad lass lad\nalfa alfa alfa lfa laf alfa\nalfa a;fj afj; sdl; sdl; sdl; sdl;\nadds alad add adds alad add\ndad as sad dad as sad as sad dad as\njaffa salad jaffa sala dadd jaffa sal;\nadd salad falsk jaffa falsk jaffa sa;l\nkafka salsa kafka sa;sa kafk; sa;sa \nsal skal sa;l sal; skal sal; sa;l skal",
+      "source": "Data/English/T_Character/Standard/03.TXT"
+    },
+    {
+      "id": "english-key-standard-04",
+      "order": 5,
+      "title": "键位课程二：e i",
+      "content": "eded eded dede dede deki deki kiki kikik edki edki\ndeik deik edie edik edie deik edke edkd aid ail\nsill still silk sill silk sill silk dide ski dide ski\naid ail aid ail if ill if ill if ill \ndide ski all laddies lasses said dad jeff aslads kissed\nlasses feed aidless lassie is all fed lie\nlasses lads like sea life lake like sea life lake\nfeed alfalfd seed sleek leaf dad likes dada fad seed\nlikes silk sail alkali seas aid all deaf kids \ndeki deki kiki kiki edki edki deik iikk \nedie edik edie deik edke edkd deik kkii\naid ail aid ail aid ail \nif ill if ill if ill ffii ifif ejej jjee\nsill silk sill silk sill silk sill silk\ndide ski dide ski dide ski dide ski\nall laddi a;es lass a;es said dad jeff asla ds;k ised\nlasses feed aidl ;ess lassie isal fedl lie; \nlass esas ales lads add lads kiss \nladdies lasses like kisses idle deeds alse seas ides\nfiddle deedee said all lasses fiddle deedee \nlasses lads like sea life lake like sea life lake\ned likes silk sail alkali seas aid all deaf kids \nfeed alfalfd seed sleek leaf \ndad likes dada fad seed salad jeff did lessee \nflake fissile did fall field lies dead",
+      "source": "Data/English/T_Character/Standard/04.TXT"
+    },
+    {
+      "id": "english-key-standard-05",
+      "order": 6,
+      "title": "键位课程三：r u",
+      "content": "frfr frfr juju juju frju frju fr ju rule rule\nsuds suds rule rule suds suds reel rude reel rude\nsuds rule suds rule afar juke afar juke afar juke \nali surfs surfs ali surfs alf surfs alf surfs sue\nis afraid sue is afraid sue jill sees red jill\nsees red jill sees dark red feed kids dad feed\nkids dad deirdre resds deirdre resds deirdre resds ed likes\nsilk ed likes silk adieu darls dukes adieu darls dukes \nask russ jessie ask russ jessie all dark jujus are\nas all dark jujus are asd dark fall sudds lull\ndark fall sudds lull fluff falls asa ruff fluff falls\nasa ruff fair deal said luke aslad assessed added lass\nded dare laddie deirdre laddie deirdre ales ideal lasses useful\nskilful allie red rakes ask fields usual aule eddie laddie\nfulfils surreal ideals asked real dear fruss eddie realises afraid\nfailure was risk dad dakar safari eddie safari assured adjures\nsale real airfare assured kissed adds usual ureid ussr uried\nusure keel keid keelles skald kaf akasa eld elisa essie",
+      "source": "Data/English/T_Character/Standard/05.TXT"
+    },
+    {
+      "id": "english-key-standard-06",
+      "order": 7,
+      "title": "键位课程四：g h",
+      "content": "fgfg fgfg fgjh fgjh jhjh jhjh igs figs figs figs\nhair hair fig fig fig hair hair hair ages half\nages half ages half ages half gull had gull had\ngull had gull had gurus giggle gurus giggle hurried\nhurried fugal fred frugalthis guru fugal gull glides\nhare has flee gauge sal fears sue fears afraid fauge\nfuel aule hairless alfred girl giggle ridge\nfgfg fgfg fgjh fgjh jhjh jhjh ghgh gghh\nigsd igsd igsd igsd rghk rghk rghk rghk\nfigs figs figs figs hair hair hair hair\nfig fig fig fig hair hair hair hair\nages half ages half ages half ages half \ngull had gull had gull had gull had \ngurus giggle gurus giggle all auld furus gigg lgge\na lass hurried a lass hurried fugal hurried fugal \nfred is frugal are laura is guru fugal gull glides hare has\ngauge fague furalg hairless alfred girl giggle fake furus if eddie ridge\ndislike jujus are as skilful fear frauds her dresses red\nlaura gall laura gall larua gall sea risk sea risk \ngauge gauge gauge gauge fuel fuel fuel alfie alfie alfie\ngreek gauge hair gurus guile guile ridge gals gals greeks",
+      "source": "Data/English/T_Character/Standard/06.TXT"
+    },
+    {
+      "id": "english-key-standard-07",
+      "order": 8,
+      "title": "键位课程五：C ,",
+      "content": "cdcd cdcd ,k,k ,k,k cd,k cd,k dac, dac, dec, dec,dac,\ndac, eric, charles, caressa, carl, charlie,chris, clark, cliff, cakd\ncurd, chesse, chilli, cheddar, ice, cecil, cecilia, chuck, curie clark\nclark, cherries claire careful, richard did grill cheese cecil radical\ncad, radical rueful careful clara, cad cliff, cares said clark\nacre, all clear deals, jack uses cliches Chile, Arfica, USA,\nFiji, Russia, Asia, Ural, Alaska ,Lake Said girl guide Lisa,\nDeirdre facile degress said duke Circular cigars are surreal giggled\ngaffer regal Rajah desires said reseda likes usual Ridge likes\nusual laddie cashier, guards all cash deals Luigi real, rakish,\nraffish, gurff figures sellers",
+      "source": "Data/English/T_Character/Standard/07.TXT"
+    },
+    {
+      "id": "english-key-standard-08",
+      "order": 9,
+      "title": "键位课程六：y t",
+      "content": "ftjy ftjy ftjy myti mtyi tmi tmia tymi tymi tick\ntake tail tale tame tick take tail tale tame yard\nYale yeah yell yetl yule yuck years tails mater matey\nheart limit says yes, Cedily says Teddy sally hates all\nMacy greeted the camel, milked camel slated, the slated recitals\nteacher maths the film film real kids teased cats, kids\ntesded headed market sellers sell meat Lucy therr, the Her cat\nsilkuy dark rats midday sam visited last summer dark midday\nlast summer like they Rudy skilful flute artist, all critecs\nhardly gave same fear real every day, likes tales hates\njust reads firl reads circa fifty five half, recluse she\nreads family already real firl herself, time reader maters teacher",
+      "source": "Data/English/T_Character/Standard/08.TXT"
+    },
+    {
+      "id": "english-key-standard-09",
+      "order": 10,
+      "title": "键位课程七：m v",
+      "content": "vfvf vfvf mjmj mjmj vfmj vfmj vava vamj vamj mama\nmava mar milk Mick mug Meg maid via veal vail\nvale vac veer vase veil Mark makes cheese cakes, Likes\nMeg varied Kim, give her regards gived regards uses Val\nuses, camera case fills flasks, veffie radical veggie Virgil lad\nadam makes chic dress duds Recluse said his mum aslad\nhimself did see Referee give Miss radical redhead claimed, hammer\ndad small Auld dad lead causes harm cars use gas\nGive fella hug heard James idesa hers vicar Asreids cash\nshack sliced frilles files fesrs mauve",
+      "source": "Data/English/T_Character/Standard/09.TXT"
+    },
+    {
+      "id": "english-key-standard-10",
+      "order": 11,
+      "title": "键位课程八：b n",
+      "content": "fbjn fbjn fbjn fbjn nbnb nbnb nbnb nbnb\nbag bet bit man bag bet bit man nub nut\ndan run net can but big nat bag bet bit\nand bun van ban men sun sin bee nag nab \nband band band butcher butcher ben ben ben \nhenty has nine names, henty has nine names,\nnay nib nub nut, big band banned all balls\nbanned all balls butcher meat, meat neil\nnancy hugged his mum fluing nine\nfbjn fbjn fbjn nbnb nbnb bag bet bit man Dan\nrun net can but big Nat and bun van ban\nmen sun sin bee nag nab nay nib nub nut,\nbig band banned all balls Banned all balls butcher meat,\nmeat neil Nancy hugged his mum fluing nine Ben many\nnames nick had eleven, lunch Henry lunch eleven, Anna fluent\nChinese advice better thing than taking, says the Ages, middle\nmany maiden very research Baby cats are alder and acacia\ntrees fungi eater assures that fungi edible Angie ice skates\nblue Bill skates feret gift has never eried, mus bad\nThey their fifth redhead, girls actually call best ftiends says\nthey met large central that right the admit, they have\nfights just fine, denise",
+      "source": "Data/English/T_Character/Standard/10.TXT"
+    },
+    {
+      "id": "english-key-standard-11",
+      "order": 12,
+      "title": "键位课程九：o w",
+      "content": "swlo swlo swlo onon onon ward ward eous eous eous\noron oron oron new now who out owl vow sow\nsew win onown not oak wit way dog toe Waf\nswlo swlo swlo onon onon ward ward\nown not oak wit way dog toe waf wag low\nwag low Uncle thrifty, they enjoyed flying kites, they ennjoyed\nkites visited Swiss town, visited should Here lady loves sir,\nreally warm wiggles, check Your, check indog belongs me, big\ndog belongs Donald comes always late, funny fellow Tom isa\nbar tender inthe film many have king ashead ofstate name\nisBond, says secret agent Often have rebel his films their\nown jargon Frends cooking, that dearest hobbies, shedid doWas wordy\nworkman, mason many mates called Will working building siteas usual\nwas enjoying Grew higher the work, seeing result love and",
+      "source": "Data/English/T_Character/Standard/11.TXT"
+    },
+    {
+      "id": "english-key-standard-12",
+      "order": 13,
+      "title": "键位课程十：p q z",
+      "content": "aqaq azaz papq azaz papq zpap zpap adpa adpa lpad\nquad lpad quad quad pack zeal pain page palm pair\nquay quid zinc quiz pane pall Zion quit zone pass\nZulu zack issuch crazy lad, papacy aoe wild party animal\nreal party animal, Paris many people happy, like There are\nzebras Africa, there good quality sell Paul quick learner too\nsome parsons live In, other Berlin wall already few years\nago All quiz shows very popular queen ruler the Dish\nwhich sweet take and dutiful very doing duties Art full\ntired work postman and actual people friends often tell about\nlisten this with Once upon time, there called Zac quiet\nlad know",
+      "source": "Data/English/T_Character/Standard/12.TXT"
+    },
+    {
+      "id": "english-key-standard-13",
+      "order": 14,
+      "title": "键位课程11：x .",
+      "content": "sxsx sxsx ,.,. ,.,. l.l. l.l. mix. mix. xmas xenon\nxerox Xhosa exist Saxon exalt exact exam axle axis axiom\nAxis ice Alex oxen This very exciting. find exciting. Next,\nstarted jumping. Max wses xerox every day. Fox hunting still\nlegal. Dad slways fixes fhings. Taxes high taxes finland. Wax\nfunny. Joe plays the. need exchange money. equator only line\nexist. The two always vernal Spring expired, name sword King\noffice world Today cannot cope without faxes. Bikes gyms very\npopular results. Life low gave. Abroad applied wanted knew expect forest",
+      "source": "Data/English/T_Character/Standard/13.TXT"
+    },
+    {
+      "id": "english-key-standard-14",
+      "order": 15,
+      "title": "键位课程13:0-9",
+      "content": "a1s2 d3d4 f5f6 a1s2 d3d4 f5f6 j7j8 l0j7 j8k9 l0j7\nj8k9 l045 124892 03853 38ggd0 8g2k53 18te8wl\na1s2 d3d4 f5f6 a1s2 d3d4 f5f6 j7j8 l0j7 j8k9 l0j7\nj8k9 l045 124892 03853 38ggd0 8g2k53 18te8wl\na1a1a1 s2s2s2 d3d3d3 d4d4d4 f5f5f5 f6f6f6 \na1s2 a1s2 d3d4 d3d4 f5f6 f5f6\na1 s2 d3 d4 f5 f6 a1 s2 d3 d4 f5 f6\nj7j7j7 j8j8j8 k9k9k9 l0l0l0\nj7j8j7j8 k9l0k9l0 j7 j8 k9 l0\nj7 j8 k9 l0j7 j8 k9 l0 j7 j8 k9 l0\n124892 03853 38ggd0 8g2k53 18te8wl\n9 and 18 makes 16 code is 87960 zip\n6 and 52 makes 312 code is 63751 zip\n13.9 my Maths 16.00 code is 73652\n16.2 my Maths 35.28 code is 47218\nc 100 is write of 1998b old, new.\nc 822 is write of 8736b old, new.\nLas Paris 35 easy 18.6 live number\nOur call number 555.236 maths and\nG is 178, gi is 266 for Roman way",
+      "source": "Data/English/T_Character/Standard/14.TXT"
+    },
+    {
+      "id": "english-key-standard-15",
+      "order": 16,
+      "title": "键位课程12：Capital-大写",
+      "content": "AasSs dDd fFf gGg GgG FfF DdD SsS AaA AsDf GgFdSa\nfG aAf dgS gFD Dgs ddA sgS fFD GaG saG FfF dDg Sf\nSg sSA AfF Fdg AFa gda Dsf AaS gaA gSg sAf Daf AF\nTt rRr eEe wWw qQq QqQ WwW EeE RrR TtT TrEwQqWeRt\nQa sWs dEd fRf gTg aWa sQs dRd fEf gRg fTf eTe Eq\ned WdR rdW GWa sqf DQg GFW AEf QTG QwQ aAd WSR qR\nBb vVv cCc xXx zZz ZzZ XxX CcC VvV BbB BvCxZzXcVb\naZ wsX edC rfV tgB aZa sXs dCd fVf gBg fBf dZd aX\nVZ feX XrE vCG EaV EqC BsS GfZ XeZ Bcf DcC dXZ Va\n\"' ;:; lLl kKk jJj hHh HhH JjJ KkK LlL :;: \"'\" :\"\n\"h k:' LKh HHK \"Hh Jlj ;ll 'KL 'lK KJ; :Jk jj; \"J\n'' :'L kl\" \"J\" \"Lh LLl JL' kjj LlL HJj LLH Khk \";\nABCED FGHIJK LMNOP QRSTUV WXYZ STEEP SUN KING STUDY NEXT\nCLOSE Quite Severe Unit Cancel Spur Space Office Master Words\nALPHA Solar Special Black Yellow CMYK Right HELP Stream Photo\nHouse Publish Page Over Hand Patch HISTORY CHANNEL MAP IMAGE GUIDE",
+      "source": "Data/English/T_Character/Standard/15.TXT"
+    },
+    {
+      "id": "english-key-standard-16",
+      "order": 17,
+      "title": "键位课程14：英文标点符号",
+      "content": ": \" ' < > ? / { } \\ ! # ^ * ( ) [ ] @ $ & %\n::pp :p:p p:p: p::p ;;:: ;::; ::;; ;;pp\n//;; /::/ ?;?; ?pp? ??pp ?p?p //:: ;??;\n'';; '';; '':: '::' \"?\"? \"\"// \"//\" //\"\"\n<<>> <<kk >>ll <><> <:<: >\">\" <<?? >>//\nlaal ??pp ?ff? //:: :?:? \"?\"? /\"/\" ?/?/\na'a' aa'' 'a'a aa'' d\"\"d \"\"dd \"f\"f 's's\n''aa \"\"ss \"ll\" \"\"'' \"'\"' \";;\" \"\":: :'':\nmark; mark; mark; key:\"one\" key:\"one\"\n'not 'old 'not 'old \"good\" \"good\" \"good\"\nthe' the' \"short,some\" \"short,some\"\nwheel; wheel; wheel; what? what? what?\nCan't woman's persent can't woman's\n<<work>> <<work>> <<work>> <know> <know> <know>\nThe force / and ? The force / and the ?\nfriend mark? key. friend mark? key.\nanalg, outlet? solar/and solar/and\ngree t:hi nder; some gree <some> <<some>>\nt:hi nder; some? even: even: \"and\" \"and\"\nKnown pad: oxyg en/ha sport? \"foot ball\"\nsten extent? work. <<just now>>\n\n(d(d )f)f ((gg ss)) [j[j ]]ff [s]s s]s[ (pistal) [glove]\n(unclear) [scare] 2(x+4) =2x+8 text: (24[3x +y][x -5]) a@a@\ns$s$ f%f% &&ff @@dd $a$a ss%% &f&f You&Me Moon&sun scout @king\n.edu 85.2% For \"qing will@e nter. gov\" read \"lea flet\n$27& 88.9%\" Why? came not; enqui re-into living $26 useful Should\nabout atom?\n\nk{k{ l{}l a}}a s\\s\\ j!1!j k!k! ##hh ^d^d f*f* ^^*#\n{list -book} Shoot! D:\\pro gram\\ \\\\FILE S\\net \\tool\\ Ifn=4 then\nn!=4*3 *2*1 scout* isnot same leaf Enter number #^*{[\\]} Carry\n^& {gir ls} [boy] #son! $words*",
+      "source": "Data/English/T_Character/Standard/16.TXT"
+    }
+  ]
+}
