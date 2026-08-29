@@ -9,6 +9,7 @@ defineProps<{
   status: TypingSessionStatus
   stats: TypingStatsValue
   showGuidance?: boolean
+  pauseMessage?: string
 }>()
 
 const statusText: Record<TypingSessionStatus, string> = {
@@ -48,9 +49,18 @@ const statusText: Record<TypingSessionStatus, string> = {
         <div class="actions"><slot name="actions" /></div>
       </div>
 
-      <slot name="content" />
-      <div class="prompt-bar"><slot name="prompt" /></div>
-      <div v-if="showGuidance !== false" class="guidance"><slot name="guidance" /></div>
+      <div class="practice-stage">
+        <slot name="content" />
+        <div class="prompt-bar"><slot name="prompt" /></div>
+        <div v-if="showGuidance !== false" class="guidance"><slot name="guidance" /></div>
+
+        <div v-if="status === 'paused'" class="pause-overlay" role="status" aria-live="assertive">
+          <div class="pause-card">
+            <strong>{{ pauseMessage || '训练已暂停' }}</strong>
+            <span>按 Esc 以外的任意键继续</span>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </template>
@@ -138,6 +148,44 @@ h1 {
 .actions {
   display: flex;
   gap: 8px;
+}
+
+.practice-stage {
+  position: relative;
+}
+
+.pause-overlay {
+  position: absolute;
+  z-index: 10;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  background: rgb(238 244 248 / 82%);
+  border-radius: 18px;
+  backdrop-filter: blur(3px);
+}
+
+.pause-card {
+  display: grid;
+  gap: 7px;
+  min-width: min(320px, calc(100% - 32px));
+  padding: 22px 28px;
+  text-align: center;
+  background: rgb(255 255 255 / 94%);
+  border: 1px solid #cbdbe4;
+  border-radius: 16px;
+  box-shadow: 0 14px 38px rgb(49 78 102 / 16%);
+}
+
+.pause-card strong {
+  color: #1b3c55;
+  font-size: 1.08rem;
+}
+
+.pause-card span {
+  color: #64788b;
+  font-size: 0.86rem;
 }
 
 .prompt-bar {

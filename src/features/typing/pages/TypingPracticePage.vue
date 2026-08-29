@@ -24,6 +24,7 @@ import {
 import type { KeyFeedback } from '../keyboard/types'
 
 type TypingTextScale = 'small' | 'medium' | 'large'
+type PauseReason = 'keyboard' | 'visibility'
 
 const route = useRoute()
 const router = useRouter()
@@ -35,6 +36,7 @@ const showKeyboard = ref(true)
 const showHands = ref(true)
 const textScale = ref<TypingTextScale>('medium')
 const keyFeedback = ref<Record<string, KeyFeedback>>({})
+const pauseReason = ref<PauseReason | null>(null)
 const feedbackTimers = new Map<string, ReturnType<typeof setTimeout>>()
 
 const activeLesson = computed<Lesson>(() => {
@@ -75,6 +77,11 @@ const hasNextLesson = computed(() => activeLessonIndex.value < lessons.length - 
 const overlayOpen = computed(
   () => lessonDrawerOpen.value || settingsOpen.value || resultOpen.value,
 )
+const pauseMessage = computed(() =>
+  pauseReason.value === 'visibility'
+    ? '离开页面，训练已自动暂停'
+    : '训练已暂停',
+)
 
 const promptText = computed(() => {
   if (session.value.status === 'completed') return '本课已经完成，可以重新练习或选择下一课。'
@@ -100,6 +107,20 @@ function selectLesson(lessonId: string) {
 
 function handlePageKeydown(event: KeyboardEvent) {
   if (overlayOpen.value) return
+
+  if (event.key === 'Escape') {
+    event.preventDefault()
+    if (session.value.status === 'running') pauseTraining('keyboard')
+    return
+  }
+
+  if (session.value.status === 'paused') {
+    if (event.ctrlKey || event.metaKey || event.altKey) return
+
+    event.preventDefault()
+    resumeTraining()
+    return
+  }
 
   const inputCharacter = keyboardKeyToCharacter(event.key)
   if (getFingerForCode(event.code) !== null) {
@@ -139,6 +160,25 @@ function clearKeyFeedback() {
   keyFeedback.value = {}
 }
 
+function pauseTraining(reason: PauseReason = 'keyboard') {
+  if (session.value.status !== 'running') return
+
+  pauseReason.value = reason
+  clearKeyFeedback()
+  pause()
+}
+
+function resumeTraining() {
+  if (session.value.status !== 'paused') return
+
+  resume()
+  pauseReason.value = null
+}
+
+function handleVisibilityChange() {
+  if (document.visibilityState === 'hidden') pauseTraining('visibility')
+}
+
 function restartFromResult() {
   resultOpen.value = false
   restart()
@@ -156,6 +196,7 @@ watch(
   () => session.value.status,
   (status) => {
     if (status === 'completed') resultOpen.value = true
+    if (status !== 'paused') pauseReason.value = null
   },
 )
 
@@ -163,11 +204,13 @@ onMounted(() => {
   window.addEventListener('keydown', handlePageKeydown)
   window.addEventListener('keyup', handlePageKeyup)
   window.addEventListener('blur', clearKeyFeedback)
+  document.addEventListener('visibilitychange', handleVisibilityChange)
 })
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', handlePageKeydown)
   window.removeEventListener('keyup', handlePageKeyup)
   window.removeEventListener('blur', clearKeyFeedback)
+  document.removeEventListener('visibilitychange', handleVisibilityChange)
   clearKeyFeedback()
 })
 </script>
@@ -179,6 +222,7 @@ onBeforeUnmount(() => {
     :status="session.status"
     :stats="stats"
     :show-guidance="showKeyboard || showHands"
+    :pause-message="pauseMessage"
   >
     <template #lesson-picker>
       <div class="header-actions">
@@ -192,8 +236,10 @@ onBeforeUnmount(() => {
     </template>
 
     <template #actions>
-      <button v-if="session.status === 'running'" type="button" @click="pause()">暂停</button>
-      <button v-else-if="session.status === 'paused'" type="button" @click="resume()">
+      <button v-if="session.status === 'running'" type="button" @click="pauseTraining()">
+        暂停
+      </button>
+      <button v-else-if="session.status === 'paused'" type="button" @click="resumeTraining()">
         继续
       </button>
       <button type="button" class="secondary" @click="restart">重新练习</button>
