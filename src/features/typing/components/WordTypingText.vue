@@ -88,6 +88,9 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
           :class="{
             'completed-word': absoluteWordIndex(wordOffset) < wordIndex,
             'current-word': absoluteWordIndex(wordOffset) === wordIndex,
+            'awaiting-separator':
+              absoluteWordIndex(wordOffset) === wordIndex &&
+              position >= Array.from(word).length,
             'separator-error':
               absoluteWordIndex(wordOffset) === wordIndex &&
               position >= Array.from(word).length &&
@@ -203,12 +206,10 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
 
 .prompt-word.current-word {
   color: #21394f;
-  border-bottom: 2px solid #263d52;
 }
 
 .prompt-word.current-word.separator-error {
   color: #a32c2c;
-  border-bottom-color: #c0392b;
 }
 
 .prompt-word.completed-word,
@@ -220,6 +221,40 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
   color: #c0392b;
   background: #ffebe8;
   animation: shake 100ms ease-out;
+}
+
+.word-character.current {
+  position: relative;
+}
+
+.word-character.current::after {
+  position: absolute;
+  right: 0;
+  bottom: 0.2em;
+  left: 0;
+  border-bottom: 2px solid #263d52;
+  content: '';
+}
+
+.word-character.current.error::after {
+  border-bottom-color: #c0392b;
+}
+
+.prompt-word.awaiting-separator {
+  position: relative;
+}
+
+.prompt-word.awaiting-separator::after {
+  position: absolute;
+  bottom: 0.2em;
+  left: 100%;
+  width: 0.64em;
+  border-bottom: 2px solid #263d52;
+  content: '';
+}
+
+.prompt-word.awaiting-separator.separator-error::after {
+  border-bottom-color: #c0392b;
 }
 
 .echo-word {

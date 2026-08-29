@@ -1,75 +1,87 @@
-# typing
+# 打字练习
 
-“打字练习”是一个参考金山打字通 2006 训练体验制作的 Web 应用：以 Vue 3 重做「文字、键盘、手指、统计」反馈闭环，不复刻桌面程序的固定布局。
+一个参考经典桌面打字软件训练体验制作的 Web 打字练习应用。项目使用 Vue 3 和 TypeScript 实现文字提示、输入反馈、虚拟键盘、手指指法与实时统计，并针对现代浏览器重新设计了界面与交互。
 
-原版程序与课程资源位于工作区的 `../jsdzt2006`，仅作本地分析和迁移参考，不随项目分发。
+在线体验：[type.sci-tech.top](https://type.sci-tech.top)
 
-## 功能现状
+## 已实现功能
 
-- **英文基础键位训练**：课程驱动，逐字符反馈，虚拟键盘高亮目标键、显示手指分区，F/J 键带定位下划线
-- **键位练习（高级）**：同一课程按行分段训练，整行文本提示与输入回显，区分大小写（CapsLock 状态指示），行尾按空格换行，支持退格回退（错误计数不回退）
-- **数字键盘训练**：独立的数字小键盘指法课程与引导
-- **单词练习**：20 本词典按需下载，支持逐词输入、累计统计、音标和中文释义
-- **训练统计**：时间、速度（CPM）、正确率、课程进度实时显示
-- **暂停控制**：Esc 暂停、按任意键继续；切离页面自动暂停
-- **导航外壳**：基于 PrimeVue 的应用框架，对应原版主窗体的功能入口
+- **英文键位练习（初级）**：按课程逐字符练习，虚拟键盘同步提示目标按键和对应手指。
+- **英文键位练习（高级）**：按行展示训练内容，支持大小写、标点、错误反馈和退格修正。
+- **数字键盘练习**：独立的数字小键盘布局、课程和右手指法提示。
+- **单词练习**：提供常用词汇、考试词汇和专业词汇等 20 本词典，显示音标、词性和中文释义。
+- **连续训练**：单词按整行排列，词间空格也需要输入；释义会跟随当前单词更新。
+- **进度记忆**：浏览器会保存上次选择的词典和练习位置，再次进入时可接着练习。
+- **即时反馈**：目标键、正确键和错误键使用不同状态显示；错误输入可用 Backspace 清除。
+- **训练统计**：实时显示用时、速度、正确率和总体进度。
+- **暂停控制**：按 Esc 暂停，按其他任意键继续；标签页失去焦点时自动暂停。
 
-后续规划（见 [docs/reference-vb6-forms.md](docs/reference-vb6-forms.md)）：文章、拼音、五笔等训练模式。
+文章、拼音和五笔等训练模式尚在规划中。
 
 ## 技术栈
 
-Vue 3 · TypeScript · Vite · Pinia · Vue Router · PrimeVue
-测试使用 Node 内置 test runner，代码规范使用 ESLint + oxlint + Prettier。
+- Vue 3、TypeScript、Vite
+- Vue Router、Pinia
+- PrimeVue、PrimeIcons
+- Node.js 内置测试运行器
+- ESLint、oxlint、Prettier
 
-## 快速开始
+## 本地运行
 
-要求 Node `^22.18.0` 或 `>=24.12.0`，包管理器为 pnpm。
+需要安装 Node.js `^22.18.0` 或 `>=24.12.0`，并使用 pnpm。
 
 ```sh
 pnpm install
-pnpm dev       # 开发服务器
-pnpm build     # 类型检查 + 生产构建
-pnpm preview   # 预览构建产物
+pnpm dev
 ```
 
-## 常用脚本
+常用命令：
 
 ```sh
-pnpm test              # 运行引擎与键位映射单元测试
-pnpm type-check        # vue-tsc 类型检查
-pnpm lint              # oxlint + eslint（自动修复）
-pnpm format            # Prettier 格式化 src/
-pnpm content:migrate   # 从原版资源迁移课程内容
-pnpm content:dictionaries # 从原始导出生成前端按需加载的精简词典
+pnpm test                 # 运行打字引擎和键位映射测试
+pnpm type-check           # 运行 TypeScript / Vue 类型检查
+pnpm build                # 类型检查并构建生产版本
+pnpm preview              # 本地预览生产构建
+pnpm lint                 # 运行 oxlint 和 ESLint 并自动修复
+pnpm format               # 使用 Prettier 格式化 src/
+pnpm content:migrate      # 重新生成键位课程数据
+pnpm content:dictionaries # 重新生成前端词典数据
 ```
 
 ## 项目结构
 
 ```text
 src/
-├── content/               # 课程数据（JSON）与类型
+├── content/                    # 课程清单、课程数据与类型
 ├── features/typing/
-│   ├── engine/            # 纯函数打字引擎（会话状态机、统计）
-│   ├── dictionaries/      # 词典类型与按需加载仓库
-│   ├── keyboard/          # QWERTY / 数字小键盘布局与手指映射
-│   ├── components/        # 键盘、手指、统计、课程抽屉等组件
-│   ├── composables/       # useTypingEngine（Vue 响应式封装）
-│   └── pages/             # 训练页面
-├── router/                # 路由（/practice/english/keys、/practice/english/numpad）
-└── App.vue                # PrimeVue 导航外壳
+│   ├── components/             # 文本、键盘、手指、统计与选择面板
+│   ├── composables/            # Vue 响应式训练逻辑
+│   ├── dictionaries/           # 词典清单、类型与按需加载
+│   ├── engine/                 # 纯函数会话状态机和统计逻辑
+│   ├── keyboard/               # 标准键盘、数字键盘及指法映射
+│   └── pages/                  # 键位练习与单词练习页面
+├── router/                     # 应用路由
+└── App.vue                     # PrimeVue 导航外壳
+
+public/data/dictionaries/       # 构建时原样复制、运行时按需获取的词典
+scripts/                        # 课程与词典数据生成脚本
+tools/                          # 原始词典格式分析和提取工具
+docs/                           # 原版窗体与词典格式研究记录
 ```
 
-架构原则：训练引擎、键位映射与视觉组件彼此解耦；练习与测试共享训练工作区，通过模式配置扩展，不为每种模式复制页面。
+训练引擎、物理键位映射和视觉组件彼此分离。普通键位课程随应用构建；体积较大的词典不会打进 JavaScript 包，而是在用户进入单词练习并选择词典时按需下载。
 
-## 文档
+## 主要页面
 
-- [docs/reference-vb6-forms.md](docs/reference-vb6-forms.md) — 从原版 exe 解析出的 VB6 窗体清单与 Web 组件映射，是功能迁移的设计依据
-- [docs/ksearch-format-analysis.md](docs/ksearch-format-analysis.md) / [docs/ksearch-typelib.md](docs/ksearch-typelib.md) — 原版词典格式分析
-- [docs/ksearch-dictionaries/](docs/ksearch-dictionaries/) — 从原版 `KSearch.dll` 提取的词典数据（约 20 本，含音标/词性/释义结构化标记），由 `tools/KSearchProbe` 工具生成
-- [tools/](tools/) — 解析原版词典的 C# 提取工具
+| 页面                 | 路由                                         |
+| -------------------- | -------------------------------------------- |
+| 英文键位练习（初级） | `/practice/english/keys/:lessonId?`          |
+| 英文键位练习（高级） | `/practice/english/keys-advanced/:lessonId?` |
+| 数字键盘练习         | `/practice/english/numpad/:lessonId?`        |
+| 单词练习             | `/practice/english/words`                    |
 
 ## 部署
 
-GitHub Actions 工作流 [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) 自动构建并发布到 GitHub Pages。
+推送到 `main` 分支后，[GitHub Actions](.github/workflows/deploy-pages.yml) 会依次安装依赖、运行测试、构建项目并发布到 GitHub Pages。自定义域名由 [`public/CNAME`](public/CNAME) 配置为 `type.sci-tech.top`。
 
-键位课程随应用打包；体积较大的单词词典位于 `public/data/dictionaries/`，进入单词练习后先获取清单，选择词典时才下载对应的数据文件。
+**本程序仅供学习交流使用，词库等部分如有侵权请联系删除。**
