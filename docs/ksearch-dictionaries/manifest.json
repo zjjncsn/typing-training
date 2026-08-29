@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "dictionaryCount": 20,
+  "totalEntryCount": 42651,
+  "dictionaries": [
+    {
+      "id": "dictionary/4W",
+      "category": "dictionary",
+      "name": "4W",
+      "source": "Data/English/T_Word/Dictionary/4W.DAT",
+      "output": "docs/ksearch-dictionaries/raw/dictionary/4W.raw.json",
+      "entryCount": 4543,
+      "errorCount": 0,
+      "caseDifferenceCount": 4
+    },
+    {
+      "id": "dictionary/6W",
+      "category": "dictionary",
+      "name": "6W",
+      "source": "Data/English/T_Word/Dictionary/6W.DAT",
+      "output": "docs/ksearch-dictionaries/raw/dictionary/6W.raw.json",
+      "entryCount": 2088,
+      "errorCount": 0,
+      "caseDifferenceCount": 0
+    },
+    {
+      "id": "dictionary/GMAT",
+      "category": "dictionary",
+      "name": "GMAT",
+      "source": "Data/English/T_Word/Dictionary/GMAT.DAT",
+      "output": "docs/ksearch-dictionaries/raw/dictionary/GMAT.raw.json",
+      "entryCount": 2435,
+      "errorCount": 0,
+      "caseDifferenceCount": 0
+    },
+    {
+      "id": "dictionary/Grade",
+      "category": "dictionary",
+      "name": "Grade",
+      "source": "Data/English/T_Word/Dictionary/Grade.DAT",
+      "output": "docs/ksearch-dictionaries/raw/dictionary/Grade.raw.json",
+      "entryCount": 900,
+      "errorCount": 0,
+      "caseDifferenceCount": 1
+    },
+    {
+      "id": "dictionary/GRE",
+      "category": "dictionary",
+      "name": "GRE",
+      "source": "Data/English/T_Word/Dictionary/GRE.DAT",
+      "output": "docs/ksearch-dictionaries/raw/dictionary/GRE.raw.json",
+      "entryCount": 6676,
+      "errorCount": 0,
+      "caseDifferenceCount": 0
+    },
+    {
+      "id": "dictionary/High",
+      "category": "dictionary",
+      "name": "High",
+      "source": "Data/English/T_Word/Dictionary/High.DAT",
+      "output": "docs/ksearch-dictionaries/raw/dictionary/High.raw.json",
+      "entryCount": 2738,
+      "errorCount": 0,
+      "caseDifferenceCount": 2
+    },
+    {
+      "id": "dictionary/Middle",
+      "category": "dictionary",
+      "name": "Middle",
+      "source": "Data/English/T_Word/Dictionary/Middle.DAT",
+      "output": "docs/ksearch-dictionaries/raw/dictionary/Middle.raw.json",
+      "entryCount": 1711,
+      "errorCount": 0,
+      "caseDifferenceCount": 6
+    },
+    {
+      "id": "dictionary/TOEFL",
+      "category": "dictionary",
+      "name": "TOEFL",
+      "source": "Data/English/T_Word/Dictionary/TOEFL.DAT",
+      "output": "docs/ksearch-dictionaries/raw/dictionary/TOEFL.raw.json",
+      "entryCount": 3472,
+      "errorCount": 0,
+      "caseDifferenceCount": 0
+    },
+    {
+      "id": "general/常用单词1000",
+      "category": "general",
+      "name": "常用单词1000",
+      "source": "Data/English/T_Word/General/常用单词1000.DAT",
+      "output": "docs/ksearch-dictionaries/raw/general/常用单词1000.raw.json",
+      "entryCount": 999,
+      "errorCount": 0,
+      "caseDifferenceCount": 1
+    },
+    {
+      "id": "professional/地理EN",
+      "category": "professional",
+      "name": "地理EN",
+      "source": "Data/English/T_Word/Professional/地理EN.DAT",
+      "output": "docs/ksearch-dictionaries/raw/professional/地理EN.raw.json",
+      "entryCount": 1421,
+      "errorCount": 0,
+      "caseDifferenceCount": 0
+    },
+    {
+      "id": "professional/电子EN",
+      "category": "professional",
+      "name": "电子EN",
+      "source": "Data/English/T_Word/Professional/电子EN.DAT",
+      "output": "docs/ksearch-dictionaries/raw/professional/电子EN.raw.json",
+      "entryCount": 1361,
+      "errorCount": 0,
+      "caseDifferenceCount": 2
+    },
+    {
+      "id": "professional/化学EN",
+      "category": "professional",
+      "name": "化学EN",
+      "source": "Data/English/T_Word/Professional/化学EN.DAT",
+      "output": "docs/ksearch-dictionaries/raw/professional/化学EN.raw.json",
+      "entryCount": 1497,
+      "errorCount": 0,
+      "caseDifferenceCount": 2
+    },
+    {
+      "id": "professional/计算机EN",
+      "category": "professional",
+      "name": "计算机EN",
+      "source": "Data/English/T_Word/Professional/计算机EN.DAT",
+      "output": "docs/ksearch-dictionaries/raw/professional/计算机EN.raw.json",
+      "entryCount": 1593,
+      "errorCount": 0,
+      "caseDifferenceCount": 1
+    },
+    {
+      "id": "professional/建筑EN",
+      "category": "professional",
+      "name": "建筑EN",
+      "source": "Data/English/T_Word/Professional/建筑EN.DAT",
+      "output": "docs/ksearch-dictionaries/raw/professional/建筑EN.raw.json",
+      "entryCount": 1983,
+      "errorCount": 0,
+      "caseDifferenceCount": 97
+    },
+    {
+      "id": "professional/农学EN",
+      "category": "professional",
+      "name": "农学EN",
+      "source": "Data/English/T_Word/Professional/农学EN.DAT",
+      "output": "docs/ksearch-dictionaries/raw/professional/农学EN.raw.json",
+      "entryCount": 1218,
+      "errorCount": 0,
+      "caseDifferenceCount": 0
+    },
+    {
+      "id": "professional/石油EN",
+      "category": "professional",
+      "name": "石油EN",
+      "source": "Data/English/T_Word/Professional/石油EN.DAT",
+      "output": "docs/ksearch-dictionaries/raw/professional/石油EN.raw.json",
+      "entryCount": 1924,
+      "errorCount": 0,
+      "caseDifferenceCount": 2
+    },
+    {
+      "id": "professional/数学EN",
+      "category": "professional",
+      "name": "数学EN",
+      "source": "Data/English/T_Word/Professional/数学EN.DAT",
+      "output": "docs/ksearch-dictionaries/raw/professional/数学EN.raw.json",
+      "entryCount": 1472,
+      "errorCount": 0,
+      "caseDifferenceCount": 10
+    },
+    {
+      "id": "professional/物理EN",
+      "category": "professional",
+      "name": "物理EN",
+      "source": "Data/English/T_Word/Professional/物理EN.DAT",
+      "output": "docs/ksearch-dictionaries/raw/professional/物理EN.raw.json",
+      "entryCount": 1613,
+      "errorCount": 0,
+      "caseDifferenceCount": 0
+    },
+    {
+      "id": "professional/心理学EN",
+      "category": "professional",
+      "name": "心理学EN",
+      "source": "Data/English/T_Word/Professional/心理学EN.DAT",
+      "output": "docs/ksearch-dictionaries/raw/professional/心理学EN.raw.json",
+      "entryCount": 1450,
+      "errorCount": 0,
+      "caseDifferenceCount": 1
+    },
+    {
+      "id": "professional/医学EN",
+      "category": "professional",
+      "name": "医学EN",
+      "source": "Data/English/T_Word/Professional/医学EN.DAT",
+      "output": "docs/ksearch-dictionaries/raw/professional/医学EN.raw.json",
+      "entryCount": 1557,
+      "errorCount": 0,
+      "caseDifferenceCount": 0
+    }
+  ]
+}
