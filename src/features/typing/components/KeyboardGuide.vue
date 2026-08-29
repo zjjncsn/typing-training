@@ -5,6 +5,7 @@ import type { KeyFeedback } from '../keyboard/types'
 const props = defineProps<{
   target: KeyboardTarget | null
   keyFeedback: Readonly<Partial<Record<string, KeyFeedback>>>
+  capsLockOn?: boolean
 }>()
 
 const homeAnchorCodes = new Set(['KeyF', 'KeyJ'])
@@ -17,6 +18,7 @@ function keyState(code: string) {
     modifier: props.target?.shiftCode === code,
     correct: feedback === 'correct',
     incorrect: feedback === 'incorrect',
+    'caps-on': code === 'CapsLock' && props.capsLockOn === true,
     'home-anchor': homeAnchorCodes.has(code),
   }
 }
@@ -167,6 +169,15 @@ function keyState(code: string) {
   background: linear-gradient(#40b9a7, #168e80);
   border-color: #0e7267;
   box-shadow: 0 0 0 3px rgb(22 142 128 / 18%);
+}
+
+.keycap.caps-on {
+  color: #fff;
+  background: linear-gradient(#63cd8d, #2e9e5b);
+  border-color: #1f7d45;
+  box-shadow:
+    inset 0 2px 4px rgb(16 82 42 / 35%),
+    0 0 0 3px rgb(46 158 91 / 20%);
 }
 
 .keycap.correct {

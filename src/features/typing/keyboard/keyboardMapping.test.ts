@@ -54,6 +54,27 @@ test('maps shifted punctuation and whitespace', () => {
   assert.equal(resolveKeyboardTarget('\n')?.code, 'Enter')
 })
 
+test('maps newline to the space key when requested', () => {
+  const target = resolveKeyboardTarget('\n', { spaceForNewline: true })
+
+  assert.equal(target?.code, 'Space')
+  assert.equal(target?.finger, 'right-thumb')
+  assert.equal(target?.character, '\n')
+})
+
+test('applies caps lock state to letter targets', () => {
+  const uppercaseWithCapsOn = resolveKeyboardTarget('F', { capsLockOn: true })
+  assert.equal(uppercaseWithCapsOn?.code, 'KeyF')
+  assert.equal(uppercaseWithCapsOn?.shiftCode, null)
+
+  const lowercaseWithCapsOn = resolveKeyboardTarget('f', { capsLockOn: true })
+  assert.equal(lowercaseWithCapsOn?.code, 'KeyF')
+  assert.equal(lowercaseWithCapsOn?.shiftCode, 'ShiftRight')
+
+  const uppercaseWithoutCaps = resolveKeyboardTarget('F', { capsLockOn: false })
+  assert.equal(uppercaseWithoutCaps?.shiftCode, 'ShiftRight')
+})
+
 test('returns null for unsupported characters and finds fingers by code', () => {
   assert.equal(resolveKeyboardTarget('你'), null)
   assert.equal(getFingerForCode('KeyK'), 'right-middle')

@@ -8,6 +8,7 @@ const defaultOptions: TypingEngineOptions = {
   mistakePolicy: 'retry',
   caseSensitive: true,
   autoAdvanceWhitespace: false,
+  autoAdvanceBlankLines: false,
 }
 
 function characterCount(value: string): number {
@@ -55,6 +56,18 @@ function advancePastWhitespace(
 
   let nextPosition = position
   while (/\s/u.test(characterAt(content, nextPosition) ?? '')) nextPosition += 1
+  return nextPosition
+}
+
+function advancePastBlankLines(
+  content: string,
+  position: number,
+  options: TypingEngineOptions,
+): number {
+  if (!options.autoAdvanceBlankLines) return position
+
+  let nextPosition = position
+  while (characterAt(content, nextPosition) === '\n') nextPosition += 1
   return nextPosition
 }
 
@@ -131,11 +144,16 @@ export function typeCharacter(
   const correct =
     correctOverride ?? charactersMatch(expected, received, runningSession.options)
   const shouldAdvance = correct || runningSession.options.mistakePolicy === 'advance'
-  const nextPosition = advancePastWhitespace(
+  let nextPosition = advancePastWhitespace(
     runningSession.content,
     runningSession.position + (shouldAdvance ? 1 : 0),
     runningSession.options,
   )
+
+  if (correct && expected === '\n') {
+    nextPosition = advancePastBlankLines(runningSession.content, nextPosition, runningSession.options)
+  }
+
   const completed = nextPosition >= characterCount(runningSession.content)
 
   const nextSession: TypingSession = {
@@ -172,6 +190,23 @@ export function typeKeyboardKey(
 ): TypingSession {
   const character = keyboardKeyToCharacter(key)
   return character === null ? session : typeCharacter(session, character, timestamp)
+}
+
+/**
+ * Moves the cursor back one position without touching the accuracy counters:
+ * mistakes made before a backspace stay counted, and retyping the character
+ * afterwards counts as a fresh correct keystroke.
+ */
+export function backspaceCharacter(session: TypingSession): TypingSession {
+  if (session.status !== 'running' || session.position === 0) {
+    return session
+  }
+
+  return {
+    ...session,
+    position: session.position - 1,
+    lastAttempt: null,
+  }
 }
 
 export function pauseTypingSession(
@@ -248,3 +283,5 @@ export type {
   TypingSessionStatus,
   TypingStats,
 } from './types'
+export type { ContentLine } from './lineSegments'
+export { resolveLineIndexAt, splitContentLines } from './lineSegments.ts'

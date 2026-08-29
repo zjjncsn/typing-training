@@ -143,14 +143,31 @@ characterTargets.set('\t', {
 
 export function resolveKeyboardTarget(
   character: string | null,
-  options: { useShiftForUppercase?: boolean } = {},
+  options: {
+    useShiftForUppercase?: boolean
+    capsLockOn?: boolean
+    spaceForNewline?: boolean
+  } = {},
 ): KeyboardTarget | null {
   if (character === null) return null
 
-  const lookupCharacter =
-    options.useShiftForUppercase === false && /^[A-Z]$/.test(character)
-      ? character.toLowerCase()
-      : character
+  if (character === '\n' && options.spaceForNewline) {
+    const spaceTarget = characterTargets.get(' ')
+    return spaceTarget ? { character, ...spaceTarget } : null
+  }
+
+  const isUppercaseLetter = /^[A-Z]$/.test(character)
+  let lookupCharacter = character
+
+  if (options.capsLockOn && /^[a-z]$/i.test(character)) {
+    lookupCharacter = isUppercaseLetter ? character.toLowerCase() : character.toUpperCase()
+  } else if (
+    isUppercaseLetter &&
+    options.useShiftForUppercase === false
+  ) {
+    lookupCharacter = character.toLowerCase()
+  }
+
   const target = characterTargets.get(lookupCharacter)
   return target ? { character, ...target } : null
 }

@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 
 import {
+  backspaceCharacter,
   createTypingSession,
   getExpectedCharacter,
   getTypingStats,
@@ -128,4 +129,62 @@ test('can ignore letter case and advance past whitespace automatically', () => {
   assert.equal(session.status, 'completed')
   assert.equal(session.correctCount, 2)
   assert.equal(session.errorCount, 1)
+})
+
+test('skips blank lines only after typing a newline when configured', () => {
+  let session = createTypingSession('a\n\nb', { autoAdvanceBlankLines: true })
+
+  session = typeCharacter(session, 'a', 100)
+  assert.equal(session.position, 1)
+  assert.equal(getExpectedCharacter(session), '\n')
+
+  session = typeCharacter(session, '\n', 200)
+  assert.equal(session.position, 3)
+  assert.equal(getExpectedCharacter(session), 'b')
+})
+
+test('keeps blank lines when the option is off', () => {
+  let session = createTypingSession('a\n\nb')
+
+  session = typeCharacter(session, 'a', 100)
+  session = typeCharacter(session, '\n', 200)
+
+  assert.equal(session.position, 2)
+  assert.equal(getExpectedCharacter(session), '\n')
+})
+
+test('backspace rewinds without updating accuracy counters', () => {
+  let session = createTypingSession('ab')
+
+  session = typeCharacter(session, 'a', 100)
+  session = typeCharacter(session, 'x', 150)
+
+  assert.equal(session.position, 1)
+  assert.equal(session.errorCount, 1)
+
+  session = backspaceCharacter(session)
+  assert.equal(session.position, 0)
+  assert.equal(session.correctCount, 1)
+  assert.equal(session.errorCount, 1)
+  assert.equal(session.lastAttempt, null)
+
+  session = typeCharacter(session, 'a', 200)
+  assert.equal(session.position, 1)
+  assert.equal(session.correctCount, 2)
+  assert.equal(session.errorCount, 1)
+  assert.equal(getTypingStats(session).accuracy, (2 / 3) * 100)
+})
+
+test('ignores backspace outside a running session and at the start', () => {
+  const idle = createTypingSession('ab')
+  assert.equal(backspaceCharacter(idle), idle)
+
+  const atStart = { ...typeCharacter(createTypingSession('ab'), 'a', 100), position: 0 }
+  const rewound = backspaceCharacter(atStart)
+  assert.equal(rewound.status, 'running')
+  assert.equal(rewound.position, 0)
+
+  const completed = typeCharacter(createTypingSession('a'), 'a', 100)
+  assert.equal(backspaceCharacter(completed).position, 1)
+  assert.equal(backspaceCharacter(completed).status, 'completed')
 })

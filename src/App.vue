@@ -26,6 +26,16 @@ const menuItems = computed(() => [
           }),
       },
       {
+        label: '键位练习（高级）',
+        icon: 'pi pi-star',
+        class: route.name === 'english-key-advanced-practice' ? 'active-menu-item' : undefined,
+        command: () =>
+          router.push({
+            name: 'english-key-advanced-practice',
+            params: { lessonId: 'english-key-standard-00' },
+          }),
+      },
+      {
         label: '数字键盘',
         icon: 'pi pi-calculator',
         class: route.name === 'english-numpad-practice' ? 'active-menu-item' : undefined,

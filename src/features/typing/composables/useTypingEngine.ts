@@ -1,6 +1,7 @@
 import { computed, onBeforeUnmount, ref, toValue, watch, type MaybeRefOrGetter } from 'vue'
 
 import {
+  backspaceCharacter,
   createTypingSession,
   getExpectedCharacter,
   getTypingStats,
@@ -14,9 +15,9 @@ import {
 
 export function useTypingEngine(
   content: MaybeRefOrGetter<string>,
-  options: Partial<TypingEngineOptions> = {},
+  options: MaybeRefOrGetter<Partial<TypingEngineOptions>> = {},
 ) {
-  const session = ref(createTypingSession(toValue(content), options))
+  const session = ref(createTypingSession(toValue(content), toValue(options)))
   const clock = ref(Date.now())
   let clockTimer: ReturnType<typeof setInterval> | undefined
 
@@ -42,6 +43,10 @@ export function useTypingEngine(
   ) {
     session.value = typeCharacter(session.value, character, timestamp, correctOverride)
     clock.value = timestamp
+  }
+
+  function backspace() {
+    session.value = backspaceCharacter(session.value)
   }
 
   function handleKeydown(event: KeyboardEvent) {
@@ -80,9 +85,9 @@ export function useTypingEngine(
   }
 
   watch(
-    () => toValue(content),
-    (nextContent) => {
-      session.value = createTypingSession(nextContent, options)
+    [() => toValue(content), () => toValue(options)],
+    ([nextContent, nextOptions]) => {
+      session.value = createTypingSession(nextContent, nextOptions)
       clock.value = Date.now()
     },
   )
@@ -104,6 +109,7 @@ export function useTypingEngine(
     expectedCharacter: computed(() => getExpectedCharacter(session.value)),
     inputCharacter,
     handleKeydown,
+    backspace,
     pause,
     resume,
     restart,

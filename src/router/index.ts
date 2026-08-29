@@ -15,6 +15,11 @@ const router = createRouter({
       component: TypingPracticePage,
     },
     {
+      path: '/practice/english/keys-advanced/:lessonId?',
+      name: 'english-key-advanced-practice',
+      component: TypingPracticePage,
+    },
+    {
       path: '/practice/english/numpad/:lessonId?',
       name: 'english-numpad-practice',
       component: TypingPracticePage,

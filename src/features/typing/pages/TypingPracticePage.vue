@@ -8,13 +8,14 @@ import type { Lesson } from '@/content/types'
 import HandGuide from '../components/HandGuide.vue'
 import KeyboardGuide from '../components/KeyboardGuide.vue'
 import LessonDrawer from '../components/LessonDrawer.vue'
+import LineTypingText from '../components/LineTypingText.vue'
 import NumpadGuide from '../components/NumpadGuide.vue'
 import SessionResultDialog from '../components/SessionResultDialog.vue'
 import TrainingSettingsDialog from '../components/TrainingSettingsDialog.vue'
 import TrainingWorkspace from '../components/TrainingWorkspace.vue'
 import TypingText from '../components/TypingText.vue'
 import { useTypingEngine } from '../composables/useTypingEngine'
-import { keyboardKeyToCharacter } from '../engine/typingEngine'
+import { keyboardKeyToCharacter, type TypingEngineOptions } from '../engine/typingEngine'
 import { resolveKeyFeedback } from '../keyboard/keyboardFeedback'
 import {
   getNumpadFingerForCode,
@@ -31,10 +32,18 @@ import type { KeyFeedback } from '../keyboard/types'
 
 type TypingTextScale = 'small' | 'medium' | 'large'
 type PauseReason = 'keyboard' | 'visibility'
+type PracticeMode = 'key' | 'key-advanced' | 'numpad'
+type LineAttempt = { received: string; correct: boolean }
 
 const route = useRoute()
 const router = useRouter()
-const isNumpad = computed(() => route.name === 'english-numpad-practice')
+const mode = computed<PracticeMode>(() => {
+  if (route.name === 'english-numpad-practice') return 'numpad'
+  if (route.name === 'english-key-advanced-practice') return 'key-advanced'
+  return 'key'
+})
+const isNumpad = computed(() => mode.value === 'numpad')
+const isAdvanced = computed(() => mode.value === 'key-advanced')
 const activeCourse = computed(() =>
   isNumpad.value ? englishNumpadCourse : englishKeyStandardCourse,
 )
@@ -47,6 +56,8 @@ const showHands = ref(true)
 const textScale = ref<TypingTextScale>('medium')
 const keyFeedback = ref<Record<string, KeyFeedback>>({})
 const pauseReason = ref<PauseReason | null>(null)
+const capsLockOn = ref(false)
+const attemptLog = ref<Record<number, LineAttempt>>({})
 const feedbackTimers = new Map<string, ReturnType<typeof setTimeout>>()
 
 const activeLesson = computed<Lesson>(() => {
@@ -57,19 +68,38 @@ const activeLesson = computed<Lesson>(() => {
   return lessons.value.find((lesson) => lesson.id === lessonId) ?? lessons.value[0]!
 })
 
+const engineOptions = computed<Partial<TypingEngineOptions>>(() =>
+  isAdvanced.value
+    ? { caseSensitive: true, autoAdvanceWhitespace: false, autoAdvanceBlankLines: true }
+    : { caseSensitive: false, autoAdvanceWhitespace: true },
+)
+
 const {
   session,
   stats,
   expectedCharacter,
-  inputCharacter,
+  inputCharacter: feedEngine,
   handleKeydown,
+  backspace,
   pause,
   resume,
   restart,
-} = useTypingEngine(() => activeLesson.value.content, {
-    caseSensitive: false,
-    autoAdvanceWhitespace: true,
-  })
+} = useTypingEngine(() => activeLesson.value.content, engineOptions)
+
+function inputCharacter(character: string, timestamp = Date.now(), correctOverride?: boolean) {
+  feedEngine(character, timestamp, correctOverride)
+  recordAttempt()
+}
+
+function recordAttempt() {
+  const attempt = session.value.lastAttempt
+  if (!attempt) return
+
+  attemptLog.value = {
+    ...attemptLog.value,
+    [attempt.position]: { received: attempt.received, correct: attempt.correct },
+  }
+}
 
 const hasCurrentError = computed(
   () =>
@@ -77,18 +107,25 @@ const hasCurrentError = computed(
     session.value.lastAttempt.position === session.value.position,
 )
 
-const keyboardTarget = computed(() =>
-  session.value.status === 'completed'
-    ? null
-    : isNumpad.value
-      ? resolveNumpadTarget(expectedCharacter.value)
-      : resolveKeyboardTarget(
-          expectedCharacter.value === null
-            ? null
-            : formatTrainingCharacter(expectedCharacter.value),
-          { useShiftForUppercase: false },
-        ),
-)
+const keyboardTarget = computed(() => {
+  if (session.value.status === 'completed') return null
+
+  if (isNumpad.value) {
+    return resolveNumpadTarget(expectedCharacter.value)
+  }
+
+  const targetCharacter =
+    isAdvanced.value || expectedCharacter.value === null
+      ? expectedCharacter.value
+      : formatTrainingCharacter(expectedCharacter.value)
+
+  return resolveKeyboardTarget(
+    targetCharacter,
+    isAdvanced.value
+      ? { capsLockOn: capsLockOn.value, spaceForNewline: true }
+      : { useShiftForUppercase: false },
+  )
+})
 
 const activeLessonIndex = computed(() =>
   lessons.value.findIndex((lesson) => lesson.id === activeLesson.value.id),
@@ -112,7 +149,9 @@ const promptText = computed(() => {
     keyboardTarget.value.character === ' '
       ? '空格'
       : keyboardTarget.value.character === '\n'
-        ? '回车'
+        ? isAdvanced.value
+          ? '空格 / 回车（换行）'
+          : '回车'
         : keyboardTarget.value.character
   const shift = keyboardTarget.value.shiftFinger
     ? `，同时按住${fingerLabels[keyboardTarget.value.shiftFinger]} Shift`
@@ -132,6 +171,13 @@ function switchKeyboardMode() {
   if (!firstLesson) return
 
   void router.push({ name: routeName, params: { lessonId: firstLesson.id } })
+}
+
+function switchKeyMode() {
+  void router.push({
+    name: isAdvanced.value ? 'english-key-practice' : 'english-key-advanced-practice',
+    params: { lessonId: activeLesson.value.id },
+  })
 }
 
 function setKeyFeedback(code: string, feedback: KeyFeedback) {
@@ -166,6 +212,8 @@ function handleNumpadKeydown(event: KeyboardEvent) {
 }
 
 function handlePageKeydown(event: KeyboardEvent) {
+  syncCapsLockState(event)
+
   if (overlayOpen.value) return
 
   if (event.key === 'Escape') {
@@ -187,8 +235,22 @@ function handlePageKeydown(event: KeyboardEvent) {
     return
   }
 
+  if (isAdvanced.value && event.key === 'Backspace') {
+    event.preventDefault()
+    backspace()
+    pruneAttemptLog()
+    return
+  }
+
+  if (isAdvanced.value && expectedCharacter.value === '\n' && event.key === ' ') {
+    event.preventDefault()
+    setKeyFeedback('Space', 'correct')
+    inputCharacter('\n')
+    return
+  }
+
   const received = keyboardKeyToCharacter(event.key)
-  if (getFingerForCode(event.code) !== null) {
+  if (event.code !== 'CapsLock' && getFingerForCode(event.code) !== null) {
     const feedback = resolveKeyFeedback(
       event.code,
       received,
@@ -201,6 +263,28 @@ function handlePageKeydown(event: KeyboardEvent) {
   }
 
   handleKeydown(event)
+  recordAttempt()
+}
+
+function syncCapsLockState(event: KeyboardEvent) {
+  capsLockOn.value =
+    event.code === 'CapsLock' ? !capsLockOn.value : event.getModifierState('CapsLock')
+}
+
+function pruneAttemptLog() {
+  const position = session.value.position
+  const next: Record<number, LineAttempt> = {}
+
+  for (const [key, value] of Object.entries(attemptLog.value)) {
+    const entryPosition = Number(key)
+    if (entryPosition < position) next[entryPosition] = value
+  }
+
+  attemptLog.value = next
+}
+
+function clearAttemptLog() {
+  attemptLog.value = {}
 }
 
 function handlePageKeyup(event: KeyboardEvent) {
@@ -243,7 +327,12 @@ function handleVisibilityChange() {
 
 function restartFromResult() {
   resultOpen.value = false
+  restartTraining()
+}
+
+function restartTraining() {
   restart()
+  clearAttemptLog()
 }
 
 function openNextLesson() {
@@ -253,6 +342,8 @@ function openNextLesson() {
   resultOpen.value = false
   selectLesson(nextLesson.id)
 }
+
+watch([activeLesson, mode], clearAttemptLog)
 
 watch(
   () => session.value.status,
@@ -279,15 +370,23 @@ onBeforeUnmount(() => {
 
 <template>
   <TrainingWorkspace
-    :eyebrow="isNumpad ? '英文打字 · 数字键盘' : '英文打字 · 基础键位'"
+    :eyebrow="isNumpad ? '英文打字 · 数字键盘' : isAdvanced ? '英文打字 · 键位练习（高级）' : '英文打字 · 基础键位'"
     :title="activeLesson.title"
     :status="session.status"
     :stats="stats"
-    :show-guidance="showKeyboard || showHands"
+    :show-guidance="isAdvanced ? showKeyboard : showKeyboard || showHands"
     :pause-message="pauseMessage"
   >
     <template #lesson-picker>
       <div class="header-actions">
+        <button
+          v-if="!isNumpad"
+          type="button"
+          class="header-button mode-button"
+          @click="switchKeyMode"
+        >
+          {{ isAdvanced ? '基础键位' : '键位练习（高级）' }}
+        </button>
         <button type="button" class="header-button mode-button" @click="switchKeyboardMode">
           {{ isNumpad ? '标准键盘' : '数字键盘' }}
         </button>
@@ -307,11 +406,20 @@ onBeforeUnmount(() => {
       <button v-else-if="session.status === 'paused'" type="button" @click="resumeTraining()">
         继续
       </button>
-      <button type="button" class="secondary" @click="restart">重新练习</button>
+      <button type="button" class="secondary" @click="restartTraining">重新练习</button>
     </template>
 
     <template #content>
+      <LineTypingText
+        v-if="isAdvanced"
+        :content="activeLesson.content"
+        :position="session.position"
+        :has-current-error="hasCurrentError"
+        :scale="textScale"
+        :attempt-results="attemptLog"
+      />
       <TypingText
+        v-else
         :content="activeLesson.content"
         :position="session.position"
         :has-current-error="hasCurrentError"
@@ -326,13 +434,14 @@ onBeforeUnmount(() => {
         v-if="showKeyboard && !isNumpad"
         :target="keyboardTarget"
         :key-feedback="keyFeedback"
+        :caps-lock-on="capsLockOn"
       />
       <NumpadGuide
         v-if="showKeyboard && isNumpad"
         :target="keyboardTarget"
         :key-feedback="keyFeedback"
       />
-      <HandGuide v-if="showHands" :target="keyboardTarget" />
+      <HandGuide v-if="showHands && !isAdvanced" :target="keyboardTarget" />
     </template>
   </TrainingWorkspace>
 

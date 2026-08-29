@@ -6,6 +6,7 @@ export interface TypingEngineOptions {
   mistakePolicy: MistakePolicy
   caseSensitive: boolean
   autoAdvanceWhitespace: boolean
+  autoAdvanceBlankLines: boolean
 }
 
 export interface TypingAttempt {
