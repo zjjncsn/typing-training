@@ -163,6 +163,12 @@ test('backspace rewinds without updating accuracy counters', () => {
   assert.equal(session.errorCount, 1)
 
   session = backspaceCharacter(session)
+  assert.equal(session.position, 1)
+  assert.equal(session.correctCount, 1)
+  assert.equal(session.errorCount, 1)
+  assert.equal(session.lastAttempt, null)
+
+  session = backspaceCharacter(session)
   assert.equal(session.position, 0)
   assert.equal(session.correctCount, 1)
   assert.equal(session.errorCount, 1)

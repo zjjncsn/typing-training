@@ -202,6 +202,16 @@ export function backspaceCharacter(session: TypingSession): TypingSession {
     return session
   }
 
+  if (
+    session.lastAttempt?.correct === false &&
+    session.lastAttempt.position === session.position
+  ) {
+    return {
+      ...session,
+      lastAttempt: null,
+    }
+  }
+
   return {
     ...session,
     position: session.position - 1,

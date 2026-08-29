@@ -25,8 +25,9 @@ import type { KeyFeedback } from '../keyboard/types'
 type TypingTextScale = 'small' | 'medium' | 'large'
 type PauseReason = 'keyboard' | 'visibility'
 type WordAttempt = { received: string; correct: boolean }
+type StoredWordPosition = { dictionaryId: string; wordIndex: number }
 
-const batchSize = 20
+const wordPositionStorageKey = 'typing-practice.word-position.v1'
 const route = useRoute()
 const router = useRouter()
 
@@ -35,7 +36,7 @@ const selectedSummary = ref<DictionarySummary | null>(null)
 const dictionary = ref<WordDictionary | null>(null)
 const loadingDictionaryId = ref<string | null>(null)
 const loadError = ref<string | null>(null)
-const batchStart = ref(0)
+const initialWordIndex = ref(0)
 const dictionaryDrawerOpen = ref(false)
 const settingsOpen = ref(false)
 const resultOpen = ref(false)
@@ -49,10 +50,8 @@ const capsLockOn = ref(false)
 const feedbackTimers = new Map<string, ReturnType<typeof setTimeout>>()
 let loadGeneration = 0
 
-const batchEntries = computed<DictionaryEntry[]>(
-  () => dictionary.value?.entries.slice(batchStart.value, batchStart.value + batchSize) ?? [],
-)
-const batchWords = computed(() => batchEntries.value.map((entry) => entry.word))
+const entries = computed<DictionaryEntry[]>(() => dictionary.value?.entries ?? [])
+const words = computed(() => entries.value.map((entry) => entry.word))
 
 const {
   practice,
@@ -64,9 +63,9 @@ const {
   pause,
   resume,
   restart,
-} = useWordPracticeEngine(batchWords)
+} = useWordPracticeEngine(words, initialWordIndex)
 
-const currentEntry = computed(() => batchEntries.value[practice.value?.wordIndex ?? 0] ?? null)
+const currentEntry = computed(() => entries.value[practice.value?.wordIndex ?? 0] ?? null)
 const status = computed(() => session.value?.status ?? 'idle')
 const hasCurrentError = computed(
   () =>
@@ -81,12 +80,6 @@ const keyboardTarget = computed(() =>
 const overlayOpen = computed(
   () => dictionaryDrawerOpen.value || settingsOpen.value || resultOpen.value,
 )
-const hasNextBatch = computed(
-  () =>
-    dictionary.value !== null &&
-    batchStart.value + batchEntries.value.length < dictionary.value.entries.length,
-)
-const batchNumber = computed(() => Math.floor(batchStart.value / batchSize) + 1)
 const title = computed(() => selectedSummary.value?.name ?? '单词练习')
 const pauseMessage = computed(() =>
   pauseReason.value === 'visibility' ? '离开页面，训练已自动暂停' : '训练已暂停',
@@ -95,7 +88,7 @@ const promptText = computed(() => {
   if (loadError.value) return loadError.value
   if (loadingDictionaryId.value) return '正在下载所选词典，请稍候。'
   if (!currentEntry.value) return '请选择词典开始练习。'
-  if (status.value === 'completed') return '本组单词已经完成。'
+  if (status.value === 'completed') return '当前词典已经完成。'
   if (hasCurrentError.value) return '按键不正确，请重新输入当前字符。'
   if (!keyboardTarget.value) return '请按照提示继续输入。'
 
@@ -111,28 +104,70 @@ function queryDictionaryId(): string | null {
   return Array.isArray(value) ? (value[0] ?? null) : (value ?? null)
 }
 
+function readStoredPosition(): StoredWordPosition | null {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(wordPositionStorageKey) ?? 'null') as unknown
+    if (
+      typeof parsed !== 'object' ||
+      parsed === null ||
+      !('dictionaryId' in parsed) ||
+      !('wordIndex' in parsed) ||
+      typeof parsed.dictionaryId !== 'string' ||
+      typeof parsed.wordIndex !== 'number' ||
+      !Number.isFinite(parsed.wordIndex)
+    ) {
+      return null
+    }
+
+    return {
+      dictionaryId: parsed.dictionaryId,
+      wordIndex: Math.max(0, Math.trunc(parsed.wordIndex)),
+    }
+  } catch {
+    return null
+  }
+}
+
+function storePosition(dictionaryId: string, wordIndex: number) {
+  try {
+    localStorage.setItem(
+      wordPositionStorageKey,
+      JSON.stringify({ dictionaryId, wordIndex } satisfies StoredWordPosition),
+    )
+  } catch {
+    // Storage may be unavailable in private or restricted browser contexts.
+  }
+}
+
 async function initializeDictionaries() {
   loadError.value = null
   try {
     const loadedManifest = await loadDictionaryManifest()
     manifest.value = loadedManifest
     const requestedId = queryDictionaryId()
+    const storedPosition = readStoredPosition()
+    const preferredId = requestedId ?? storedPosition?.dictionaryId
     const summary =
-      loadedManifest.dictionaries.find((item) => item.id === requestedId) ??
+      loadedManifest.dictionaries.find((item) => item.id === preferredId) ??
       loadedManifest.dictionaries.find((item) => item.id === loadedManifest.defaultDictionaryId) ??
       loadedManifest.dictionaries[0]
 
-    if (summary) await selectDictionary(summary, requestedId !== summary.id)
+    if (summary) {
+      const resumeIndex = storedPosition?.dictionaryId === summary.id ? storedPosition.wordIndex : 0
+      await selectDictionary(summary, requestedId !== summary.id, resumeIndex)
+    }
   } catch (error) {
     loadError.value = error instanceof Error ? error.message : '词典清单加载失败。'
   }
 }
 
-async function selectDictionary(summary: DictionarySummary, replaceRoute = true) {
+async function selectDictionary(summary: DictionarySummary, replaceRoute = true, resumeIndex = 0) {
+  if (dictionary.value?.id === summary.id) return
+
   const generation = ++loadGeneration
   selectedSummary.value = summary
   dictionary.value = null
-  batchStart.value = 0
+  initialWordIndex.value = resumeIndex
   resultOpen.value = false
   loadError.value = null
   loadingDictionaryId.value = summary.id
@@ -276,13 +311,6 @@ function restartTraining() {
   clearAttemptLog()
 }
 
-function openNextBatch() {
-  if (!hasNextBatch.value) return
-  batchStart.value += batchSize
-  resultOpen.value = false
-  clearAttemptLog()
-}
-
 function handleVisibilityChange() {
   if (document.visibilityState === 'hidden') pauseTraining('visibility')
 }
@@ -303,6 +331,13 @@ watch(
   (nextStatus) => {
     if (nextStatus === 'completed') resultOpen.value = true
     if (nextStatus !== 'paused') pauseReason.value = null
+  },
+)
+
+watch(
+  [() => dictionary.value?.id, () => practice.value?.wordIndex],
+  ([dictionaryId, wordIndex]) => {
+    if (dictionaryId && wordIndex !== undefined) storePosition(dictionaryId, wordIndex)
   },
 )
 
@@ -336,8 +371,8 @@ onBeforeUnmount(() => {
   >
     <template #lesson-picker>
       <div class="header-actions">
-        <span v-if="dictionary" class="batch-label">
-          第 {{ batchNumber }} 组 · {{ (practice?.wordIndex ?? 0) + 1 }}/{{ batchEntries.length }}
+        <span v-if="dictionary" class="position-label">
+          第 {{ (practice?.wordIndex ?? 0) + 1 }} / {{ entries.length }} 词
         </span>
         <button type="button" class="header-button" @click="dictionaryDrawerOpen = true">
           选择词典
@@ -370,7 +405,8 @@ onBeforeUnmount(() => {
       </div>
       <template v-else-if="currentEntry && session">
         <WordTypingText
-          :word="currentEntry.word"
+          :words="words"
+          :word-index="practice?.wordIndex ?? 0"
           :position="session.position"
           :has-current-error="hasCurrentError"
           :scale="textScale"
@@ -419,15 +455,13 @@ onBeforeUnmount(() => {
 
   <SessionResultDialog
     v-model:open="resultOpen"
-    :lesson-title="`${title} · 第 ${batchNumber} 组`"
+    :lesson-title="title"
     :stats="stats"
-    :has-next-lesson="hasNextBatch"
-    completion-label="本组完成"
-    restart-label="再练本组"
-    next-label="下一组"
-    close-label="继续选词"
+    :has-next-lesson="false"
+    completion-label="词典完成"
+    restart-label="重新练习"
+    close-label="返回练习"
     @restart="restartTraining"
-    @next="openNextBatch"
   />
 </template>
 
@@ -439,7 +473,7 @@ onBeforeUnmount(() => {
   gap: 8px;
 }
 
-.batch-label {
+.position-label {
   margin-right: 4px;
   color: #718493;
   font-size: 0.78rem;
@@ -506,7 +540,7 @@ button.secondary {
     flex-direction: column;
   }
 
-  .batch-label {
+  .position-label {
     margin: 0 0 2px;
   }
 }

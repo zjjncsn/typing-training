@@ -29,17 +29,29 @@ function characterCount(value: string): number {
   return Array.from(value).length
 }
 
-export function createWordPracticeSession(words: readonly string[]): WordPracticeSession {
+function wordContent(words: readonly string[], wordIndex: number): string {
+  return `${words[wordIndex]!}${wordIndex < words.length - 1 ? ' ' : ''}`
+}
+
+export function createWordPracticeSession(
+  words: readonly string[],
+  initialWordIndex = 0,
+): WordPracticeSession {
   const safeWords = words.filter((word) => word.length > 0)
-  const firstWord = safeWords[0]
-  if (!firstWord) throw new Error('Word practice requires at least one word')
+  if (safeWords.length === 0) throw new Error('Word practice requires at least one word')
+
+  const normalizedIndex = Number.isFinite(initialWordIndex) ? Math.trunc(initialWordIndex) : 0
+  const wordIndex = Math.min(Math.max(0, normalizedIndex), safeWords.length - 1)
 
   return {
     words: [...safeWords],
-    wordIndex: 0,
-    completedCharacterCount: 0,
-    totalCharacterCount: safeWords.reduce((sum, word) => sum + characterCount(word), 0),
-    typing: createTypingSession(firstWord, wordOptions),
+    wordIndex,
+    completedCharacterCount: safeWords
+      .slice(0, wordIndex)
+      .reduce((sum, word) => sum + characterCount(word) + 1, 0),
+    totalCharacterCount:
+      safeWords.reduce((sum, word) => sum + characterCount(word), 0) + safeWords.length - 1,
+    typing: createTypingSession(wordContent(safeWords, wordIndex), wordOptions),
   }
 }
 
@@ -55,16 +67,15 @@ export function typeWordPracticeCharacter(
   }
 
   const nextWordIndex = session.wordIndex + 1
-  const nextWord = session.words[nextWordIndex]!
 
   return {
     ...session,
     wordIndex: nextWordIndex,
     completedCharacterCount:
-      session.completedCharacterCount + characterCount(session.words[session.wordIndex]!),
+      session.completedCharacterCount + characterCount(session.typing.content),
     typing: {
       ...typing,
-      content: nextWord,
+      content: wordContent(session.words, nextWordIndex),
       status: 'running',
       position: 0,
       activeStartedAt: timestamp,
@@ -99,7 +110,7 @@ export function restartWordPractice(session: WordPracticeSession): WordPracticeS
     completedCharacterCount: 0,
     typing: restartTypingSession({
       ...session.typing,
-      content: session.words[0]!,
+      content: wordContent(session.words, 0),
     }),
   }
 }

@@ -25,7 +25,10 @@ const emptyStats: TypingStats = {
   remainingCharacters: 0,
 }
 
-export function useWordPracticeEngine(words: MaybeRefOrGetter<readonly string[]>) {
+export function useWordPracticeEngine(
+  words: MaybeRefOrGetter<readonly string[]>,
+  initialWordIndex: MaybeRefOrGetter<number> = 0,
+) {
   const practice = ref<WordPracticeSession | null>(null)
   const clock = ref(Date.now())
   let clockTimer: ReturnType<typeof setInterval> | undefined
@@ -74,9 +77,10 @@ export function useWordPracticeEngine(words: MaybeRefOrGetter<readonly string[]>
   }
 
   watch(
-    () => toValue(words),
-    (nextWords) => {
-      practice.value = nextWords.length > 0 ? createWordPracticeSession(nextWords) : null
+    [() => toValue(words), () => toValue(initialWordIndex)],
+    ([nextWords, nextInitialWordIndex]) => {
+      practice.value =
+        nextWords.length > 0 ? createWordPracticeSession(nextWords, nextInitialWordIndex) : null
       clock.value = Date.now()
     },
     { immediate: true },
