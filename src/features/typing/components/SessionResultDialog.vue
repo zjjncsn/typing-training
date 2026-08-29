@@ -6,6 +6,10 @@ defineProps<{
   lessonTitle: string
   stats: TypingStats
   hasNextLesson: boolean
+  completionLabel?: string
+  restartLabel?: string
+  nextLabel?: string
+  closeLabel?: string
 }>()
 
 const emit = defineEmits<{
@@ -25,20 +29,38 @@ function formatDuration(milliseconds: number): string {
     <div v-if="open" class="result-layer">
       <section role="dialog" aria-modal="true" aria-labelledby="result-title">
         <div class="success-mark">✓</div>
-        <p>课程完成</p>
+        <p>{{ completionLabel ?? '课程完成' }}</p>
         <h2 id="result-title">{{ lessonTitle }}</h2>
 
         <dl>
-          <div><dt>用时</dt><dd>{{ formatDuration(stats.elapsedMs) }}</dd></div>
-          <div><dt>速度</dt><dd>{{ Math.round(stats.cpm) }} CPM</dd></div>
-          <div><dt>正确率</dt><dd>{{ stats.accuracy.toFixed(1) }}%</dd></div>
-          <div><dt>错误</dt><dd>{{ stats.errorCount }}</dd></div>
+          <div>
+            <dt>用时</dt>
+            <dd>{{ formatDuration(stats.elapsedMs) }}</dd>
+          </div>
+          <div>
+            <dt>速度</dt>
+            <dd>{{ Math.round(stats.cpm) }} CPM</dd>
+          </div>
+          <div>
+            <dt>正确率</dt>
+            <dd>{{ stats.accuracy.toFixed(1) }}%</dd>
+          </div>
+          <div>
+            <dt>错误</dt>
+            <dd>{{ stats.errorCount }}</dd>
+          </div>
         </dl>
 
         <div class="result-actions">
-          <button type="button" class="secondary" @click="emit('restart')">再练一次</button>
-          <button v-if="hasNextLesson" type="button" @click="emit('next')">下一课</button>
-          <button v-else type="button" @click="emit('update:open', false)">返回课程</button>
+          <button type="button" class="secondary" @click="emit('restart')">
+            {{ restartLabel ?? '再练一次' }}
+          </button>
+          <button v-if="hasNextLesson" type="button" @click="emit('next')">
+            {{ nextLabel ?? '下一课' }}
+          </button>
+          <button v-else type="button" @click="emit('update:open', false)">
+            {{ closeLabel ?? '返回课程' }}
+          </button>
         </div>
       </section>
     </div>

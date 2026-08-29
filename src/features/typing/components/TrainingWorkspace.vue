@@ -9,6 +9,7 @@ defineProps<{
   status: TypingSessionStatus
   stats: TypingStatsValue
   showGuidance?: boolean
+  showAside?: boolean
   pauseMessage?: string
 }>()
 
@@ -50,9 +51,17 @@ const statusText: Record<TypingSessionStatus, string> = {
       </div>
 
       <div class="practice-stage">
-        <slot name="content" />
-        <div class="prompt-bar"><slot name="prompt" /></div>
-        <div v-if="showGuidance !== false" class="guidance"><slot name="guidance" /></div>
+        <div class="practice-layout" :class="{ 'has-aside': showAside && $slots.aside }">
+          <div class="practice-main">
+            <slot name="content" />
+            <div class="prompt-bar"><slot name="prompt" /></div>
+            <div v-if="showGuidance !== false" class="guidance"><slot name="guidance" /></div>
+          </div>
+
+          <div v-if="showAside && $slots.aside" class="practice-aside">
+            <slot name="aside" />
+          </div>
+        </div>
 
         <div v-if="status === 'paused'" class="pause-overlay" role="status" aria-live="assertive">
           <div class="pause-card">
@@ -154,6 +163,23 @@ h1 {
   position: relative;
 }
 
+.practice-layout.has-aside {
+  display: grid;
+  grid-template-columns: minmax(680px, 1fr) minmax(250px, 280px);
+  gap: 14px;
+  align-items: start;
+}
+
+.practice-main {
+  min-width: 0;
+}
+
+.practice-aside {
+  position: sticky;
+  top: 16px;
+  min-width: 0;
+}
+
 .pause-overlay {
   position: absolute;
   z-index: 10;
@@ -202,6 +228,17 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+@media (width <= 1120px) {
+  .practice-layout.has-aside {
+    display: block;
+  }
+
+  .practice-aside {
+    position: static;
+    margin-top: 10px;
+  }
 }
 
 @media (width <= 700px) {

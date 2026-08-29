@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "defaultDictionaryId": "general-common-1000",
+  "dictionaries": [
+    {
+      "id": "dictionary-4w",
+      "name": "4W 英汉词典",
+      "category": "dictionary",
+      "entryCount": 4543,
+      "file": "dictionary/4w.json",
+      "byteSize": 2754460
+    },
+    {
+      "id": "dictionary-6w",
+      "name": "6W 英汉词典",
+      "category": "dictionary",
+      "entryCount": 2088,
+      "file": "dictionary/6w.json",
+      "byteSize": 939929
+    },
+    {
+      "id": "dictionary-gmat",
+      "name": "GMAT 词汇",
+      "category": "dictionary",
+      "entryCount": 2435,
+      "file": "dictionary/gmat.json",
+      "byteSize": 750559
+    },
+    {
+      "id": "dictionary-grade",
+      "name": "分级词汇",
+      "category": "dictionary",
+      "entryCount": 900,
+      "file": "dictionary/grade.json",
+      "byteSize": 87758
+    },
+    {
+      "id": "dictionary-gre",
+      "name": "GRE 词汇",
+      "category": "dictionary",
+      "entryCount": 6676,
+      "file": "dictionary/gre.json",
+      "byteSize": 1761704
+    },
+    {
+      "id": "dictionary-high",
+      "name": "高中英语",
+      "category": "dictionary",
+      "entryCount": 2738,
+      "file": "dictionary/high.json",
+      "byteSize": 283844
+    },
+    {
+      "id": "dictionary-middle",
+      "name": "初中英语",
+      "category": "dictionary",
+      "entryCount": 1711,
+      "file": "dictionary/middle.json",
+      "byteSize": 169054
+    },
+    {
+      "id": "dictionary-toefl",
+      "name": "TOEFL 词汇",
+      "category": "dictionary",
+      "entryCount": 3472,
+      "file": "dictionary/toefl.json",
+      "byteSize": 1321954
+    },
+    {
+      "id": "general-common-1000",
+      "name": "常用单词 1000",
+      "category": "general",
+      "entryCount": 999,
+      "file": "general/common-1000.json",
+      "byteSize": 320167
+    },
+    {
+      "id": "professional-geography",
+      "name": "地理英语",
+      "category": "professional",
+      "entryCount": 1421,
+      "file": "professional/geography.json",
+      "byteSize": 65706
+    },
+    {
+      "id": "professional-electronics",
+      "name": "电子英语",
+      "category": "professional",
+      "entryCount": 1361,
+      "file": "professional/electronics.json",
+      "byteSize": 68249
+    },
+    {
+      "id": "professional-chemistry",
+      "name": "化学英语",
+      "category": "professional",
+      "entryCount": 1497,
+      "file": "professional/chemistry.json",
+      "byteSize": 59978
+    },
+    {
+      "id": "professional-computer",
+      "name": "计算机英语",
+      "category": "professional",
+      "entryCount": 1593,
+      "file": "professional/computer.json",
+      "byteSize": 94111
+    },
+    {
+      "id": "professional-architecture",
+      "name": "建筑英语",
+      "category": "professional",
+      "entryCount": 1983,
+      "file": "professional/architecture.json",
+      "byteSize": 93297
+    },
+    {
+      "id": "professional-agriculture",
+      "name": "农学英语",
+      "category": "professional",
+      "entryCount": 1218,
+      "file": "professional/agriculture.json",
+      "byteSize": 45255
+    },
+    {
+      "id": "professional-petroleum",
+      "name": "石油英语",
+      "category": "professional",
+      "entryCount": 1924,
+      "file": "professional/petroleum.json",
+      "byteSize": 70522
+    },
+    {
+      "id": "professional-mathematics",
+      "name": "数学英语",
+      "category": "professional",
+      "entryCount": 1472,
+      "file": "professional/mathematics.json",
+      "byteSize": 75984
+    },
+    {
+      "id": "professional-physics",
+      "name": "物理英语",
+      "category": "professional",
+      "entryCount": 1613,
+      "file": "professional/physics.json",
+      "byteSize": 114218
+    },
+    {
+      "id": "professional-psychology",
+      "name": "心理学英语",
+      "category": "professional",
+      "entryCount": 1450,
+      "file": "professional/psychology.json",
+      "byteSize": 65055
+    },
+    {
+      "id": "professional-medicine",
+      "name": "医学英语",
+      "category": "professional",
+      "entryCount": 1557,
+      "file": "professional/medicine.json",
+      "byteSize": 53567
+    }
+  ]
+}

@@ -48,7 +48,8 @@ const menuItems = computed(() => [
       {
         label: '单词练习',
         icon: 'pi pi-list-check',
-        disabled: true,
+        class: route.name === 'english-word-practice' ? 'active-menu-item' : undefined,
+        command: () => router.push({ name: 'english-word-practice' }),
       },
       {
         label: '文章练习',
@@ -101,7 +102,13 @@ const menuItems = computed(() => [
   color: #223047;
   background: #eef4f8;
   font-family:
-    Inter, "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    Inter,
+    'Microsoft YaHei',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }

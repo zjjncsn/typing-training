@@ -6,6 +6,9 @@ defineProps<{
   showKeyboard: boolean
   showHands: boolean
   textScale: TypingTextScale
+  enableExplanation?: boolean
+  showExplanation?: boolean
+  hideHands?: boolean
 }>()
 
 const emit = defineEmits<{
@@ -13,12 +16,18 @@ const emit = defineEmits<{
   'update:showKeyboard': [value: boolean]
   'update:showHands': [value: boolean]
   'update:textScale': [value: TypingTextScale]
+  'update:showExplanation': [value: boolean]
 }>()
 </script>
 
 <template>
   <Teleport to="body">
-    <div v-if="open" class="dialog-layer" role="presentation" @click.self="emit('update:open', false)">
+    <div
+      v-if="open"
+      class="dialog-layer"
+      role="presentation"
+      @click.self="emit('update:open', false)"
+    >
       <section role="dialog" aria-modal="true" aria-labelledby="settings-title">
         <header>
           <div>
@@ -28,12 +37,21 @@ const emit = defineEmits<{
           <button type="button" aria-label="关闭设置" @click="emit('update:open', false)">×</button>
         </header>
 
-        <label class="setting-row">
+        <label v-if="!hideHands" class="setting-row">
           <div><strong>屏幕键盘</strong><small>显示目标键和 Shift 组合</small></div>
           <input
             type="checkbox"
             :checked="showKeyboard"
             @change="emit('update:showKeyboard', ($event.target as HTMLInputElement).checked)"
+          />
+        </label>
+
+        <label v-if="enableExplanation" class="setting-row">
+          <div><strong>单词释义</strong><small>显示当前单词的音标和中文解释</small></div>
+          <input
+            type="checkbox"
+            :checked="showExplanation"
+            @change="emit('update:showExplanation', ($event.target as HTMLInputElement).checked)"
           />
         </label>
 
