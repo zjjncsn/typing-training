@@ -2,12 +2,13 @@
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-import { englishKeyStandardCourse } from '@/content/courses'
+import { englishKeyStandardCourse, englishNumpadCourse } from '@/content/courses'
 import type { Lesson } from '@/content/types'
 
 import HandGuide from '../components/HandGuide.vue'
 import KeyboardGuide from '../components/KeyboardGuide.vue'
 import LessonDrawer from '../components/LessonDrawer.vue'
+import NumpadGuide from '../components/NumpadGuide.vue'
 import SessionResultDialog from '../components/SessionResultDialog.vue'
 import TrainingSettingsDialog from '../components/TrainingSettingsDialog.vue'
 import TrainingWorkspace from '../components/TrainingWorkspace.vue'
@@ -15,6 +16,11 @@ import TypingText from '../components/TypingText.vue'
 import { useTypingEngine } from '../composables/useTypingEngine'
 import { keyboardKeyToCharacter } from '../engine/typingEngine'
 import { resolveKeyFeedback } from '../keyboard/keyboardFeedback'
+import {
+  getNumpadFingerForCode,
+  numpadCodeToCharacter,
+  resolveNumpadTarget,
+} from '../keyboard/numpadLayout'
 import {
   fingerLabels,
   formatTrainingCharacter,
@@ -28,7 +34,11 @@ type PauseReason = 'keyboard' | 'visibility'
 
 const route = useRoute()
 const router = useRouter()
-const lessons = englishKeyStandardCourse.lessons
+const isNumpad = computed(() => route.name === 'english-numpad-practice')
+const activeCourse = computed(() =>
+  isNumpad.value ? englishNumpadCourse : englishKeyStandardCourse,
+)
+const lessons = computed(() => activeCourse.value.lessons)
 const lessonDrawerOpen = ref(false)
 const settingsOpen = ref(false)
 const resultOpen = ref(false)
@@ -44,11 +54,19 @@ const activeLesson = computed<Lesson>(() => {
     ? route.params.lessonId[0]
     : route.params.lessonId
 
-  return lessons.find((lesson) => lesson.id === lessonId) ?? lessons[0]!
+  return lessons.value.find((lesson) => lesson.id === lessonId) ?? lessons.value[0]!
 })
 
-const { session, stats, expectedCharacter, handleKeydown, pause, resume, restart } =
-  useTypingEngine(() => activeLesson.value.content, {
+const {
+  session,
+  stats,
+  expectedCharacter,
+  inputCharacter,
+  handleKeydown,
+  pause,
+  resume,
+  restart,
+} = useTypingEngine(() => activeLesson.value.content, {
     caseSensitive: false,
     autoAdvanceWhitespace: true,
   })
@@ -62,18 +80,20 @@ const hasCurrentError = computed(
 const keyboardTarget = computed(() =>
   session.value.status === 'completed'
     ? null
-    : resolveKeyboardTarget(
-        expectedCharacter.value === null
-          ? null
-          : formatTrainingCharacter(expectedCharacter.value),
-        { useShiftForUppercase: false },
-      ),
+    : isNumpad.value
+      ? resolveNumpadTarget(expectedCharacter.value)
+      : resolveKeyboardTarget(
+          expectedCharacter.value === null
+            ? null
+            : formatTrainingCharacter(expectedCharacter.value),
+          { useShiftForUppercase: false },
+        ),
 )
 
 const activeLessonIndex = computed(() =>
-  lessons.findIndex((lesson) => lesson.id === activeLesson.value.id),
+  lessons.value.findIndex((lesson) => lesson.id === activeLesson.value.id),
 )
-const hasNextLesson = computed(() => activeLessonIndex.value < lessons.length - 1)
+const hasNextLesson = computed(() => activeLessonIndex.value < lessons.value.length - 1)
 const overlayOpen = computed(
   () => lessonDrawerOpen.value || settingsOpen.value || resultOpen.value,
 )
@@ -102,7 +122,47 @@ const promptText = computed(() => {
 })
 
 function selectLesson(lessonId: string) {
-  void router.push({ name: 'english-key-practice', params: { lessonId } })
+  void router.push({ name: route.name ?? 'english-key-practice', params: { lessonId } })
+}
+
+function switchKeyboardMode() {
+  const course = isNumpad.value ? englishKeyStandardCourse : englishNumpadCourse
+  const routeName = isNumpad.value ? 'english-key-practice' : 'english-numpad-practice'
+  const firstLesson = course.lessons[0]
+  if (!firstLesson) return
+
+  void router.push({ name: routeName, params: { lessonId: firstLesson.id } })
+}
+
+function setKeyFeedback(code: string, feedback: KeyFeedback) {
+  const timer = feedbackTimers.get(code)
+  if (timer !== undefined) clearTimeout(timer)
+  feedbackTimers.delete(code)
+  keyFeedback.value = { ...keyFeedback.value, [code]: feedback }
+}
+
+function handleNumpadKeydown(event: KeyboardEvent) {
+  if (event.ctrlKey || event.metaKey || event.altKey) return
+
+  const physicalCharacter = numpadCodeToCharacter(event.code)
+  const received = physicalCharacter ?? keyboardKeyToCharacter(event.key)
+
+  if (getNumpadFingerForCode(event.code) !== null) {
+    const correct =
+      physicalCharacter !== null &&
+      keyboardTarget.value?.code === event.code &&
+      physicalCharacter === expectedCharacter.value
+    setKeyFeedback(event.code, correct ? 'correct' : 'incorrect')
+  }
+
+  if (received === null) return
+
+  event.preventDefault()
+  const correct =
+    physicalCharacter !== null &&
+    keyboardTarget.value?.code === event.code &&
+    physicalCharacter === expectedCharacter.value
+  inputCharacter(received, Date.now(), correct)
 }
 
 function handlePageKeydown(event: KeyboardEvent) {
@@ -122,20 +182,22 @@ function handlePageKeydown(event: KeyboardEvent) {
     return
   }
 
-  const inputCharacter = keyboardKeyToCharacter(event.key)
+  if (isNumpad.value) {
+    handleNumpadKeydown(event)
+    return
+  }
+
+  const received = keyboardKeyToCharacter(event.key)
   if (getFingerForCode(event.code) !== null) {
     const feedback = resolveKeyFeedback(
       event.code,
-      inputCharacter,
+      received,
       expectedCharacter.value,
       keyboardTarget.value,
       session.value.options.caseSensitive,
     )
 
-    const timer = feedbackTimers.get(event.code)
-    if (timer !== undefined) clearTimeout(timer)
-    feedbackTimers.delete(event.code)
-    keyFeedback.value = { ...keyFeedback.value, [event.code]: feedback }
+    setKeyFeedback(event.code, feedback)
   }
 
   handleKeydown(event)
@@ -185,7 +247,7 @@ function restartFromResult() {
 }
 
 function openNextLesson() {
-  const nextLesson = lessons[activeLessonIndex.value + 1]
+  const nextLesson = lessons.value[activeLessonIndex.value + 1]
   if (!nextLesson) return
 
   resultOpen.value = false
@@ -217,7 +279,7 @@ onBeforeUnmount(() => {
 
 <template>
   <TrainingWorkspace
-    eyebrow="英文打字 · 基础键位"
+    :eyebrow="isNumpad ? '英文打字 · 数字键盘' : '英文打字 · 基础键位'"
     :title="activeLesson.title"
     :status="session.status"
     :stats="stats"
@@ -226,6 +288,9 @@ onBeforeUnmount(() => {
   >
     <template #lesson-picker>
       <div class="header-actions">
+        <button type="button" class="header-button mode-button" @click="switchKeyboardMode">
+          {{ isNumpad ? '标准键盘' : '数字键盘' }}
+        </button>
         <button type="button" class="header-button" @click="lessonDrawerOpen = true">
           第 {{ activeLesson.order }} 课 · 选择课程
         </button>
@@ -258,7 +323,12 @@ onBeforeUnmount(() => {
 
     <template #guidance>
       <KeyboardGuide
-        v-if="showKeyboard"
+        v-if="showKeyboard && !isNumpad"
+        :target="keyboardTarget"
+        :key-feedback="keyFeedback"
+      />
+      <NumpadGuide
+        v-if="showKeyboard && isNumpad"
         :target="keyboardTarget"
         :key-feedback="keyFeedback"
       />
@@ -308,6 +378,12 @@ onBeforeUnmount(() => {
 
 .icon-button {
   color: #168e80;
+}
+
+.mode-button {
+  color: #08796c;
+  background: #effbf8;
+  border-color: #a8d9d1;
 }
 
 button {

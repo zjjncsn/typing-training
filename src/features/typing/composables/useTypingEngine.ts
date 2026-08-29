@@ -35,8 +35,12 @@ export function useTypingEngine(
     clockTimer = undefined
   }
 
-  function inputCharacter(character: string, timestamp = Date.now()) {
-    session.value = typeCharacter(session.value, character, timestamp)
+  function inputCharacter(
+    character: string,
+    timestamp = Date.now(),
+    correctOverride?: boolean,
+  ) {
+    session.value = typeCharacter(session.value, character, timestamp, correctOverride)
     clock.value = timestamp
   }
 

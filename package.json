@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "content:migrate": "node scripts/migrate-lessons.mjs",
-    "test": "node --test src/features/typing/engine/typingEngine.test.ts src/features/typing/keyboard/keyboardMapping.test.ts",
+    "test": "node --test src/features/typing/engine/typingEngine.test.ts src/features/typing/keyboard/keyboardMapping.test.ts src/features/typing/keyboard/numpadMapping.test.ts",
     "type-check": "vue-tsc --build",
     "lint": "run-s \"lint:*\"",
     "lint:oxlint": "oxlint . --fix",

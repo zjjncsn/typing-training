@@ -5,6 +5,50 @@ import { fileURLToPath } from 'node:url'
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const legacyRoot = resolve(projectRoot, '..', 'jsdzt2006')
 
+// The original application expands this correction drill at runtime. The file
+// itself contains distractor characters rather than the text shown to learners.
+const contentOverrides = new Map([
+  [
+    'english-key-standard/02',
+    `RGGTGG
+RGGTGG
+GGTGGR
+GGTGGR
+RTGGGB
+RTGGGB
+BGGGTR
+BGGGTR
+GTFGFG
+GTFGFG
+GFGFTG
+GFGFTG
+FGTGGG
+FGTGGG
+GGGTGF
+GGGTGF
+RRBGBB
+RRBGBB
+BBGBRR
+BBGBRR
+BGGGBB
+BGGGBB
+BBGGGB
+BBGGGB
+FGGTFG
+FGGTFG
+GFTGGF
+GFTGGF
+TGFBGT
+TGFBGT
+TGBFGT
+TGBFGT
+TTTGGG
+TTTGGG
+GGGTTT
+GGGTTT`,
+  ],
+])
+
 const migrations = [
   {
     sourceDirectory: resolve(legacyRoot, 'Data', 'English', 'T_Character', 'Standard'),
@@ -19,6 +63,19 @@ const migrations = [
     },
     sourcePrefix: 'Data/English/T_Character/Standard',
   },
+  {
+    sourceDirectory: resolve(legacyRoot, 'Data', 'English', 'T_Character', 'Numpad'),
+    outputFile: resolve(projectRoot, 'src', 'content', 'lessons', 'english-numpad.json'),
+    course: {
+      schemaVersion: 1,
+      id: 'english-numpad',
+      title: '英文数字键盘',
+      language: 'en',
+      inputMode: 'physical-keyboard',
+      layout: 'numpad',
+    },
+    sourcePrefix: 'Data/English/T_Character/Numpad',
+  },
 ]
 
 function parseLegacyLesson(buffer, filename, order, courseId, sourcePrefix) {
@@ -32,16 +89,17 @@ function parseLegacyLesson(buffer, filename, order, courseId, sourcePrefix) {
   }
 
   const title = lines[titleIndex].trim()
-  const content = lines
+  const parsedContent = lines
     .slice(titleIndex + 1)
     .join('\n')
     .trim()
 
-  if (!content) {
+  if (!parsedContent) {
     throw new Error(`Lesson ${filename} has no training content`)
   }
 
   const sourceId = filename.replace(/\.txt$/i, '')
+  const content = contentOverrides.get(`${courseId}/${sourceId}`) ?? parsedContent
 
   return {
     id: `${courseId}-${sourceId.padStart(2, '0')}`,

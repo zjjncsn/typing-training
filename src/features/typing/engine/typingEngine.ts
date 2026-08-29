@@ -101,6 +101,7 @@ export function typeCharacter(
   session: TypingSession,
   received: string,
   timestamp = Date.now(),
+  correctOverride?: boolean,
 ): TypingSession {
   const now = normalizeTimestamp(timestamp)
 
@@ -127,7 +128,8 @@ export function typeCharacter(
         }
       : session
 
-  const correct = charactersMatch(expected, received, runningSession.options)
+  const correct =
+    correctOverride ?? charactersMatch(expected, received, runningSession.options)
   const shouldAdvance = correct || runningSession.options.mistakePolicy === 'advance'
   const nextPosition = advancePastWhitespace(
     runningSession.content,

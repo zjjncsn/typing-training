@@ -1,72 +1,61 @@
 <script setup lang="ts">
-import { qwertyRows, type KeyboardTarget } from '../keyboard/qwertyLayout'
-import type { KeyFeedback } from '../keyboard/types'
+import { numpadKeys } from '../keyboard/numpadLayout'
+import type { KeyboardTarget, KeyFeedback } from '../keyboard/types'
 
 const props = defineProps<{
   target: KeyboardTarget | null
   keyFeedback: Readonly<Partial<Record<string, KeyFeedback>>>
 }>()
 
-const homeAnchorCodes = new Set(['KeyF', 'KeyJ'])
-
 function keyState(code: string) {
   const feedback = props.keyFeedback[code]
 
   return {
     active: props.target?.code === code,
-    modifier: props.target?.shiftCode === code,
     correct: feedback === 'correct',
     incorrect: feedback === 'incorrect',
-    'home-anchor': homeAnchorCodes.has(code),
+    'home-anchor': code === 'Numpad5',
   }
 }
 </script>
 
 <template>
-  <section class="keyboard-panel" aria-label="键盘指法提示">
-    <div class="keyboard">
-      <div v-for="(row, rowIndex) in qwertyRows" :key="rowIndex" class="keyboard-row">
-        <div
-          v-for="definition in row"
-          :key="definition.code"
-          class="keycap"
-          :class="keyState(definition.code)"
-          :data-finger="definition.finger"
-          :style="{ flex: definition.width ?? 1 }"
-          :aria-current="keyState(definition.code).active || undefined"
-        >
-          <small v-if="definition.shiftLabel">{{ definition.shiftLabel }}</small>
-          <span>{{ definition.label }}</span>
-        </div>
+  <section class="numpad-panel" aria-label="数字键盘指法提示">
+    <div class="numpad">
+      <div
+        v-for="definition in numpadKeys"
+        :key="definition.code"
+        class="keycap"
+        :class="keyState(definition.code)"
+        :data-finger="definition.finger"
+        :style="{
+          gridColumn: `${definition.column} / span ${definition.columnSpan ?? 1}`,
+          gridRow: `${definition.row} / span ${definition.rowSpan ?? 1}`,
+        }"
+        :aria-current="keyState(definition.code).active || undefined"
+      >
+        {{ definition.label }}
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-.keyboard-panel {
-  min-width: 0;
+.numpad-panel {
+  display: grid;
+  place-items: center;
   width: 100%;
-  padding: 14px 18px 16px;
+  padding: 16px 18px;
   background: #e9f2f5;
   border: 1px solid #cedde4;
   border-radius: 18px;
 }
 
-.keyboard {
+.numpad {
   display: grid;
-  gap: 6px;
-  min-width: 680px;
-}
-
-.keyboard-row {
-  display: flex;
-  gap: 6px;
-}
-
-.keyboard-row:last-child {
-  width: 48%;
-  margin: 0 auto;
+  grid-template-columns: repeat(4, 68px);
+  grid-template-rows: repeat(5, 50px);
+  gap: 7px;
 }
 
 .keycap {
@@ -75,10 +64,8 @@ function keyState(code: string) {
   --key-border: #aebdca;
 
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 46px;
+  display: grid;
+  place-items: center;
   min-width: 0;
   color: #26384d;
   background: linear-gradient(180deg, var(--key-top), var(--key-bottom));
@@ -89,7 +76,7 @@ function keyState(code: string) {
     inset 0 1px 0 rgb(255 255 255 / 82%),
     0 2px 3px rgb(48 76 94 / 10%);
   font-family: "Cascadia Mono", Consolas, monospace;
-  font-size: 0.78rem;
+  font-size: 1rem;
   transition:
     transform 45ms ease-out,
     box-shadow 45ms ease-out;
@@ -126,23 +113,15 @@ function keyState(code: string) {
 }
 
 .keycap.home-anchor::after {
-  content: '';
   position: absolute;
-  bottom: 5px;
+  bottom: 6px;
   left: 50%;
-  width: 34%;
+  width: 24px;
   height: 3px;
-  border-radius: 2px;
+  content: '';
   background: rgb(38 56 77 / 42%);
+  border-radius: 2px;
   transform: translateX(-50%);
-}
-
-.keycap small {
-  position: absolute;
-  top: 4px;
-  left: 6px;
-  color: #8a9baa;
-  font-size: 0.62rem;
 }
 
 .keycap.active {
@@ -151,13 +130,6 @@ function keyState(code: string) {
   background: linear-gradient(#fff2ad, #ffd75c);
   border-color: #e4a91e;
   box-shadow: 0 0 0 3px rgb(245 169 35 / 20%);
-}
-
-.keycap.modifier {
-  color: #fff;
-  background: linear-gradient(#40b9a7, #168e80);
-  border-color: #0e7267;
-  box-shadow: 0 0 0 3px rgb(22 142 128 / 18%);
 }
 
 .keycap.correct {
@@ -182,9 +154,9 @@ function keyState(code: string) {
   }
 }
 
-@media (width <= 850px) {
-  .keyboard-panel {
-    overflow-x: auto;
+@media (width <= 420px) {
+  .numpad {
+    grid-template-columns: repeat(4, minmax(48px, 60px));
   }
 }
 </style>

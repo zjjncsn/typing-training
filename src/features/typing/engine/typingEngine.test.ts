@@ -42,6 +42,17 @@ test('records an error and waits for the correct character by default', () => {
   assert.equal(session.correctCount, 1)
 })
 
+test('can reject a matching character when the physical key is wrong', () => {
+  const session = typeCharacter(createTypingSession('1'), '1', 100, false)
+
+  assert.equal(session.status, 'running')
+  assert.equal(session.position, 0)
+  assert.equal(session.correctCount, 0)
+  assert.equal(session.errorCount, 1)
+  assert.equal(session.lastAttempt?.received, '1')
+  assert.equal(session.lastAttempt?.correct, false)
+})
+
 test('can advance after mistakes when configured', () => {
   const session = typeCharacter(
     createTypingSession('a', { mistakePolicy: 'advance' }),
