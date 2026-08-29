@@ -46,6 +46,7 @@ function keyState(code: string) {
   place-items: center;
   width: 100%;
   padding: 16px 18px;
+  user-select: none;
   background: #e9f2f5;
   border: 1px solid #cedde4;
   border-radius: 18px;

@@ -30,7 +30,10 @@ function keyState(code: string) {
           v-for="definition in row"
           :key="definition.code"
           class="keycap"
-          :class="keyState(definition.code)"
+          :class="[
+            keyState(definition.code),
+            { 'letter-key': definition.code.startsWith('Key') },
+          ]"
           :data-finger="definition.finger"
           :style="{ flex: definition.width ?? 1 }"
           :aria-current="keyState(definition.code).active || undefined"
@@ -48,6 +51,7 @@ function keyState(code: string) {
   min-width: 0;
   width: 100%;
   padding: 14px 18px 16px;
+  user-select: none;
   background: #e9f2f5;
   border: 1px solid #cedde4;
   border-radius: 18px;
@@ -143,6 +147,11 @@ function keyState(code: string) {
   left: 6px;
   color: #8a9baa;
   font-size: 0.62rem;
+}
+
+.keycap.letter-key span {
+  font-size: 1.08rem;
+  font-weight: 650;
 }
 
 .keycap.active {
