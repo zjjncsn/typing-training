@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+import leftHandImage from '@/assets/left-hand-outline.png'
+
 import { fingerLabels, type FingerId, type KeyboardTarget } from '../keyboard/qwertyLayout'
 
 const props = defineProps<{
@@ -30,55 +32,29 @@ function isActive(finger: FingerId): boolean {
       <strong>{{ activeDescription || '—' }}</strong>
     </header>
 
-    <svg viewBox="0 0 620 220" role="img" :aria-label="activeDescription || '暂无手指提示'">
-      <g class="hand left-hand">
-        <rect class="palm" x="78" y="112" width="174" height="88" rx="42" />
-        <g :class="{ active: isActive('left-pinky') }">
-          <rect class="finger" x="42" y="72" width="38" height="105" rx="19" />
-          <circle class="tip" cx="61" cy="82" r="8" />
-        </g>
-        <g :class="{ active: isActive('left-ring') }">
-          <rect class="finger" x="84" y="35" width="38" height="128" rx="19" />
-          <circle class="tip" cx="103" cy="45" r="8" />
-        </g>
-        <g :class="{ active: isActive('left-middle') }">
-          <rect class="finger" x="127" y="18" width="40" height="145" rx="20" />
-          <circle class="tip" cx="147" cy="28" r="8" />
-        </g>
-        <g :class="{ active: isActive('left-index') }">
-          <rect class="finger" x="172" y="39" width="40" height="126" rx="20" />
-          <circle class="tip" cx="192" cy="49" r="8" />
-        </g>
-        <g :class="{ active: isActive('left-thumb') }" transform="rotate(-38 242 142)">
-          <rect class="finger" x="222" y="103" width="42" height="91" rx="21" />
-          <circle class="tip" cx="243" cy="114" r="8" />
-        </g>
-      </g>
+    <div class="hands" role="img" :aria-label="activeDescription || '暂无手指提示'">
+      <div class="hand-figure">
+        <div class="hand-canvas">
+          <img :src="leftHandImage" alt="" aria-hidden="true" />
+          <span class="finger-marker pinky" :class="{ active: isActive('left-pinky') }" />
+          <span class="finger-marker ring" :class="{ active: isActive('left-ring') }" />
+          <span class="finger-marker middle" :class="{ active: isActive('left-middle') }" />
+          <span class="finger-marker index" :class="{ active: isActive('left-index') }" />
+          <span class="finger-marker thumb" :class="{ active: isActive('left-thumb') }" />
+        </div>
+      </div>
 
-      <g class="hand right-hand">
-        <rect class="palm" x="368" y="112" width="174" height="88" rx="42" />
-        <g :class="{ active: isActive('right-thumb') }" transform="rotate(38 378 142)">
-          <rect class="finger" x="356" y="103" width="42" height="91" rx="21" />
-          <circle class="tip" cx="377" cy="114" r="8" />
-        </g>
-        <g :class="{ active: isActive('right-index') }">
-          <rect class="finger" x="408" y="39" width="40" height="126" rx="20" />
-          <circle class="tip" cx="428" cy="49" r="8" />
-        </g>
-        <g :class="{ active: isActive('right-middle') }">
-          <rect class="finger" x="453" y="18" width="40" height="145" rx="20" />
-          <circle class="tip" cx="473" cy="28" r="8" />
-        </g>
-        <g :class="{ active: isActive('right-ring') }">
-          <rect class="finger" x="498" y="35" width="38" height="128" rx="19" />
-          <circle class="tip" cx="517" cy="45" r="8" />
-        </g>
-        <g :class="{ active: isActive('right-pinky') }">
-          <rect class="finger" x="540" y="72" width="38" height="105" rx="19" />
-          <circle class="tip" cx="559" cy="82" r="8" />
-        </g>
-      </g>
-    </svg>
+      <div class="hand-figure right-hand">
+        <div class="hand-canvas">
+          <img :src="leftHandImage" alt="" aria-hidden="true" />
+          <span class="finger-marker pinky" :class="{ active: isActive('right-pinky') }" />
+          <span class="finger-marker ring" :class="{ active: isActive('right-ring') }" />
+          <span class="finger-marker middle" :class="{ active: isActive('right-middle') }" />
+          <span class="finger-marker index" :class="{ active: isActive('right-index') }" />
+          <span class="finger-marker thumb" :class="{ active: isActive('right-thumb') }" />
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -115,34 +91,86 @@ header strong {
   font-size: 0.86rem;
 }
 
-svg {
+.hands {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.hand-figure {
+  width: min(45%, 165px);
+}
+
+.hand-canvas {
+  position: relative;
+  width: 100%;
+}
+
+.right-hand .hand-canvas {
+  transform: scaleX(-1);
+}
+
+img {
   display: block;
   width: 100%;
   height: auto;
-  margin-top: 8px;
+  mix-blend-mode: multiply;
+  opacity: 0.78;
 }
 
-.palm,
-.finger {
-  fill: #dce8ec;
-  stroke: #9fb5bf;
-  stroke-width: 2;
-}
-
-.tip {
-  fill: #b9cbd2;
+.finger-marker {
+  position: absolute;
+  width: 11%;
+  aspect-ratio: 1;
+  pointer-events: none;
+  background: #28c76f;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 2px #159551,
+    0 3px 9px rgb(21 149 81 / 48%);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.55);
   transition:
-    fill 140ms ease,
-    filter 140ms ease;
+    opacity 70ms ease-out,
+    transform 70ms ease-out;
 }
 
-g.active .finger {
-  fill: #ffe694;
-  stroke: #e1a525;
+.finger-marker.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
-g.active .tip {
-  fill: #f5a623;
-  filter: drop-shadow(0 0 7px rgb(245 166 35 / 70%));
+.finger-marker.pinky {
+  top: 27%;
+  left: 7%;
+}
+
+.finger-marker.ring {
+  top: 11%;
+  left: 25%;
+}
+
+.finger-marker.middle {
+  top: 5%;
+  left: 40.5%;
+}
+
+.finger-marker.index {
+  top: 7%;
+  left: 63%;
+}
+
+.finger-marker.thumb {
+  top: 39%;
+  left: 91%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .finger-marker {
+    transition: none;
+  }
 }
 </style>
