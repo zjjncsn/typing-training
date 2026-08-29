@@ -57,9 +57,9 @@ const statusText: Record<TypingSessionStatus, string> = {
 
 <style scoped>
 .training-workspace {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1080px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 38px 0 70px;
+  padding: 18px 0 44px;
 }
 
 .workspace-header,
@@ -71,11 +71,11 @@ const statusText: Record<TypingSessionStatus, string> = {
 }
 
 .workspace-header {
-  margin-bottom: 22px;
+  margin-bottom: 12px;
 }
 
 .eyebrow {
-  margin: 0 0 7px;
+  margin: 0 0 3px;
   color: #168e80;
   font-size: 0.78rem;
   font-weight: 800;
@@ -85,7 +85,7 @@ const statusText: Record<TypingSessionStatus, string> = {
 h1 {
   margin: 0;
   color: #172b43;
-  font-size: clamp(1.55rem, 3vw, 2.25rem);
+  font-size: clamp(1.35rem, 2.4vw, 1.8rem);
 }
 
 .header-tools {
@@ -94,7 +94,7 @@ h1 {
 
 .progress-track {
   height: 7px;
-  margin: 16px 4px 0;
+  margin: 10px 4px 0;
   overflow: hidden;
   background: #dbe7ec;
   border-radius: 999px;
@@ -108,12 +108,12 @@ h1 {
 }
 
 .practice-area {
-  margin-top: 18px;
+  margin-top: 10px;
 }
 
 .practice-toolbar {
-  min-height: 38px;
-  margin-bottom: 10px;
+  min-height: 32px;
+  margin-bottom: 6px;
 }
 
 .practice-toolbar p {
@@ -142,8 +142,8 @@ h1 {
 
 .prompt-bar {
   min-height: 46px;
-  margin: 12px 0;
-  padding: 12px 16px;
+  margin: 8px 0;
+  padding: 10px 16px;
   color: #4d6175;
   background: #fff;
   border: 1px solid #d8e3e9;
@@ -151,15 +151,9 @@ h1 {
 }
 
 .guidance {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(280px, 0.9fr);
-  gap: 14px;
-}
-
-@media (width <= 900px) {
-  .guidance {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 @media (width <= 700px) {

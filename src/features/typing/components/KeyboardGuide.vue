@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { fingerLabels, qwertyRows, type KeyboardTarget } from '../keyboard/qwertyLayout'
+import { qwertyRows, type KeyboardTarget } from '../keyboard/qwertyLayout'
 import type { KeyFeedback } from '../keyboard/types'
 
 const props = defineProps<{
   target: KeyboardTarget | null
   keyFeedback: Readonly<Partial<Record<string, KeyFeedback>>>
 }>()
+
+const homeAnchorCodes = new Set(['KeyF', 'KeyJ'])
 
 function keyState(code: string) {
   const feedback = props.keyFeedback[code]
@@ -15,24 +17,13 @@ function keyState(code: string) {
     modifier: props.target?.shiftCode === code,
     correct: feedback === 'correct',
     incorrect: feedback === 'incorrect',
+    'home-anchor': homeAnchorCodes.has(code),
   }
 }
 </script>
 
 <template>
   <section class="keyboard-panel" aria-label="键盘指法提示">
-    <header>
-      <div>
-        <p class="panel-kicker">键盘提示</p>
-        <p v-if="target" class="target-description">
-          目标键 <strong>{{ target.character === ' ' ? '空格' : target.character }}</strong>
-          · {{ fingerLabels[target.finger] }}
-          <template v-if="target.shiftFinger"> + {{ fingerLabels[target.shiftFinger] }} Shift</template>
-        </p>
-        <p v-else class="target-description">当前字符无需物理键提示</p>
-      </div>
-    </header>
-
     <div class="keyboard">
       <div v-for="(row, rowIndex) in qwertyRows" :key="rowIndex" class="keyboard-row">
         <div
@@ -55,41 +46,11 @@ function keyState(code: string) {
 <style scoped>
 .keyboard-panel {
   min-width: 0;
-  padding: 18px;
+  width: 100%;
+  padding: 14px 18px 16px;
   background: #e9f2f5;
   border: 1px solid #cedde4;
   border-radius: 18px;
-}
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 42px;
-  margin-bottom: 14px;
-}
-
-.panel-kicker,
-.target-description {
-  margin: 0;
-}
-
-.panel-kicker {
-  color: #168e80;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
-.target-description {
-  margin-top: 3px;
-  color: #607286;
-  font-size: 0.82rem;
-}
-
-.target-description strong {
-  color: #19344d;
-  font-size: 1rem;
 }
 
 .keyboard {
@@ -162,6 +123,18 @@ header {
   --key-top: #e5f0ff;
   --key-bottom: #bfd5f1;
   --key-border: #80a8d2;
+}
+
+.keycap.home-anchor::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  width: 34%;
+  height: 3px;
+  border-radius: 2px;
+  background: rgb(38 56 77 / 42%);
+  transform: translateX(-50%);
 }
 
 .keycap small {

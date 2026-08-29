@@ -37,17 +37,12 @@ const visibleSegment = computed(() => {
   return {
     characters: characters.slice(segment.start, segment.end),
     start: segment.start,
-    number: segmentIndex + 1,
-    count: segments.length,
   }
 })
 </script>
 
 <template>
   <div class="typing-text" :data-scale="scale ?? 'medium'" aria-label="训练文本">
-    <div class="segment-meta">
-      第 {{ visibleSegment.number }} / {{ visibleSegment.count }} 组
-    </div>
     <div class="segment-content">
       <span
         v-for="(character, index) in visibleSegment.characters"
@@ -67,23 +62,13 @@ const visibleSegment = computed(() => {
 .typing-text {
   --training-key-size: 58px;
 
-  min-height: 142px;
-  padding: 18px 28px 28px;
+  padding: 16px 28px 20px;
   color: #64748b;
   background: #fff;
   border: 1px solid #d8e3eb;
   border-radius: 18px;
   box-shadow: 0 12px 35px rgb(49 78 102 / 8%);
   font-family: "Cascadia Mono", Consolas, monospace;
-}
-
-.segment-meta {
-  margin-bottom: 13px;
-  color: #91a1af;
-  font-family:
-    Inter, "Microsoft YaHei", system-ui, sans-serif;
-  font-size: 0.7rem;
-  line-height: 1.4;
 }
 
 .segment-content {

@@ -27,11 +27,6 @@ function isActive(finger: FingerId): boolean {
 
 <template>
   <section class="hand-panel" aria-label="手指提示">
-    <header>
-      <p>手指提示</p>
-      <strong>{{ activeDescription || '—' }}</strong>
-    </header>
-
     <div class="hands" role="img" :aria-label="activeDescription || '暂无手指提示'">
       <div class="hand-figure">
         <div class="hand-canvas">
@@ -60,47 +55,24 @@ function isActive(finger: FingerId): boolean {
 
 <style scoped>
 .hand-panel {
+  width: 100%;
   min-width: 260px;
-  padding: 18px;
+  padding: 12px 18px 14px;
   background: #fff;
   border: 1px solid #d4e0e7;
   border-radius: 18px;
-}
-
-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-header p,
-header strong {
-  margin: 0;
-}
-
-header p {
-  color: #168e80;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
-header strong {
-  color: #334b62;
-  font-size: 0.86rem;
 }
 
 .hands {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 12px;
-  margin-top: 10px;
+  gap: clamp(28px, 8vw, 90px);
+  margin-top: 0;
 }
 
 .hand-figure {
-  width: min(45%, 165px);
+  width: min(34%, 155px);
 }
 
 .hand-canvas {

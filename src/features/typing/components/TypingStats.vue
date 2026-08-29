@@ -36,22 +36,29 @@ function formatDuration(milliseconds: number): string {
 
 <style scoped>
 .stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 8px 6px;
+  background: rgb(255 255 255 / 82%);
+  border: 1px solid #d8e3eb;
+  border-radius: 12px;
 }
 
 .stats div {
-  padding: 16px;
-  text-align: center;
-  background: rgb(255 255 255 / 82%);
-  border: 1px solid #d8e3eb;
-  border-radius: 14px;
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 2px 18px;
+}
+
+.stats div + div {
+  border-left: 1px solid #d8e3eb;
 }
 
 dt {
-  margin-bottom: 5px;
+  margin: 0;
   color: #718096;
   font-size: 0.8rem;
 }
@@ -59,7 +66,7 @@ dt {
 dd {
   margin: 0;
   color: #1c314a;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 700;
 }
 
@@ -71,7 +78,17 @@ small {
 
 @media (width <= 600px) {
   .stats {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    width: auto;
+  }
+
+  .stats div {
+    justify-content: center;
+  }
+
+  .stats div + div {
+    border-left: none;
   }
 }
 </style>
