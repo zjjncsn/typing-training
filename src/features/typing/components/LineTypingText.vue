@@ -2,6 +2,8 @@
 import { computed } from 'vue'
 
 import { resolveLineIndexAt, splitContentLines } from '../engine/lineSegments'
+import TypingInputPanel from './TypingInputPanel.vue'
+import TypingPromptCharacter from './TypingPromptCharacter.vue'
 
 interface LineAttempt {
   received: string
@@ -56,33 +58,35 @@ function displayEchoCharacter(character: string): string {
 
 <template>
   <div class="line-typing-text" :data-scale="scale ?? 'medium'" aria-label="训练文本">
-    <p class="text-row">
-      <span
-        v-for="entry in promptCharacters"
-        :key="entry.index"
-        class="prompt-char"
-        :class="{
-          done: entry.index < position,
-          current: entry.index === position,
-          error: entry.index === position && hasCurrentError,
-        }"
-      >{{ entry.character }}</span>
-      <span
-        class="prompt-char newline-cell"
-        :class="{ current: newlineIsCurrent, error: newlineIsCurrent && hasCurrentError }"
-      > </span>
-    </p>
-
-    <p class="text-row input-echo" aria-label="输入回显">
-      <template v-for="entry in echoCharacters" :key="entry.index">
-        <span v-if="entry.index === position" class="input-caret" aria-hidden="true" />
-        <span
-          class="echo-char"
-          :class="{ incorrect: !entry.correct }"
-        >{{ displayEchoCharacter(entry.received) }}</span>
+    <TypingInputPanel wrap>
+      <template #prompt>
+        <TypingPromptCharacter
+          v-for="entry in promptCharacters"
+          :key="entry.index"
+          :character="entry.character"
+          :complete="entry.index < position"
+          :current="entry.index === position"
+          :error="entry.index === position && hasCurrentError"
+        />
+        <TypingPromptCharacter
+          class="newline-cell"
+          character=" "
+          :current="newlineIsCurrent"
+          :error="newlineIsCurrent && hasCurrentError"
+        />
       </template>
-      <span v-if="newlineIsCurrent" class="input-caret" aria-hidden="true" />
-    </p>
+
+      <template #echo>
+        <template v-for="entry in echoCharacters" :key="entry.index">
+          <span
+            class="echo-char"
+            :class="{ incorrect: !entry.correct, 'caret-before': entry.index === position }"
+            >{{ displayEchoCharacter(entry.received) }}</span
+          >
+        </template>
+        <span v-if="newlineIsCurrent" class="input-caret" aria-hidden="true" />
+      </template>
+    </TypingInputPanel>
   </div>
 </template>
 
@@ -90,13 +94,13 @@ function displayEchoCharacter(character: string): string {
 .line-typing-text {
   --line-font-size: 1.3rem;
 
-  padding: 16px 24px 18px;
   color: #64748b;
-  background: #fff;
-  border: 1px solid #d8e3eb;
-  border-radius: 18px;
-  box-shadow: 0 12px 35px rgb(49 78 102 / 8%);
-  font-family: "Cascadia Mono", Consolas, monospace;
+  font-family: 'Cascadia Mono', Consolas, monospace;
+  font-size: var(--line-font-size);
+  line-height: 1.65;
+  letter-spacing: 0.035em;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .line-typing-text[data-scale='small'] {
@@ -107,47 +111,16 @@ function displayEchoCharacter(character: string): string {
   --line-font-size: 1.55rem;
 }
 
-.text-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  margin: 0;
-  font-size: var(--line-font-size);
-  line-height: 2;
-  letter-spacing: 0.08em;
-}
-
-.prompt-char,
 .echo-char {
+  position: relative;
+  display: inline-block;
+  width: 1ch;
   white-space: pre;
   text-align: center;
 }
 
-.prompt-char.done {
-  color: #60758e;
-}
-
-.prompt-char.current {
-  color: #17293e;
-  border-bottom: 3px solid #17293e;
-}
-
-.prompt-char.newline-cell {
+.newline-cell {
   min-width: 1ch;
-}
-
-.prompt-char.current.error {
-  color: #a32c2c;
-  border-bottom-color: #c0392b;
-  animation: shake 100ms ease-out;
-}
-
-.input-echo {
-  min-height: calc(var(--line-font-size) * 2);
-  margin-top: 12px;
-  padding-top: 12px;
-  color: #26384d;
-  border-top: 1px dashed #dbe5ec;
 }
 
 .echo-char.incorrect {
@@ -163,27 +136,25 @@ function displayEchoCharacter(character: string): string {
   animation: caret-blink 1.1s step-end infinite;
 }
 
+.echo-char.caret-before::before {
+  position: absolute;
+  top: 0.18em;
+  bottom: 0.18em;
+  left: -1px;
+  width: 2px;
+  background: #0e7267;
+  content: '';
+  animation: caret-blink 1.1s step-end infinite;
+}
+
 @keyframes caret-blink {
   50% {
     opacity: 0;
   }
 }
 
-@keyframes shake {
-  25% {
-    transform: translateX(-2px);
-  }
-
-  75% {
-    transform: translateX(2px);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .prompt-char.current.error {
-    animation: none;
-  }
-
+  .echo-char.caret-before::before,
   .input-caret {
     animation: none;
   }

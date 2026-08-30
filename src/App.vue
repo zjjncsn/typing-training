@@ -54,7 +54,8 @@ const menuItems = computed(() => [
       {
         label: '文章练习',
         icon: 'pi pi-file-edit',
-        disabled: true,
+        class: route.name === 'english-article-practice' ? 'active-menu-item' : undefined,
+        command: () => router.push({ name: 'english-article-practice' }),
       },
     ],
   },

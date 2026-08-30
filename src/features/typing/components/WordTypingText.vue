@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+import TypingInputPanel from './TypingInputPanel.vue'
+import TypingPromptCharacter from './TypingPromptCharacter.vue'
+
 interface WordAttempt {
   received: string
   correct: boolean
@@ -77,66 +80,68 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
 
 <template>
   <div class="word-typing-text" :data-scale="scale ?? 'medium'" aria-label="单词训练文本">
-    <div class="word-stream">
-      <span
-        v-for="(word, wordOffset) in currentLine.words"
-        :key="absoluteWordIndex(wordOffset)"
-        class="word-column"
-      >
-        <span
-          class="word-block prompt-word"
-          :class="{
-            'completed-word': absoluteWordIndex(wordOffset) < wordIndex,
-            'current-word': absoluteWordIndex(wordOffset) === wordIndex,
-            'awaiting-separator':
-              absoluteWordIndex(wordOffset) === wordIndex &&
-              position >= Array.from(word).length,
-            'separator-error':
-              absoluteWordIndex(wordOffset) === wordIndex &&
-              position >= Array.from(word).length &&
-              hasCurrentError,
-          }"
-        >
+    <TypingInputPanel>
+      <template #prompt>
+        <div class="word-row">
           <span
-            v-for="(character, characterIndex) in Array.from(word)"
-            :key="characterIndex"
-            class="word-character"
+            v-for="(word, wordOffset) in currentLine.words"
+            :key="absoluteWordIndex(wordOffset)"
+            class="word-block prompt-word"
             :class="{
-              complete:
-                absoluteWordIndex(wordOffset) < wordIndex ||
-                (absoluteWordIndex(wordOffset) === wordIndex && characterIndex < position),
-              current: absoluteWordIndex(wordOffset) === wordIndex && characterIndex === position,
-              error:
+              'current-word': absoluteWordIndex(wordOffset) === wordIndex,
+              'awaiting-separator':
+                absoluteWordIndex(wordOffset) === wordIndex && position >= Array.from(word).length,
+              'separator-error':
                 absoluteWordIndex(wordOffset) === wordIndex &&
-                characterIndex === position &&
+                position >= Array.from(word).length &&
                 hasCurrentError,
             }"
-            >{{ character }}</span
           >
-        </span>
+            <TypingPromptCharacter
+              v-for="(character, characterIndex) in Array.from(word)"
+              :key="characterIndex"
+              :character="character"
+              :complete="
+                absoluteWordIndex(wordOffset) < wordIndex ||
+                (absoluteWordIndex(wordOffset) === wordIndex && characterIndex < position)
+              "
+              :current="absoluteWordIndex(wordOffset) === wordIndex && characterIndex === position"
+              :error="
+                absoluteWordIndex(wordOffset) === wordIndex &&
+                characterIndex === position &&
+                hasCurrentError
+              "
+            />
+          </span>
+        </div>
+      </template>
 
-        <span
-          class="word-block echo-word"
-          :class="{
-            'awaiting-separator':
-              absoluteWordIndex(wordOffset) === wordIndex && position >= Array.from(word).length,
-          }"
-          aria-label="输入回显"
-        >
+      <template #echo>
+        <div class="word-row" aria-label="输入回显">
           <span
-            v-for="(_, characterIndex) in Array.from(word)"
-            :key="characterIndex"
-            class="echo-character"
+            v-for="(word, wordOffset) in currentLine.words"
+            :key="absoluteWordIndex(wordOffset)"
+            class="word-block echo-word"
             :class="{
-              incorrect: !echoCharacter(word, wordOffset, characterIndex).correct,
-              'caret-before':
-                absoluteWordIndex(wordOffset) === wordIndex && characterIndex === position,
+              'awaiting-separator':
+                absoluteWordIndex(wordOffset) === wordIndex && position >= Array.from(word).length,
             }"
-            >{{ echoCharacter(word, wordOffset, characterIndex).received }}</span
           >
-        </span>
-      </span>
-    </div>
+            <span
+              v-for="(_, characterIndex) in Array.from(word)"
+              :key="characterIndex"
+              class="echo-character"
+              :class="{
+                incorrect: !echoCharacter(word, wordOffset, characterIndex).correct,
+                'caret-before':
+                  absoluteWordIndex(wordOffset) === wordIndex && characterIndex === position,
+              }"
+              >{{ echoCharacter(word, wordOffset, characterIndex).received }}</span
+            >
+          </span>
+        </div>
+      </template>
+    </TypingInputPanel>
   </div>
 </template>
 
@@ -144,13 +149,12 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
 .word-typing-text {
   --word-font-size: 1.28rem;
 
-  padding: 14px 20px 16px;
   overflow: hidden;
-  background: #fff;
-  border: 1px solid #d8e3eb;
-  border-radius: 18px;
-  box-shadow: 0 12px 35px rgb(49 78 102 / 8%);
+  color: #607083;
   font-family: 'Cascadia Mono', Consolas, monospace;
+  font-size: var(--word-font-size);
+  line-height: 1.65;
+  letter-spacing: 0.035em;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -163,45 +167,16 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
   --word-font-size: 1.52rem;
 }
 
-.word-stream {
-  position: relative;
+.word-row {
   display: flex;
+  min-width: max-content;
   gap: 1ch;
-  align-items: stretch;
-  overflow: hidden;
-  color: #607083;
-  font-size: var(--word-font-size);
-  line-height: 1.55;
-  letter-spacing: 0.035em;
   white-space: nowrap;
-}
-
-.word-stream::after {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  left: 0;
-  border-top: 1px solid #e0e8ed;
-  content: '';
-}
-
-.word-column {
-  z-index: 1;
-  display: grid;
-  flex: 0 0 auto;
-  grid-template-rows: repeat(2, minmax(calc(var(--word-font-size) * 1.8), auto));
-  align-items: center;
 }
 
 .word-block {
   display: inline-flex;
   flex: 0 0 auto;
-}
-
-.prompt-word,
-.echo-word {
-  align-self: stretch;
-  align-items: center;
 }
 
 .prompt-word.current-word {
@@ -212,49 +187,23 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
   color: #a32c2c;
 }
 
-.prompt-word.completed-word,
-.word-character.complete {
-  color: #7c8ea0;
-}
-
-.word-character.current.error {
-  color: #c0392b;
-  background: #ffebe8;
-  animation: shake 100ms ease-out;
-}
-
-.word-character.current {
-  position: relative;
-}
-
-.word-character.current::after {
-  position: absolute;
-  right: 0;
-  bottom: 0.2em;
-  left: 0;
-  border-bottom: 2px solid #263d52;
-  content: '';
-}
-
-.word-character.current.error::after {
-  border-bottom-color: #c0392b;
-}
-
 .prompt-word.awaiting-separator {
   position: relative;
 }
 
 .prompt-word.awaiting-separator::after {
   position: absolute;
-  bottom: 0.2em;
-  left: 100%;
-  width: 0.64em;
-  border-bottom: 2px solid #263d52;
+  bottom: -0.12em;
+  left: calc(100% + 0.14ch);
+  width: 0.72ch;
+  height: 3px;
+  background: #168e80;
+  border-radius: 999px;
   content: '';
 }
 
 .prompt-word.awaiting-separator.separator-error::after {
-  border-bottom-color: #c0392b;
+  background: #c0392b;
 }
 
 .echo-word {
@@ -264,20 +213,19 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
 
 .echo-word.awaiting-separator::after {
   position: absolute;
-  top: 0.38em;
-  bottom: 0.38em;
-  left: 100%;
+  top: 0.3em;
+  bottom: 0.3em;
+  left: calc(100% + 0.1ch);
   width: 2px;
   background: #0e7267;
   content: '';
   animation: caret-blink 1.1s step-end infinite;
 }
 
-.word-character,
 .echo-character {
   position: relative;
   display: inline-block;
-  width: 0.64em;
+  width: 1ch;
   white-space: pre;
   text-align: center;
 }
@@ -304,17 +252,7 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
   }
 }
 
-@keyframes shake {
-  25% {
-    transform: translateX(-2px);
-  }
-  75% {
-    transform: translateX(2px);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .word-character.current.error,
   .echo-character.caret-before::before,
   .echo-word.awaiting-separator::after {
     animation: none;

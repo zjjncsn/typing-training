@@ -16,8 +16,11 @@ import {
 export function useTypingEngine(
   content: MaybeRefOrGetter<string>,
   options: MaybeRefOrGetter<Partial<TypingEngineOptions>> = {},
+  initialPosition: MaybeRefOrGetter<number> = 0,
 ) {
-  const session = ref(createTypingSession(toValue(content), toValue(options)))
+  const session = ref(
+    createTypingSession(toValue(content), toValue(options), toValue(initialPosition)),
+  )
   const clock = ref(Date.now())
   let clockTimer: ReturnType<typeof setInterval> | undefined
 
@@ -36,11 +39,7 @@ export function useTypingEngine(
     clockTimer = undefined
   }
 
-  function inputCharacter(
-    character: string,
-    timestamp = Date.now(),
-    correctOverride?: boolean,
-  ) {
+  function inputCharacter(character: string, timestamp = Date.now(), correctOverride?: boolean) {
     session.value = typeCharacter(session.value, character, timestamp, correctOverride)
     clock.value = timestamp
   }
@@ -85,9 +84,9 @@ export function useTypingEngine(
   }
 
   watch(
-    [() => toValue(content), () => toValue(options)],
-    ([nextContent, nextOptions]) => {
-      session.value = createTypingSession(nextContent, nextOptions)
+    [() => toValue(content), () => toValue(options), () => toValue(initialPosition)],
+    ([nextContent, nextOptions, nextInitialPosition]) => {
+      session.value = createTypingSession(nextContent, nextOptions, nextInitialPosition)
       clock.value = Date.now()
     },
   )

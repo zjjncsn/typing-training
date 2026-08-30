@@ -9,6 +9,7 @@ defineProps<{
   status: TypingSessionStatus
   stats: TypingStatsValue
   showGuidance?: boolean
+  showPrompt?: boolean
   showAside?: boolean
   pauseMessage?: string
 }>()
@@ -54,7 +55,7 @@ const statusText: Record<TypingSessionStatus, string> = {
         <div class="practice-layout" :class="{ 'has-aside': showAside && $slots.aside }">
           <div class="practice-main">
             <slot name="content" />
-            <div class="prompt-bar"><slot name="prompt" /></div>
+            <div v-if="showPrompt !== false" class="prompt-bar"><slot name="prompt" /></div>
             <div v-if="showGuidance !== false" class="guidance"><slot name="guidance" /></div>
           </div>
 

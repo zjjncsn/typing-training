@@ -29,6 +29,17 @@ test('starts on first input and completes a lesson', () => {
   assert.equal(session.activeElapsedMs, 1_000)
 })
 
+test('can create an idle session at a saved position', () => {
+  const session = createTypingSession('abcdef', {}, 3)
+  assert.equal(session.position, 3)
+  assert.equal(session.status, 'idle')
+  assert.equal(session.correctCount, 0)
+  assert.equal(getExpectedCharacter(session), 'd')
+
+  assert.equal(createTypingSession('abc', {}, -10).position, 0)
+  assert.equal(createTypingSession('abc', {}, 99).position, 2)
+})
+
 test('records an error and waits for the correct character by default', () => {
   let session = createTypingSession('a')
 
@@ -55,11 +66,7 @@ test('can reject a matching character when the physical key is wrong', () => {
 })
 
 test('can advance after mistakes when configured', () => {
-  const session = typeCharacter(
-    createTypingSession('a', { mistakePolicy: 'advance' }),
-    'x',
-    100,
-  )
+  const session = typeCharacter(createTypingSession('a', { mistakePolicy: 'advance' }), 'x', 100)
 
   assert.equal(session.status, 'completed')
   assert.equal(session.position, 1)
@@ -87,7 +94,7 @@ test('calculates accuracy, progress, CPM and WPM', () => {
 
   const stats = getTypingStats(session, 60_000)
   assert.equal(stats.progress, 100)
-  assert.equal(stats.accuracy, 2 / 3 * 100)
+  assert.equal(stats.accuracy, (2 / 3) * 100)
   assert.equal(stats.cpm, 2)
   assert.equal(stats.wpm, 0.4)
 })

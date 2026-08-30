@@ -8,6 +8,7 @@ defineProps<{
   textScale: TypingTextScale
   enableExplanation?: boolean
   showExplanation?: boolean
+  hideKeyboard?: boolean
   hideHands?: boolean
 }>()
 
@@ -37,7 +38,7 @@ const emit = defineEmits<{
           <button type="button" aria-label="关闭设置" @click="emit('update:open', false)">×</button>
         </header>
 
-        <label v-if="!hideHands" class="setting-row">
+        <label v-if="!hideKeyboard" class="setting-row">
           <div><strong>屏幕键盘</strong><small>显示目标键和 Shift 组合</small></div>
           <input
             type="checkbox"
@@ -55,7 +56,7 @@ const emit = defineEmits<{
           />
         </label>
 
-        <label class="setting-row">
+        <label v-if="!hideHands" class="setting-row">
           <div><strong>手指提示</strong><small>显示目标手指和双手联动</small></div>
           <input
             type="checkbox"

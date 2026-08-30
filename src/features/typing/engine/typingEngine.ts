@@ -1,8 +1,4 @@
-import type {
-  TypingEngineOptions,
-  TypingSession,
-  TypingStats,
-} from './types'
+import type { TypingEngineOptions, TypingSession, TypingStats } from './types'
 
 const defaultOptions: TypingEngineOptions = {
   mistakePolicy: 'retry',
@@ -74,15 +70,21 @@ function advancePastBlankLines(
 export function createTypingSession(
   content: string,
   options: Partial<TypingEngineOptions> = {},
+  initialPosition = 0,
 ): TypingSession {
   if (content.length === 0) {
     throw new Error('Typing content cannot be empty')
   }
 
+  const normalizedInitialPosition = Math.min(
+    Math.max(0, Math.trunc(initialPosition)),
+    characterCount(content) - 1,
+  )
+
   return {
     content,
     status: 'idle',
-    position: 0,
+    position: normalizedInitialPosition,
     correctCount: 0,
     errorCount: 0,
     startedAt: null,
@@ -141,8 +143,7 @@ export function typeCharacter(
         }
       : session
 
-  const correct =
-    correctOverride ?? charactersMatch(expected, received, runningSession.options)
+  const correct = correctOverride ?? charactersMatch(expected, received, runningSession.options)
   const shouldAdvance = correct || runningSession.options.mistakePolicy === 'advance'
   let nextPosition = advancePastWhitespace(
     runningSession.content,
@@ -151,7 +152,11 @@ export function typeCharacter(
   )
 
   if (correct && expected === '\n') {
-    nextPosition = advancePastBlankLines(runningSession.content, nextPosition, runningSession.options)
+    nextPosition = advancePastBlankLines(
+      runningSession.content,
+      nextPosition,
+      runningSession.options,
+    )
   }
 
   const completed = nextPosition >= characterCount(runningSession.content)
@@ -202,10 +207,7 @@ export function backspaceCharacter(session: TypingSession): TypingSession {
     return session
   }
 
-  if (
-    session.lastAttempt?.correct === false &&
-    session.lastAttempt.position === session.position
-  ) {
+  if (session.lastAttempt?.correct === false && session.lastAttempt.position === session.position) {
     return {
       ...session,
       lastAttempt: null,
@@ -219,10 +221,7 @@ export function backspaceCharacter(session: TypingSession): TypingSession {
   }
 }
 
-export function pauseTypingSession(
-  session: TypingSession,
-  timestamp = Date.now(),
-): TypingSession {
+export function pauseTypingSession(session: TypingSession, timestamp = Date.now()): TypingSession {
   if (session.status !== 'running') {
     return session
   }
@@ -237,10 +236,7 @@ export function pauseTypingSession(
   }
 }
 
-export function resumeTypingSession(
-  session: TypingSession,
-  timestamp = Date.now(),
-): TypingSession {
+export function resumeTypingSession(session: TypingSession, timestamp = Date.now()): TypingSession {
   if (session.status !== 'paused') {
     return session
   }
@@ -262,10 +258,7 @@ export function getExpectedCharacter(session: TypingSession): string | null {
   return characterAt(session.content, session.position) ?? null
 }
 
-export function getTypingStats(
-  session: TypingSession,
-  timestamp = Date.now(),
-): TypingStats {
+export function getTypingStats(session: TypingSession, timestamp = Date.now()): TypingStats {
   const now = normalizeTimestamp(timestamp)
   const contentLength = characterCount(session.content)
   const elapsedMs = activeDuration(session, now)
