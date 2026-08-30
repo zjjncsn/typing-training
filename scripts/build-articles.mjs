@@ -38,7 +38,13 @@ function normalizeContent(value) {
 }
 
 function compareNumericNames(left, right) {
-  return Number.parseInt(left, 10) - Number.parseInt(right, 10)
+  return left.localeCompare(right, 'en', { numeric: true, sensitivity: 'base' })
+}
+
+function createExcerpt(content, limit = 88) {
+  const normalized = content.replace(/\s+/gu, ' ').trim()
+  const characters = Array.from(normalized)
+  return characters.length <= limit ? normalized : `${characters.slice(0, limit).join('')}…`
 }
 
 async function main() {
@@ -85,6 +91,7 @@ async function main() {
         title: article.title,
         category,
         sourceName: article.sourceName,
+        excerpt: createExcerpt(content),
         file: outputFile,
         characterCount: Array.from(content).length,
         byteSize: Buffer.byteLength(serialized),

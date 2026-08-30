@@ -365,6 +365,7 @@ onBeforeUnmount(() => {
     :title="title"
     :status="status"
     :stats="stats"
+    show-wpm
     :show-guidance="Boolean(currentEntry && showKeyboard)"
     :show-aside="Boolean(currentEntry && showExplanation)"
     :pause-message="pauseMessage"

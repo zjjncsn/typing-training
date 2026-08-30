@@ -8,6 +8,7 @@ defineProps<{
   title: string
   status: TypingSessionStatus
   stats: TypingStatsValue
+  showWpm?: boolean
   showGuidance?: boolean
   showPrompt?: boolean
   showAside?: boolean
@@ -32,7 +33,7 @@ const statusText: Record<TypingSessionStatus, string> = {
       <div class="header-tools"><slot name="lesson-picker" /></div>
     </header>
 
-    <TypingStats :stats="stats" />
+    <TypingStats :stats="stats" :show-wpm="showWpm" />
 
     <div
       class="progress-track"

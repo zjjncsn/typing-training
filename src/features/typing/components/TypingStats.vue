@@ -3,6 +3,7 @@ import type { TypingStats } from '../engine/typingEngine'
 
 defineProps<{
   stats: TypingStats
+  showWpm?: boolean
 }>()
 
 function formatDuration(milliseconds: number): string {
@@ -22,6 +23,10 @@ function formatDuration(milliseconds: number): string {
     <div>
       <dt>速度</dt>
       <dd>{{ Math.round(stats.cpm) }} <small>CPM</small></dd>
+    </div>
+    <div v-if="showWpm">
+      <dt>单词</dt>
+      <dd>{{ Math.round(stats.wpm) }} <small>WPM</small></dd>
     </div>
     <div>
       <dt>正确率</dt>
@@ -89,6 +94,10 @@ small {
 
   .stats div + div {
     border-left: none;
+  }
+
+  .stats div:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 }
 </style>

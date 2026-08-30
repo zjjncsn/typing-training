@@ -10,6 +10,7 @@ export interface ArticleSummary {
   title: string
   category: ArticleCategory
   sourceName: string
+  excerpt: string
   file: string
   characterCount: number
   byteSize: number

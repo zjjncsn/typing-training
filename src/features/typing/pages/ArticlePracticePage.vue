@@ -2,6 +2,16 @@
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
+import {
+  articleResumePosition,
+  createEmptyArticleProgress,
+  loadArticleProgress,
+  markArticleCompleted,
+  recordArticlePosition,
+  restartArticleProgress,
+  saveArticleProgress,
+  type ArticleProgressState,
+} from '../articles/articleProgress'
 import type { ArticleManifest, ArticleSummary, TrainingArticle } from '../articles/types'
 import { loadArticle, loadArticleManifest } from '../articles/articleRepository'
 import ArticleDrawer from '../components/ArticleDrawer.vue'
@@ -16,12 +26,6 @@ type TypingTextScale = 'small' | 'medium' | 'large'
 type PauseReason = 'keyboard' | 'visibility'
 type ArticleAttempt = { received: string; correct: boolean }
 
-interface StoredArticlePosition {
-  articleId: string
-  position: number
-}
-
-const articlePositionStorageKey = 'typing-practice.article-position.v1'
 const route = useRoute()
 const router = useRouter()
 const manifest = ref<ArticleManifest | null>(null)
@@ -36,6 +40,7 @@ const textScale = ref<TypingTextScale>('medium')
 const pauseReason = ref<PauseReason | null>(null)
 const initialPosition = ref(0)
 const attemptLog = ref<Record<number, ArticleAttempt>>({})
+const articleProgress = ref<ArticleProgressState>(createEmptyArticleProgress())
 let loadGeneration = 0
 
 const content = computed(() => article.value?.content ?? ' ')
@@ -79,36 +84,19 @@ function routeArticleId(): string | null {
   return Array.isArray(value) ? (value[0] ?? null) : (value ?? null)
 }
 
-function readStoredPosition(): StoredArticlePosition | null {
+function persistProgress(nextProgress: ArticleProgressState) {
+  if (nextProgress === articleProgress.value) return
+  articleProgress.value = nextProgress
   try {
-    const parsed = JSON.parse(localStorage.getItem(articlePositionStorageKey) ?? 'null') as unknown
-    if (
-      typeof parsed !== 'object' ||
-      parsed === null ||
-      !('articleId' in parsed) ||
-      !('position' in parsed) ||
-      typeof parsed.articleId !== 'string' ||
-      typeof parsed.position !== 'number' ||
-      !Number.isFinite(parsed.position)
-    ) {
-      return null
-    }
-
-    return {
-      articleId: parsed.articleId,
-      position: Math.max(0, Math.trunc(parsed.position)),
-    }
+    saveArticleProgress(localStorage, nextProgress)
   } catch {
-    return null
+    // Storage may be unavailable in private or restricted browser contexts.
   }
 }
 
-function storePosition(articleId: string, position: number) {
+function initializeProgress() {
   try {
-    localStorage.setItem(
-      articlePositionStorageKey,
-      JSON.stringify({ articleId, position } satisfies StoredArticlePosition),
-    )
+    articleProgress.value = loadArticleProgress(localStorage)
   } catch {
     // Storage may be unavailable in private or restricted browser contexts.
   }
@@ -120,15 +108,18 @@ async function initializeArticles() {
     const loadedManifest = await loadArticleManifest()
     manifest.value = loadedManifest
     const requestedId = routeArticleId()
-    const stored = readStoredPosition()
-    const preferredId = requestedId ?? stored?.articleId
+    const preferredId = requestedId ?? articleProgress.value.lastArticleId
     const summary =
       loadedManifest.articles.find((item) => item.id === preferredId) ??
       loadedManifest.articles.find((item) => item.id === loadedManifest.defaultArticleId) ??
       loadedManifest.articles[0]
 
     if (summary) {
-      const resumePosition = stored?.articleId === summary.id ? stored.position : 0
+      const resumePosition = articleResumePosition(
+        articleProgress.value,
+        summary.id,
+        summary.characterCount,
+      )
       await selectArticle(summary, requestedId !== summary.id, resumePosition)
     }
   } catch (error) {
@@ -136,13 +127,20 @@ async function initializeArticles() {
   }
 }
 
-async function selectArticle(summary: ArticleSummary, replaceRoute = true, resumePosition = 0) {
+async function selectArticle(
+  summary: ArticleSummary,
+  replaceRoute = true,
+  resumePosition?: number,
+) {
   if (article.value?.id === summary.id) return
 
   const generation = ++loadGeneration
+  const nextPosition =
+    resumePosition ??
+    articleResumePosition(articleProgress.value, summary.id, summary.characterCount)
   selectedSummary.value = summary
   article.value = null
-  initialPosition.value = Math.min(resumePosition, Math.max(0, summary.characterCount - 1))
+  initialPosition.value = Math.min(nextPosition, Math.max(0, summary.characterCount - 1))
   loadingArticleId.value = summary.id
   loadError.value = null
   resultOpen.value = false
@@ -238,6 +236,9 @@ function resumeTraining() {
 
 function restartTraining() {
   resultOpen.value = false
+  if (article.value) {
+    persistProgress(restartArticleProgress(articleProgress.value, article.value.id))
+  }
   restart()
   clearAttemptLog()
 }
@@ -266,19 +267,36 @@ watch(
   (nextStatus) => {
     if (nextStatus === 'completed') {
       resultOpen.value = true
-      if (article.value) storePosition(article.value.id, 0)
+      if (article.value) {
+        persistProgress(
+          markArticleCompleted(
+            articleProgress.value,
+            article.value.id,
+            Array.from(article.value.content).length,
+          ),
+        )
+      }
     }
     if (nextStatus !== 'paused') pauseReason.value = null
   },
 )
 
 watch([() => article.value?.id, () => session.value.position], ([articleId, position]) => {
-  if (articleId && session.value.status !== 'completed') storePosition(articleId, position)
+  if (!articleId || !article.value || session.value.status === 'completed') return
+  persistProgress(
+    recordArticlePosition(
+      articleProgress.value,
+      articleId,
+      position,
+      Array.from(article.value.content).length,
+    ),
+  )
 })
 
 onMounted(() => {
   window.addEventListener('keydown', handlePageKeydown)
   document.addEventListener('visibilitychange', handleVisibilityChange)
+  initializeProgress()
   void initializeArticles()
 })
 
@@ -295,6 +313,7 @@ onBeforeUnmount(() => {
     :title="title"
     :status="status"
     :stats="stats"
+    show-wpm
     :show-guidance="false"
     :show-prompt="false"
     :pause-message="pauseMessage"
@@ -352,6 +371,7 @@ onBeforeUnmount(() => {
     v-model:open="articleDrawerOpen"
     :categories="manifest?.categories ?? []"
     :articles="manifest?.articles ?? []"
+    :progress="articleProgress"
     :active-article-id="selectedSummary?.id ?? null"
     :loading-article-id="loadingArticleId"
     @select="selectArticle"

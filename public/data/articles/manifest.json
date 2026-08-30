@@ -37,6 +37,7 @@
       "title": "名言 1",
       "category": "adage",
       "sourceName": "Adage: 1.txt",
+      "excerpt": "Success is dangerous. One begins to copy oneself, and to copy oneself is more dangerous …",
       "file": "adage/1.json",
       "characterCount": 1127,
       "byteSize": 1250
@@ -46,6 +47,7 @@
       "title": "名言 2",
       "category": "adage",
       "sourceName": "Adage: 2.txt",
+      "excerpt": "Life affords no higher pleasure than that of surmounting difficulties, passing from one …",
       "file": "adage/2.json",
       "characterCount": 1045,
       "byteSize": 1164
@@ -55,6 +57,7 @@
       "title": "名言 3",
       "category": "adage",
       "sourceName": "Adage: 3.txt",
+      "excerpt": "We learn wisdom from failure much more than from success. We often discover what will do…",
       "file": "adage/3.json",
       "characterCount": 922,
       "byteSize": 1044
@@ -64,6 +67,7 @@
       "title": "名言 4",
       "category": "adage",
       "sourceName": "Adage: 4.txt",
+      "excerpt": "A wise man will make more opportunities than he finds. Peace and friendship with all man…",
       "file": "adage/4.json",
       "characterCount": 815,
       "byteSize": 937
@@ -73,6 +77,7 @@
       "title": "名言 5",
       "category": "adage",
       "sourceName": "Adage: 5.txt",
+      "excerpt": "Self-pity is our worst enemy and if we yield to it, we can never do anything wise in thi…",
       "file": "adage/5.json",
       "characterCount": 900,
       "byteSize": 1016
@@ -82,6 +87,7 @@
       "title": "名言 6",
       "category": "adage",
       "sourceName": "Adage: 6.txt",
+      "excerpt": "All truly wise thoughts have been thought already thousands of times; but to make them t…",
       "file": "adage/6.json",
       "characterCount": 775,
       "byteSize": 894
@@ -91,6 +97,7 @@
       "title": "名言 7",
       "category": "adage",
       "sourceName": "Adage: 7.txt",
+      "excerpt": "One of the surest evidences of friendship that one individual can display to another is …",
       "file": "adage/7.json",
       "characterCount": 874,
       "byteSize": 993
@@ -100,6 +107,7 @@
       "title": "名言 8",
       "category": "adage",
       "sourceName": "Adage: 8.txt",
+      "excerpt": "You can make more friends in two months by becoming really interested in other people th…",
       "file": "adage/8.json",
       "characterCount": 729,
       "byteSize": 849
@@ -109,6 +117,7 @@
       "title": "名言 9",
       "category": "adage",
       "sourceName": "Adage: 9.txt",
+      "excerpt": "Without friends no one would choose to live, though he had all other goods. Character is…",
       "file": "adage/9.json",
       "characterCount": 732,
       "byteSize": 851
@@ -118,6 +127,7 @@
       "title": "名言 10",
       "category": "adage",
       "sourceName": "Adage: 10.txt",
+      "excerpt": "Friendship is precious, not only in the shade, but in the sunshine of life; and thanks t…",
       "file": "adage/10.json",
       "characterCount": 737,
       "byteSize": 858
@@ -127,6 +137,7 @@
       "title": "名言 11",
       "category": "adage",
       "sourceName": "Adage: 11.txt",
+      "excerpt": "Every tomorrow has two handles. We can take hold of it with the handle of anxiety or the…",
       "file": "adage/11.json",
       "characterCount": 927,
       "byteSize": 1049
@@ -136,6 +147,7 @@
       "title": "名言 12",
       "category": "adage",
       "sourceName": "Adage: 12.txt",
+      "excerpt": "A better world shall emerge based on faith and understanding. Take note, theologians, th…",
       "file": "adage/12.json",
       "characterCount": 790,
       "byteSize": 910
@@ -145,6 +157,7 @@
       "title": "名言 13",
       "category": "adage",
       "sourceName": "Adage: 13.txt",
+      "excerpt": "Believing with you that religion is a matter which lies solely between man and his God, …",
       "file": "adage/13.json",
       "characterCount": 1127,
       "byteSize": 1245
@@ -154,6 +167,7 @@
       "title": "名言 14",
       "category": "adage",
       "sourceName": "Adage: 14.txt",
+      "excerpt": "A lively, disinterested, persistent liking for truth is extraordinarily rare. Action and…",
       "file": "adage/14.json",
       "characterCount": 823,
       "byteSize": 950
@@ -163,6 +177,7 @@
       "title": "名言 15",
       "category": "adage",
       "sourceName": "Adage: 15.txt",
+      "excerpt": "He who is most slow in making a promise is the most faithful in performance of it. I fel…",
       "file": "adage/15.json",
       "characterCount": 971,
       "byteSize": 1089
@@ -172,6 +187,7 @@
       "title": "名言 16",
       "category": "adage",
       "sourceName": "Adage: 16.txt",
+      "excerpt": "If I could tell the world just one thing it would be we're all okay, and not to worry ca…",
       "file": "adage/16.json",
       "characterCount": 875,
       "byteSize": 996
@@ -181,6 +197,7 @@
       "title": "名言 17",
       "category": "adage",
       "sourceName": "Adage: 17.txt",
+      "excerpt": "Say what you will about the sweet miracle of unquestioning faith, I consider a capacity …",
       "file": "adage/17.json",
       "characterCount": 833,
       "byteSize": 958
@@ -190,6 +207,7 @@
       "title": "名言 18",
       "category": "adage",
       "sourceName": "Adage: 18.txt",
+      "excerpt": "Religion is not a fractional thing that can be doled out in fixed weekly or daily measur…",
       "file": "adage/18.json",
       "characterCount": 875,
       "byteSize": 995
@@ -199,6 +217,7 @@
       "title": "名言 19",
       "category": "adage",
       "sourceName": "Adage: 19.txt",
+      "excerpt": "When all kinds of trials and temptations crowd into your lives, my brothers, don't resen…",
       "file": "adage/19.json",
       "characterCount": 885,
       "byteSize": 1005
@@ -208,6 +227,7 @@
       "title": "名言 20",
       "category": "adage",
       "sourceName": "Adage: 20.txt",
+      "excerpt": "There lives more faith in honest doubt, believe me, than in half the creeds. And the pra…",
       "file": "adage/20.json",
       "characterCount": 750,
       "byteSize": 872
@@ -217,6 +237,7 @@
       "title": "名言 21",
       "category": "adage",
       "sourceName": "Adage: 21.txt",
+      "excerpt": "Success is relative. It is what we can make of the mess we have made of things. To trave…",
       "file": "adage/21.json",
       "characterCount": 841,
       "byteSize": 960
@@ -226,6 +247,7 @@
       "title": "名言 22",
       "category": "adage",
       "sourceName": "Adage: 22.txt",
+      "excerpt": "Dictionary is the only place that success comes before work. Hard work is the price we m…",
       "file": "adage/22.json",
       "characterCount": 857,
       "byteSize": 978
@@ -235,6 +257,7 @@
       "title": "名言 23",
       "category": "adage",
       "sourceName": "Adage: 23.txt",
+      "excerpt": "Friendship is like money, easier made than kept. When we honestly ask ourselves which pe…",
       "file": "adage/23.json",
       "characterCount": 719,
       "byteSize": 839
@@ -244,6 +267,7 @@
       "title": "名言 24",
       "category": "adage",
       "sourceName": "Adage: 24.txt",
+      "excerpt": "Laughter is not at all a bad beginning for a friendship, and it is far the best ending f…",
       "file": "adage/24.json",
       "characterCount": 820,
       "byteSize": 942
@@ -253,6 +277,7 @@
       "title": "名言 25",
       "category": "adage",
       "sourceName": "Adage: 25.txt",
+      "excerpt": "Absence diminishes small loves and increases great ones, as the wind blows out the candl…",
       "file": "adage/25.json",
       "characterCount": 667,
       "byteSize": 790
@@ -262,6 +287,7 @@
       "title": "名言 26",
       "category": "adage",
       "sourceName": "Adage: 26.txt",
+      "excerpt": "Love many things, for therein lies the true strength, and whosoever loves much performs …",
       "file": "adage/26.json",
       "characterCount": 792,
       "byteSize": 913
@@ -271,6 +297,7 @@
       "title": "名言 27",
       "category": "adage",
       "sourceName": "Adage: 27.txt",
+      "excerpt": "In every living thing there is the desire for love. The course of true love never did ru…",
       "file": "adage/27.json",
       "characterCount": 822,
       "byteSize": 947
@@ -280,6 +307,7 @@
       "title": "名言 28",
       "category": "adage",
       "sourceName": "Adage: 28.txt",
+      "excerpt": "Love is all we have, the only way that each can help the other. Love grows by giving. Th…",
       "file": "adage/28.json",
       "characterCount": 577,
       "byteSize": 699
@@ -289,6 +317,7 @@
       "title": "名言 29",
       "category": "adage",
       "sourceName": "Adage: 29.txt",
+      "excerpt": "The best way to know God is to love many things. But I always think that the best way to…",
       "file": "adage/29.json",
       "characterCount": 592,
       "byteSize": 717
@@ -298,6 +327,7 @@
       "title": "名言 30",
       "category": "adage",
       "sourceName": "Adage: 30.txt",
+      "excerpt": "Love is life. And if you miss love, you miss life. Don't forget to love yourself. Flatte…",
       "file": "adage/30.json",
       "characterCount": 629,
       "byteSize": 751
@@ -307,6 +337,7 @@
       "title": "散文 1",
       "category": "essay",
       "sourceName": "Essay: 1.txt",
+      "excerpt": "Spring like thin oaks by hill and glen. What cordial welcomes greet the guest, By thy lo…",
       "file": "essay/1.json",
       "characterCount": 847,
       "byteSize": 985
@@ -316,6 +347,7 @@
       "title": "散文 2",
       "category": "essay",
       "sourceName": "Essay: 2.txt",
+      "excerpt": "Oh mother of a mighty race, Yet lovely in thy youthful grace! The elder dames thy haught…",
       "file": "essay/2.json",
       "characterCount": 777,
       "byteSize": 917
@@ -325,6 +357,7 @@
       "title": "散文 3",
       "category": "essay",
       "sourceName": "Essay: 3.txt",
+      "excerpt": "Highland Mary YE banks and braes and streams around, The castle o' Montgomery, Green be …",
       "file": "essay/3.json",
       "characterCount": 1059,
       "byteSize": 1205
@@ -334,6 +367,7 @@
       "title": "散文 4",
       "category": "essay",
       "sourceName": "Essay: 4.txt",
+      "excerpt": "Sonnet Written in the church-Yard at Middleton Pressed by the moon，mute arbitress of tid…",
       "file": "essay/4.json",
       "characterCount": 674,
       "byteSize": 828
@@ -343,6 +377,7 @@
       "title": "散文 5",
       "category": "essay",
       "sourceName": "Essay: 5.txt",
+      "excerpt": "I Was Wrong I believed that the things that you said, they were true That you felt for m…",
       "file": "essay/5.json",
       "characterCount": 649,
       "byteSize": 787
@@ -352,6 +387,7 @@
       "title": "散文 6",
       "category": "essay",
       "sourceName": "Essay: 6.txt",
+      "excerpt": "Deceived Deceived, not with words, but a kiss. By a touch that said much more than any s…",
       "file": "essay/6.json",
       "characterCount": 641,
       "byteSize": 781
@@ -361,6 +397,7 @@
       "title": "散文 7",
       "category": "essay",
       "sourceName": "Essay: 7.txt",
+      "excerpt": "Beloved Self... The midnight sky adorned by stars, Stars that rearranged themselves In t…",
       "file": "essay/7.json",
       "characterCount": 1935,
       "byteSize": 2114
@@ -370,6 +407,7 @@
       "title": "散文 8",
       "category": "essay",
       "sourceName": "Essay: 8.txt",
+      "excerpt": "Blind Distance Dear Supreme God I'll ask you always Why did you create distance? Why did…",
       "file": "essay/8.json",
       "characterCount": 1221,
       "byteSize": 1375
@@ -379,6 +417,7 @@
       "title": "散文 9",
       "category": "essay",
       "sourceName": "Essay: 9.txt",
+      "excerpt": "MY LOVE There's a girl who I love, I think I'll find her, get her and pray that we stay …",
       "file": "essay/9.json",
       "characterCount": 851,
       "byteSize": 973
@@ -388,6 +427,7 @@
       "title": "散文 10",
       "category": "essay",
       "sourceName": "Essay: 10.txt",
+      "excerpt": "The past The present The future I shiver when you place your hand upon mine. I shiver wh…",
       "file": "essay/10.json",
       "characterCount": 1001,
       "byteSize": 1142
@@ -397,6 +437,7 @@
       "title": "散文 11",
       "category": "essay",
       "sourceName": "Essay: 11.txt",
+      "excerpt": "For then is Tarquin brought unto his bed, Intending weariness with heavy sprite; For aft…",
       "file": "essay/11.json",
       "characterCount": 1244,
       "byteSize": 1388
@@ -406,6 +447,7 @@
       "title": "散文 12",
       "category": "essay",
       "sourceName": "Essay: 12.txt",
+      "excerpt": "Remember I remember when we once laughed, lying beneath the stars. We talked of deep and…",
       "file": "essay/12.json",
       "characterCount": 743,
       "byteSize": 883
@@ -415,6 +457,7 @@
       "title": "散文 13",
       "category": "essay",
       "sourceName": "Essay: 13.txt",
+      "excerpt": "Addicted To Your Kisses! I was length warned against addictions, Time and time again, Bu…",
       "file": "essay/13.json",
       "characterCount": 632,
       "byteSize": 769
@@ -424,6 +467,7 @@
       "title": "散文 14",
       "category": "essay",
       "sourceName": "Essay: 14.txt",
+      "excerpt": "In Silence Without her love, What can I do? Who do I run to in the midst of my misery? W…",
       "file": "essay/14.json",
       "characterCount": 900,
       "byteSize": 1048
@@ -433,6 +477,7 @@
       "title": "散文 15",
       "category": "essay",
       "sourceName": "Essay: 15.txt",
+      "excerpt": "I'll be waiting Baby please forgive me for what I have done, for I know I have broken yo…",
       "file": "essay/15.json",
       "characterCount": 997,
       "byteSize": 1121
@@ -442,6 +487,7 @@
       "title": "散文 16",
       "category": "essay",
       "sourceName": "Essay: 16.txt",
+      "excerpt": "Love revisited As the distant shadow of the setting sun drifts across the field. It remi…",
       "file": "essay/16.json",
       "characterCount": 740,
       "byteSize": 867
@@ -451,6 +497,7 @@
       "title": "散文 17",
       "category": "essay",
       "sourceName": "Essay: 17.txt",
+      "excerpt": "My love came back to me I used to envy those couples who would hold hands just because t…",
       "file": "essay/17.json",
       "characterCount": 1562,
       "byteSize": 1710
@@ -460,6 +507,7 @@
       "title": "散文 18",
       "category": "essay",
       "sourceName": "Essay: 18.txt",
+      "excerpt": "How can I be so lucky? Look at all the things that are right in front of me. A family of…",
       "file": "essay/18.json",
       "characterCount": 1246,
       "byteSize": 1383
@@ -469,6 +517,7 @@
       "title": "散文 19",
       "category": "essay",
       "sourceName": "Essay: 19.txt",
+      "excerpt": "Now, as I said, the way to the Celestial City lies just through this town, where this lu…",
       "file": "essay/19.json",
       "characterCount": 986,
       "byteSize": 1103
@@ -478,6 +527,7 @@
       "title": "散文 20",
       "category": "essay",
       "sourceName": "Essay: 20.txt",
+      "excerpt": "FOREVER I do know that birds continue to live and procreate as long as the weather is am…",
       "file": "essay/20.json",
       "characterCount": 949,
       "byteSize": 1070
@@ -487,6 +537,7 @@
       "title": "散文 21",
       "category": "essay",
       "sourceName": "Essay: 21.txt",
+      "excerpt": "THE BODY What would the body of Saint Francis be like? They say it was so delicate that …",
       "file": "essay/21.json",
       "characterCount": 960,
       "byteSize": 1081
@@ -496,6 +547,7 @@
       "title": "散文 22",
       "category": "essay",
       "sourceName": "Essay: 22.txt",
+      "excerpt": "LETTER FROM THE CABIN I've watched all week, but it seems the eagles really haven't retu…",
       "file": "essay/22.json",
       "characterCount": 980,
       "byteSize": 1099
@@ -505,6 +557,7 @@
       "title": "散文 23",
       "category": "essay",
       "sourceName": "Essay: 23.txt",
+      "excerpt": "LEAVING THE ROADSIDE MOTEL A ventriloquist sat in his car and tried to start it, but it …",
       "file": "essay/23.json",
       "characterCount": 1469,
       "byteSize": 1591
@@ -514,6 +567,7 @@
       "title": "散文 24",
       "category": "essay",
       "sourceName": "Essay: 24.txt",
+      "excerpt": "AFTER THE WEATHER Yesterday a man was sucked out of an airplane over the blue tipped mou…",
       "file": "essay/24.json",
       "characterCount": 1027,
       "byteSize": 1152
@@ -523,6 +577,7 @@
       "title": "散文 25",
       "category": "essay",
       "sourceName": "Essay: 25.txt",
+      "excerpt": "For that he coloured with his high estate, Hiding base sin in pleats of majesty; That no…",
       "file": "essay/25.json",
       "characterCount": 1195,
       "byteSize": 1339
@@ -532,6 +587,7 @@
       "title": "散文 26",
       "category": "essay",
       "sourceName": "Essay: 26.txt",
+      "excerpt": "In this moment In this moment, in the twilight of a cold room, thunder approaches from a…",
       "file": "essay/26.json",
       "characterCount": 1041,
       "byteSize": 1159
@@ -541,6 +597,7 @@
       "title": "散文 27",
       "category": "essay",
       "sourceName": "Essay: 27.txt",
+      "excerpt": "THE ACCIDENT Spud, that was her name. It said so in black ink on the strip of adhesive t…",
       "file": "essay/27.json",
       "characterCount": 1276,
       "byteSize": 1399
@@ -550,6 +607,7 @@
       "title": "散文 28",
       "category": "essay",
       "sourceName": "Essay: 28.txt",
+      "excerpt": "NIGHT FISHING We were eating Milk Duds and drinking some kind of colas on the screen por…",
       "file": "essay/28.json",
       "characterCount": 718,
       "byteSize": 836
@@ -559,6 +617,7 @@
       "title": "散文 29",
       "category": "essay",
       "sourceName": "Essay: 29.txt",
+      "excerpt": "From the besieged Ardea all in post, Borne by the trustless wings of false desire, Lust-…",
       "file": "essay/29.json",
       "characterCount": 1318,
       "byteSize": 1466
@@ -568,6 +627,7 @@
       "title": "散文 30",
       "category": "essay",
       "sourceName": "Essay: 30.txt",
+      "excerpt": "Perchance his boast of Lucrece' sovereignty Suggested this proud issue of a king; For by…",
       "file": "essay/30.json",
       "characterCount": 1255,
       "byteSize": 1399
@@ -577,6 +637,7 @@
       "title": "笑话 1",
       "category": "joke",
       "sourceName": "Joke: 1.txt",
+      "excerpt": "Hurt all over A young woman went to her doctor complaining of pain. \"Where are you hurti…",
       "file": "joke/1.json",
       "characterCount": 580,
       "byteSize": 713
@@ -586,6 +647,7 @@
       "title": "笑话 2",
       "category": "joke",
       "sourceName": "Joke: 2.txt",
+      "excerpt": "A farmer is driving down the road and spots a sign that reads \"Mule For Sale\" he decides…",
       "file": "joke/2.json",
       "characterCount": 1610,
       "byteSize": 1745
@@ -595,6 +657,7 @@
       "title": "笑话 3",
       "category": "joke",
       "sourceName": "Joke: 3.txt",
+      "excerpt": "Your horse called A guy is reading his paper when his wife walks up behind him and smack…",
       "file": "joke/3.json",
       "characterCount": 608,
       "byteSize": 737
@@ -604,6 +667,7 @@
       "title": "笑话 4",
       "category": "joke",
       "sourceName": "Joke: 4.txt",
+      "excerpt": "You bring me bad luck Her husband had been slipping in and out of a coma for several mon…",
       "file": "joke/4.json",
       "characterCount": 578,
       "byteSize": 692
@@ -613,6 +677,7 @@
       "title": "笑话 5",
       "category": "joke",
       "sourceName": "Joke: 5.txt",
+      "excerpt": "There was this tiger that woke up one morning and just felt great (yes, just like Tony t…",
       "file": "joke/5.json",
       "characterCount": 1156,
       "byteSize": 1282
@@ -622,6 +687,7 @@
       "title": "笑话 6",
       "category": "joke",
       "sourceName": "Joke: 6.txt",
+      "excerpt": "A boy was teaching a girl arithmetic, he said it was his mission. He kissed her once; he…",
       "file": "joke/6.json",
       "characterCount": 486,
       "byteSize": 605
@@ -631,6 +697,7 @@
       "title": "笑话 7",
       "category": "joke",
       "sourceName": "Joke: 7.txt",
+      "excerpt": "Be good for nothing A little boy says to his mother, \"Mom, I'll be good for a dollar.\" T…",
       "file": "joke/7.json",
       "characterCount": 539,
       "byteSize": 666
@@ -640,6 +707,7 @@
       "title": "笑话 8",
       "category": "joke",
       "sourceName": "Joke: 8.txt",
+      "excerpt": "Grandpa and granddaughter were sitting talking when she asked, \"Did God make you, Grandp…",
       "file": "joke/8.json",
       "characterCount": 520,
       "byteSize": 648
@@ -649,6 +717,7 @@
       "title": "笑话 9",
       "category": "joke",
       "sourceName": "Joke: 9.txt",
+      "excerpt": "CHANGE WILL Seems an elderly gentleman had serious hearing problems for a number of year…",
       "file": "joke/9.json",
       "characterCount": 531,
       "byteSize": 649
@@ -658,6 +727,7 @@
       "title": "笑话 10",
       "category": "joke",
       "sourceName": "Joke: 10.txt",
+      "excerpt": "Upside down An old man and woman were married for years even though they hated each othe…",
       "file": "joke/10.json",
       "characterCount": 1134,
       "byteSize": 1258
@@ -667,6 +737,7 @@
       "title": "笑话 11",
       "category": "joke",
       "sourceName": "Joke: 11.txt",
+      "excerpt": "One day one pig went to a bar and the bar tender asked what can I get for you today and …",
       "file": "joke/11.json",
       "characterCount": 964,
       "byteSize": 1078
@@ -676,6 +747,7 @@
       "title": "笑话 12",
       "category": "joke",
       "sourceName": "Joke: 12.txt",
+      "excerpt": "In Texas coach Barry Switzer is upset on how the Cowboys played after the season. They w…",
       "file": "joke/12.json",
       "characterCount": 1213,
       "byteSize": 1358
@@ -685,6 +757,7 @@
       "title": "笑话 13",
       "category": "joke",
       "sourceName": "Joke: 13.txt",
+      "excerpt": "Anything you want... One day a rich guy was having a party at his house. He was loaded, …",
       "file": "joke/13.json",
       "characterCount": 1844,
       "byteSize": 2014
@@ -694,6 +767,7 @@
       "title": "笑话 14",
       "category": "joke",
       "sourceName": "Joke: 14.txt",
+      "excerpt": "A lovely afternoon finds one fellow and his wife golfing. They have had a wonderful time…",
       "file": "joke/14.json",
       "characterCount": 1409,
       "byteSize": 1538
@@ -703,6 +777,7 @@
       "title": "笑话 15",
       "category": "joke",
       "sourceName": "Joke: 15.txt",
+      "excerpt": "How this all came about A wife arriving home after a shopping trip, was horrified to fin…",
       "file": "joke/15.json",
       "characterCount": 936,
       "byteSize": 1061
@@ -712,6 +787,7 @@
       "title": "笑话 16",
       "category": "joke",
       "sourceName": "Joke: 16.txt",
+      "excerpt": "Alex Ferguson foes to the Arsenal training camp and says to Arsene Wenger, \"Arsene how c…",
       "file": "joke/16.json",
       "characterCount": 1150,
       "byteSize": 1291
@@ -721,6 +797,7 @@
       "title": "笑话 17",
       "category": "joke",
       "sourceName": "Joke: 17.txt",
+      "excerpt": "The elderly couple was sitting in the den watching TV. They were discussing the fact tha…",
       "file": "joke/17.json",
       "characterCount": 1050,
       "byteSize": 1176
@@ -730,6 +807,7 @@
       "title": "笑话 18",
       "category": "joke",
       "sourceName": "Joke: 18.txt",
+      "excerpt": "An 80 year old couple was worried because they kept forgetting things all the time. The …",
       "file": "joke/18.json",
       "characterCount": 813,
       "byteSize": 945
@@ -739,6 +817,7 @@
       "title": "笑话 19",
       "category": "joke",
       "sourceName": "Joke: 19.txt",
+      "excerpt": "One day a man is walking in San Francisco's Chinatown, and takes a turn down a strange l…",
       "file": "joke/19.json",
       "characterCount": 1147,
       "byteSize": 1268
@@ -748,6 +827,7 @@
       "title": "笑话 20",
       "category": "joke",
       "sourceName": "Joke: 20.txt",
+      "excerpt": "There was a lawyer who died and went to hell as all lawyers do. There he met tons of oth…",
       "file": "joke/20.json",
       "characterCount": 1221,
       "byteSize": 1337
@@ -757,6 +837,7 @@
       "title": "笑话 21",
       "category": "joke",
       "sourceName": "Joke: 21.txt",
+      "excerpt": "An older lady moved in with her young adult daughter after her husband died. Her daughte…",
       "file": "joke/21.json",
       "characterCount": 1208,
       "byteSize": 1340
@@ -766,6 +847,7 @@
       "title": "笑话 22",
       "category": "joke",
       "sourceName": "Joke: 22.txt",
+      "excerpt": "Once there were three stupid blondes walking down the street. They came upon a big huge …",
       "file": "joke/22.json",
       "characterCount": 991,
       "byteSize": 1105
@@ -775,6 +857,7 @@
       "title": "笑话 23",
       "category": "joke",
       "sourceName": "Joke: 23.txt",
+      "excerpt": "One day three men were riding in a truck and all of a sudden it brakes down. So they pus…",
       "file": "joke/23.json",
       "characterCount": 1002,
       "byteSize": 1124
@@ -784,6 +867,7 @@
       "title": "笑话 24",
       "category": "joke",
       "sourceName": "Joke: 24.txt",
+      "excerpt": "How to get what you want A wise old gentleman retired and purchased a modest home near a…",
       "file": "joke/24.json",
       "characterCount": 1196,
       "byteSize": 1320
@@ -793,6 +877,7 @@
       "title": "笑话 25",
       "category": "joke",
       "sourceName": "Joke: 25.txt",
+      "excerpt": "What is your favorite pastime? For his final project in a statistics class, a student de…",
       "file": "joke/25.json",
       "characterCount": 1222,
       "byteSize": 1375
@@ -802,6 +887,7 @@
       "title": "笑话 26",
       "category": "joke",
       "sourceName": "Joke: 26.txt",
+      "excerpt": "A veterinarian had had a really rough day at his office. When he finally got home from t…",
       "file": "joke/26.json",
       "characterCount": 836,
       "byteSize": 981
@@ -811,6 +897,7 @@
       "title": "笑话 27",
       "category": "joke",
       "sourceName": "Joke: 27.txt",
+      "excerpt": "A young couple was expecting a visit from the pastor of their church. They wanted everyt…",
       "file": "joke/27.json",
       "characterCount": 748,
       "byteSize": 877
@@ -820,6 +907,7 @@
       "title": "笑话 28",
       "category": "joke",
       "sourceName": "Joke: 28.txt",
+      "excerpt": "A man is playing golf, and he gets to hole number 3 when all of the sudden he hears some…",
       "file": "joke/28.json",
       "characterCount": 1020,
       "byteSize": 1146
@@ -829,6 +917,7 @@
       "title": "笑话 29",
       "category": "joke",
       "sourceName": "Joke: 29.txt",
+      "excerpt": "Clinton was visiting a grade school when he decided to observe a 4th grade English class…",
       "file": "joke/29.json",
       "characterCount": 1094,
       "byteSize": 1228
@@ -838,6 +927,7 @@
       "title": "笑话 30",
       "category": "joke",
       "sourceName": "Joke: 30.txt",
+      "excerpt": "Monica Lewinsky dies and tries to get into Heaven. She sneaks into a line of Nuns waitin…",
       "file": "joke/30.json",
       "characterCount": 1007,
       "byteSize": 1145
@@ -847,6 +937,7 @@
       "title": "小说 1",
       "category": "novel",
       "sourceName": "Novel: 1.txt",
+      "excerpt": "No man could be timid after such an approach as not to make some manner of response. So …",
       "file": "novel/1.json",
       "characterCount": 1964,
       "byteSize": 2087
@@ -856,6 +947,7 @@
       "title": "小说 2",
       "category": "novel",
       "sourceName": "Novel: 2.txt",
+      "excerpt": "Already had I made sure that a rooted and anchored affection had come to me from out the…",
       "file": "novel/2.json",
       "characterCount": 1653,
       "byteSize": 1775
@@ -865,6 +957,7 @@
       "title": "小说 3",
       "category": "novel",
       "sourceName": "Novel: 3.txt",
+      "excerpt": "I was up the next morning before the October sunrise, and away through the wild and the …",
       "file": "novel/3.json",
       "characterCount": 1734,
       "byteSize": 1853
@@ -874,6 +967,7 @@
       "title": "小说 4",
       "category": "novel",
       "sourceName": "Novel: 4.txt",
+      "excerpt": "\"Despite a general level of affluence never before realized in the history of the world.…",
       "file": "novel/4.json",
       "characterCount": 1941,
       "byteSize": 2065
@@ -883,6 +977,7 @@
       "title": "小说 5",
       "category": "novel",
       "sourceName": "Novel: 5.txt",
+      "excerpt": "Living standards have soared during the twentieth century, and economists expect them to…",
       "file": "novel/5.json",
       "characterCount": 1602,
       "byteSize": 1725
@@ -892,6 +987,7 @@
       "title": "小说 6",
       "category": "novel",
       "sourceName": "Novel: 6.txt",
+      "excerpt": "In spite of the title, this article will really be on how not to grow old, which, at my …",
       "file": "novel/6.json",
       "characterCount": 2056,
       "byteSize": 2176
@@ -901,6 +997,7 @@
       "title": "小说 7",
       "category": "novel",
       "sourceName": "Novel: 7.txt",
+      "excerpt": "I think that a successful old age is easier for those who have strong impersonal interes…",
       "file": "novel/7.json",
       "characterCount": 2287,
       "byteSize": 2402
@@ -910,6 +1007,7 @@
       "title": "小说 8",
       "category": "novel",
       "sourceName": "Novel: 8.txt",
+      "excerpt": "I see now why her round blue eyes are so round, so noticeably round. It is because she \"…",
       "file": "novel/8.json",
       "characterCount": 2302,
       "byteSize": 2425
@@ -919,6 +1017,7 @@
       "title": "小说 9",
       "category": "novel",
       "sourceName": "Novel: 9.txt",
+      "excerpt": "In that vanished time in small-town Jackson, most of the ladies I was familiar with, the…",
       "file": "novel/9.json",
       "characterCount": 1613,
       "byteSize": 1743
@@ -928,6 +1027,7 @@
       "title": "小说 10",
       "category": "novel",
       "sourceName": "Novel: 10.txt",
+      "excerpt": "In my fourth years as an undergraduate I was editor of the college magazine, and had to …",
       "file": "novel/10.json",
       "characterCount": 1715,
       "byteSize": 1834
@@ -937,6 +1037,7 @@
       "title": "小说 11",
       "category": "novel",
       "sourceName": "Novel: 11.txt",
+      "excerpt": "But middle age has its compensations. Youth is bond hand and foot with the shackles of p…",
       "file": "novel/11.json",
       "characterCount": 1749,
       "byteSize": 1870
@@ -946,6 +1047,7 @@
       "title": "小说 12",
       "category": "novel",
       "sourceName": "Novel: 12.txt",
+      "excerpt": "The other dog made no advances, nor received any; also, he did not attempt to steal from…",
       "file": "novel/12.json",
       "characterCount": 1566,
       "byteSize": 1686
@@ -955,6 +1057,7 @@
       "title": "小说 13",
       "category": "novel",
       "sourceName": "Novel: 13.txt",
+      "excerpt": "Buck's first day on the Dyea beach was like a nightmare. Every hour was filled with shoc…",
       "file": "novel/13.json",
       "characterCount": 1813,
       "byteSize": 1932
@@ -964,6 +1067,7 @@
       "title": "小说 14",
       "category": "novel",
       "sourceName": "Novel: 14.txt",
+      "excerpt": "So sudden was it, and so unexpected, that Buck was taken aback. He saw Spitz run out his…",
       "file": "novel/14.json",
       "characterCount": 2123,
       "byteSize": 2245
@@ -973,6 +1077,7 @@
       "title": "小说 15",
       "category": "novel",
       "sourceName": "Novel: 15.txt",
+      "excerpt": "By afternoon, Perrault, who was in a hurry to be on the trail with his despatches, retur…",
       "file": "novel/15.json",
       "characterCount": 2138,
       "byteSize": 2260
@@ -982,6 +1087,7 @@
       "title": "小说 16",
       "category": "novel",
       "sourceName": "Novel: 16.txt",
+      "excerpt": "That night Buck faced the great problem of sleeping. The tent, illumined by a candle, gl…",
       "file": "novel/16.json",
       "characterCount": 2158,
       "byteSize": 2277
@@ -991,6 +1097,7 @@
       "title": "小说 17",
       "category": "novel",
       "sourceName": "Novel: 17.txt",
+      "excerpt": "Nor did he open his eyes till roused by the noises of the waking camp. At first he did n…",
       "file": "novel/17.json",
       "characterCount": 2194,
       "byteSize": 2318
@@ -1000,6 +1107,7 @@
       "title": "小说 18",
       "category": "novel",
       "sourceName": "Novel: 18.txt",
+      "excerpt": "Dave was wheeler or sled dog, pulling in front of him was Buck, then came Sol-leks; the …",
       "file": "novel/18.json",
       "characterCount": 1856,
       "byteSize": 1975
@@ -1009,6 +1117,7 @@
       "title": "小说 19",
       "category": "novel",
       "sourceName": "Novel: 19.txt",
+      "excerpt": "That day they made forty miles, the trail being packed; but the next day, and for many d…",
       "file": "novel/19.json",
       "characterCount": 2004,
       "byteSize": 2123
@@ -1018,6 +1127,7 @@
       "title": "小说 20",
       "category": "novel",
       "sourceName": "Novel: 20.txt",
+      "excerpt": "Not that Buck reasoned it out. He was fit, that was all, and unconsciously he accommodat…",
       "file": "novel/20.json",
       "characterCount": 1897,
       "byteSize": 2015
@@ -1027,6 +1137,7 @@
       "title": "小说 21",
       "category": "novel",
       "sourceName": "Novel: 21.txt",
+      "excerpt": "The dominant primordial beast was strong in Buck, and under the fierce conditions of tra…",
       "file": "novel/21.json",
       "characterCount": 1495,
       "byteSize": 1613
@@ -1036,6 +1147,7 @@
       "title": "小说 22",
       "category": "novel",
       "sourceName": "Novel: 22.txt",
+      "excerpt": "As for Passepartout, he was a true Parisian of Paris. Since he had abandoned his own cou…",
       "file": "novel/22.json",
       "characterCount": 2167,
       "byteSize": 2285
@@ -1045,6 +1157,7 @@
       "title": "小说 23",
       "category": "novel",
       "sourceName": "Novel: 23.txt",
+      "excerpt": "Close in under the sheltering rock Buck made his nest. So snug and warm was it, that he …",
       "file": "novel/23.json",
       "characterCount": 2171,
       "byteSize": 2295
@@ -1054,6 +1167,7 @@
       "title": "小说 24",
       "category": "novel",
       "sourceName": "Novel: 24.txt",
+      "excerpt": "In the meantime the astonished team-dogs had burst out of their nests only to be set upo…",
       "file": "novel/24.json",
       "characterCount": 2080,
       "byteSize": 2198
@@ -1063,6 +1177,7 @@
       "title": "小说 25",
       "category": "novel",
       "sourceName": "Novel: 25.txt",
+      "excerpt": "Phileas Fogg, having shut the door of his house at half-past eleven, and having put his …",
       "file": "novel/25.json",
       "characterCount": 1887,
       "byteSize": 2004
@@ -1072,6 +1187,7 @@
       "title": "小说 26",
       "category": "novel",
       "sourceName": "Novel: 26.txt",
+      "excerpt": "It was Phileas Fogg, whose head now emerged from behind his newspapers, who made this re…",
       "file": "novel/26.json",
       "characterCount": 1886,
       "byteSize": 2005
@@ -1081,6 +1197,7 @@
       "title": "小说 27",
       "category": "novel",
       "sourceName": "Novel: 27.txt",
+      "excerpt": "There he lay for the remainder of the weary night, nursing his wrath and wounded pride. …",
       "file": "novel/27.json",
       "characterCount": 1487,
       "byteSize": 1605
@@ -1090,6 +1207,7 @@
       "title": "小说 28",
       "category": "novel",
       "sourceName": "Novel: 28.txt",
+      "excerpt": "Everybody knows that the great reversed triangle of land, with its base in the north and…",
       "file": "novel/28.json",
       "characterCount": 2039,
       "byteSize": 2158
@@ -1099,6 +1217,7 @@
       "title": "小说 29",
       "category": "novel",
       "sourceName": "Novel: 29.txt",
+      "excerpt": "Meanwhile the Mongolia was pushing forward rapidly; on the 13th, Mocha, surrounded by it…",
       "file": "novel/29.json",
       "characterCount": 1827,
       "byteSize": 1946
@@ -1108,6 +1227,7 @@
       "title": "小说 30",
       "category": "novel",
       "sourceName": "Novel: 30.txt",
+      "excerpt": "The distance between Suez and Aden is precisely thirteen hundred and ten miles, and the …",
       "file": "novel/30.json",
       "characterCount": 2167,
       "byteSize": 2285
@@ -1117,6 +1237,7 @@
       "title": "小说 31",
       "category": "novel",
       "sourceName": "Novel: 31.txt",
+      "excerpt": "The steamer Mongolia, belonging to the Peninsular and Oriental Company, built of iron, o…",
       "file": "novel/31.json",
       "characterCount": 1944,
       "byteSize": 2062
@@ -1126,6 +1247,7 @@
       "title": "小说 32",
       "category": "novel",
       "sourceName": "Novel: 32.txt",
+      "excerpt": "Everything, it said, was against the travellers, every obstacle imposed alike by man and…",
       "file": "novel/32.json",
       "characterCount": 1958,
       "byteSize": 2081
@@ -1135,6 +1257,7 @@
       "title": "其他 1",
       "category": "other",
       "sourceName": "Other: 1.txt",
+      "excerpt": "While Afghanistan in winter can be a beautiful place, Christmas away from family is ofte…",
       "file": "other/1.json",
       "characterCount": 1334,
       "byteSize": 1455
@@ -1144,6 +1267,7 @@
       "title": "其他 2",
       "category": "other",
       "sourceName": "Other: 2.txt",
+      "excerpt": "At the Bagram airbase, U.S. troops joined their British counterparts in Christmas caroli…",
       "file": "other/2.json",
       "characterCount": 1773,
       "byteSize": 1900
@@ -1153,6 +1277,7 @@
       "title": "其他 3",
       "category": "other",
       "sourceName": "Other: 3.txt",
+      "excerpt": "U.S. Marines based at the Kandahar airport in southern Afghanistan moved to a state of h…",
       "file": "other/3.json",
       "characterCount": 1531,
       "byteSize": 1651
@@ -1162,6 +1287,7 @@
       "title": "其他 4",
       "category": "other",
       "sourceName": "Other: 4.txt",
+      "excerpt": "The Olympic Movement's Agenda 21 is Beijing's guideline for hosting the 2008 Olympic Gam…",
       "file": "other/4.json",
       "characterCount": 1666,
       "byteSize": 1790
@@ -1171,6 +1297,7 @@
       "title": "其他 5",
       "category": "other",
       "sourceName": "Other: 5.txt",
+      "excerpt": "Under-17 youth squad to be trimmed Coach Solomon Kaseke last week called 27 players into…",
       "file": "other/5.json",
       "characterCount": 932,
       "byteSize": 1054
@@ -1180,6 +1307,7 @@
       "title": "其他 6",
       "category": "other",
       "sourceName": "Other: 6.txt",
+      "excerpt": "Nation must confess We are a nation that has accepted innocent blood to be shed, suspend…",
       "file": "other/6.json",
       "characterCount": 1197,
       "byteSize": 1320
@@ -1189,6 +1317,7 @@
       "title": "其他 7",
       "category": "other",
       "sourceName": "Other: 7.txt",
+      "excerpt": "Health care trauma In response to the state crisis in trauma care funding, state Sen. Gl…",
       "file": "other/7.json",
       "characterCount": 1051,
       "byteSize": 1172
@@ -1198,6 +1327,7 @@
       "title": "其他 8",
       "category": "other",
       "sourceName": "Other: 8.txt",
+      "excerpt": "Any external force does not back up Nick but the students of the college are behind him,…",
       "file": "other/8.json",
       "characterCount": 1327,
       "byteSize": 1442
@@ -1207,6 +1337,7 @@
       "title": "其他 9",
       "category": "other",
       "sourceName": "Other: 9.txt",
+      "excerpt": "Bell Mulls Angel Move Jeff Bell, executive producer of The WB's Angel, told SCI FI Wire …",
       "file": "other/9.json",
       "characterCount": 1406,
       "byteSize": 1533
@@ -1216,6 +1347,7 @@
       "title": "其他 10",
       "category": "other",
       "sourceName": "Other: 10.txt",
+      "excerpt": "Mr. Dashwood's disappointment was, at first, severe; but his temper was cheerful and san…",
       "file": "other/10.json",
       "characterCount": 1629,
       "byteSize": 1750
@@ -1225,6 +1357,7 @@
       "title": "其他 11",
       "category": "other",
       "sourceName": "Other: 11.txt",
+      "excerpt": "No sooner was his father's funeral over, than Mrs. John Dashwood, without sending any no…",
       "file": "other/11.json",
       "characterCount": 1318,
       "byteSize": 1437
@@ -1234,6 +1367,7 @@
       "title": "其他 12",
       "category": "other",
       "sourceName": "Other: 12.txt",
+      "excerpt": "Marianne's abilities were, in many respects, quite equal to Elinor's. She was sensible a…",
       "file": "other/12.json",
       "characterCount": 1367,
       "byteSize": 1489
@@ -1243,6 +1377,7 @@
       "title": "其他 13",
       "category": "other",
       "sourceName": "Other: 13.txt",
+      "excerpt": "She was faithful to her word; and when Willoughby called at the cottage, the same day, E…",
       "file": "other/13.json",
       "characterCount": 1562,
       "byteSize": 1687
@@ -1252,6 +1387,7 @@
       "title": "其他 14",
       "category": "other",
       "sourceName": "Other: 14.txt",
+      "excerpt": "He soon discovers that his father is really the head of the Veritas Foundation, an organ…",
       "file": "other/14.json",
       "characterCount": 984,
       "byteSize": 1102
@@ -1261,6 +1397,7 @@
       "title": "其他 15",
       "category": "other",
       "sourceName": "Other: 15.txt",
+      "excerpt": "Indy Girls To Reunite Steven Spielberg told Chicago Sun-Times columnist Cindy Pearlman t…",
       "file": "other/15.json",
       "characterCount": 836,
       "byteSize": 964
@@ -1270,6 +1407,7 @@
       "title": "其他 16",
       "category": "other",
       "sourceName": "Other: 16.txt",
+      "excerpt": "Spielberg Talks Indy IV Details Steven Spielberg, who will direct a fourth installment o…",
       "file": "other/16.json",
       "characterCount": 1318,
       "byteSize": 1448
@@ -1279,6 +1417,7 @@
       "title": "其他 17",
       "category": "other",
       "sourceName": "Other: 17.txt",
+      "excerpt": "There was a steaming mist in all the hollows, and it hat roamed in its forlornness up th…",
       "file": "other/17.json",
       "characterCount": 1632,
       "byteSize": 1750
@@ -1288,6 +1427,7 @@
       "title": "其他 18",
       "category": "other",
       "sourceName": "Other: 18.txt",
+      "excerpt": "It was the best of times, it was the worst of times, it was the age of wisdom, it was th…",
       "file": "other/18.json",
       "characterCount": 1816,
       "byteSize": 1935
@@ -1297,6 +1437,7 @@
       "title": "其他 19",
       "category": "other",
       "sourceName": "Other: 19.txt",
+      "excerpt": "As Elinor and Marianne were walking together the next morning the latter communicated a …",
       "file": "other/19.json",
       "characterCount": 1599,
       "byteSize": 1722
@@ -1306,6 +1447,7 @@
       "title": "其他 20",
       "category": "other",
       "sourceName": "Other: 20.txt",
+      "excerpt": "I was born in the Year 1632, in the City of York, of a good Family, my Father being a Fo…",
       "file": "other/20.json",
       "characterCount": 1484,
       "byteSize": 1603
@@ -1315,6 +1457,7 @@
       "title": "其他 21",
       "category": "other",
       "sourceName": "Other: 21.txt",
+      "excerpt": "After this, he pressed me earnestly, and in the most affectionate manner, not to play th…",
       "file": "other/21.json",
       "characterCount": 1399,
       "byteSize": 1516
@@ -1324,6 +1467,7 @@
       "title": "其他 22",
       "category": "other",
       "sourceName": "Other: 22.txt",
+      "excerpt": "He bid me observe it, and I should always find, that the Calamities of Life were shared …",
       "file": "other/22.json",
       "characterCount": 1496,
       "byteSize": 1613
@@ -1333,6 +1477,7 @@
       "title": "其他 23",
       "category": "other",
       "sourceName": "Other: 23.txt",
+      "excerpt": "I was sincerely affected with this Discourse, as indeed who could be otherwise? and I re…",
       "file": "other/23.json",
       "characterCount": 1225,
       "byteSize": 1342
@@ -1342,6 +1487,7 @@
       "title": "其他 24",
       "category": "other",
       "sourceName": "Other: 24.txt",
+      "excerpt": "It was not till almost a Year after this that I broke loose, frequently expostulating wi…",
       "file": "other/24.json",
       "characterCount": 1692,
       "byteSize": 1809
@@ -1351,6 +1497,7 @@
       "title": "其他 25",
       "category": "other",
       "sourceName": "Other: 25.txt",
+      "excerpt": "Joseph was an elderly, nay, an old man: very old, perhaps, though hale and sinewy. `The …",
       "file": "other/25.json",
       "characterCount": 1273,
       "byteSize": 1394
@@ -1360,6 +1507,7 @@
       "title": "其他 26",
       "category": "other",
       "sourceName": "Other: 26.txt",
+      "excerpt": "The apartment and furniture would have been nothing extraordinary as belonging to a home…",
       "file": "other/26.json",
       "characterCount": 1550,
       "byteSize": 1667
@@ -1369,6 +1517,7 @@
       "title": "其他 27",
       "category": "other",
       "sourceName": "Other: 27.txt",
+      "excerpt": "While enjoying a month of fine weather at the sea coast, I was thrown into the company o…",
       "file": "other/27.json",
       "characterCount": 1163,
       "byteSize": 1281
@@ -1378,6 +1527,7 @@
       "title": "其他 28",
       "category": "other",
       "sourceName": "Other: 28.txt",
+      "excerpt": "We also encountered several other minor, design nits. For example, the image gallery cou…",
       "file": "other/28.json",
       "characterCount": 1200,
       "byteSize": 1332
@@ -1387,6 +1537,7 @@
       "title": "其他 29",
       "category": "other",
       "sourceName": "Other: 29.txt",
+      "excerpt": "Yesterday afternoon set in misty and cold. I had half a mind to spend it by my study fir…",
       "file": "other/29.json",
       "characterCount": 1128,
       "byteSize": 1246
@@ -1396,6 +1547,7 @@
       "title": "其他 30",
       "category": "other",
       "sourceName": "Other: 30.txt",
+      "excerpt": "The old gentleman died: his will was read, and like almost every other will, gave as muc…",
       "file": "other/30.json",
       "characterCount": 1279,
       "byteSize": 1397
@@ -1405,6 +1557,7 @@
       "title": "诗歌 1",
       "category": "poesy",
       "sourceName": "Poesy: 1.txt",
+      "excerpt": "If you can keep your head when all about you Are losing theirs and blaming it on you; If…",
       "file": "poesy/1.json",
       "characterCount": 1461,
       "byteSize": 1608
@@ -1414,6 +1567,7 @@
       "title": "诗歌 2",
       "category": "poesy",
       "sourceName": "Poesy: 2.txt",
+      "excerpt": "THE RIVER OF LIFE The more we live, more brief appear Our life's succeeding stages; A da…",
       "file": "poesy/2.json",
       "characterCount": 816,
       "byteSize": 954
@@ -1423,6 +1577,7 @@
       "title": "诗歌 3",
       "category": "poesy",
       "sourceName": "Poesy: 3.txt",
+      "excerpt": "TO DAFFODILS Fair Daffodils, we weep to see You haste away so soon; As yet the early-ris…",
       "file": "poesy/3.json",
       "characterCount": 485,
       "byteSize": 619
@@ -1432,6 +1587,7 @@
       "title": "诗歌 4",
       "category": "poesy",
       "sourceName": "Poesy: 4.txt",
+      "excerpt": "THE DAFFODILS I wandered lonely as a cloud That floats on height o'er vales and hills, W…",
       "file": "poesy/4.json",
       "characterCount": 817,
       "byteSize": 955
@@ -1441,6 +1597,7 @@
       "title": "诗歌 5",
       "category": "poesy",
       "sourceName": "Poesy: 5.txt",
+      "excerpt": "A RED，RED ROSE O my Luve's like a red, red rose That's newly spring in June: O my Luve's…",
       "file": "poesy/5.json",
       "characterCount": 493,
       "byteSize": 625
@@ -1450,6 +1607,7 @@
       "title": "诗歌 6",
       "category": "poesy",
       "sourceName": "Poesy: 6.txt",
+      "excerpt": "If love have lent you twenty thousand tongues, And every tongue more moving than your ow…",
       "file": "poesy/6.json",
       "characterCount": 1033,
       "byteSize": 1170
@@ -1459,6 +1617,7 @@
       "title": "诗歌 7",
       "category": "poesy",
       "sourceName": "Poesy: 7.txt",
+      "excerpt": "Whose frothy mouth, bepainted all with red, Like milk and blood being mingled both toget…",
       "file": "poesy/7.json",
       "characterCount": 1084,
       "byteSize": 1221
@@ -1468,6 +1627,7 @@
       "title": "诗歌 8",
       "category": "poesy",
       "sourceName": "Poesy: 8.txt",
+      "excerpt": "Here overcome as one full of despair, She veiled her eyelids, who, like sluices, stopped…",
       "file": "poesy/8.json",
       "characterCount": 1070,
       "byteSize": 1207
@@ -1477,6 +1637,7 @@
       "title": "诗歌 9",
       "category": "poesy",
       "sourceName": "Poesy: 9.txt",
+      "excerpt": "By this, far off she hears some huntsman hollow; A nurse's song ne'er pleased her babe s…",
       "file": "poesy/9.json",
       "characterCount": 1057,
       "byteSize": 1194
@@ -1486,6 +1647,7 @@
       "title": "诗歌 10",
       "category": "poesy",
       "sourceName": "Poesy: 10.txt",
+      "excerpt": "I have these dreams I'm walking home home where it used to be everything is as it was fr…",
       "file": "poesy/10.json",
       "characterCount": 1506,
       "byteSize": 1672
@@ -1495,6 +1657,7 @@
       "title": "诗歌 11",
       "category": "poesy",
       "sourceName": "Poesy: 11.txt",
+      "excerpt": "THE MOON Thy beauty haunts me heart and soul, O thou fair moon so close and bright; Thy …",
       "file": "poesy/11.json",
       "characterCount": 449,
       "byteSize": 578
@@ -1504,6 +1667,7 @@
       "title": "诗歌 12",
       "category": "poesy",
       "sourceName": "Poesy: 12.txt",
+      "excerpt": "THE SHEPHERDESS She walks--the lady of my delight-- A shepherdess of sheep. Her flocks a…",
       "file": "poesy/12.json",
       "characterCount": 594,
       "byteSize": 730
@@ -1513,6 +1677,7 @@
       "title": "诗歌 13",
       "category": "poesy",
       "sourceName": "Poesy: 13.txt",
+      "excerpt": "THE SOUL My soul's the sky--my flying soul! The light night flare the thunder roll, The …",
       "file": "poesy/13.json",
       "characterCount": 734,
       "byteSize": 871
@@ -1522,6 +1687,7 @@
       "title": "诗歌 14",
       "category": "poesy",
       "sourceName": "Poesy: 14.txt",
+      "excerpt": "They have watered the street, It shines in the glare of lamps, Cold, white lamps, And li…",
       "file": "poesy/14.json",
       "characterCount": 720,
       "byteSize": 865
@@ -1531,6 +1697,7 @@
       "title": "诗歌 15",
       "category": "poesy",
       "sourceName": "Poesy: 15.txt",
+      "excerpt": "Hog-Butcher for the World, Tool-maker, stacker of Wheat, Player with Railroads and the N…",
       "file": "poesy/15.json",
       "characterCount": 1594,
       "byteSize": 1735
@@ -1540,6 +1707,7 @@
       "title": "诗歌 16",
       "category": "poesy",
       "sourceName": "Poesy: 16.txt",
+      "excerpt": "I Hear an Army I hear an army charging upon the land, And the thunder of horses plunging…",
       "file": "poesy/16.json",
       "characterCount": 632,
       "byteSize": 761
@@ -1549,6 +1717,7 @@
       "title": "诗歌 17",
       "category": "poesy",
       "sourceName": "Poesy: 17.txt",
+      "excerpt": "Scarborough Fair Are you going to Scarborough Fair? Parsley, sage, rosemary and thyme Re…",
       "file": "poesy/17.json",
       "characterCount": 1158,
       "byteSize": 1305
@@ -1558,6 +1727,7 @@
       "title": "诗歌 18",
       "category": "poesy",
       "sourceName": "Poesy: 18.txt",
+      "excerpt": "Your soul reached out to me one day and disturbed me in my slumber. Over mountains, thro…",
       "file": "poesy/18.json",
       "characterCount": 816,
       "byteSize": 946
@@ -1567,6 +1737,7 @@
       "title": "诗歌 19",
       "category": "poesy",
       "sourceName": "Poesy: 19.txt",
+      "excerpt": "Meditation I saw the stars against the summer night Still trembling as they trembled whe…",
       "file": "poesy/19.json",
       "characterCount": 548,
       "byteSize": 686
@@ -1576,6 +1747,7 @@
       "title": "诗歌 20",
       "category": "poesy",
       "sourceName": "Poesy: 20.txt",
+      "excerpt": "Sometime he scuds far off, and there he stares; Anon he starts at stirring of a feather;…",
       "file": "poesy/20.json",
       "characterCount": 1075,
       "byteSize": 1215
@@ -1585,6 +1757,7 @@
       "title": "诗歌 21",
       "category": "poesy",
       "sourceName": "Poesy: 21.txt",
+      "excerpt": "The reaper Behold her, single in the field, Yon solitary Highland Lass! Reaping and sing…",
       "file": "poesy/21.json",
       "characterCount": 1019,
       "byteSize": 1168
@@ -1594,6 +1767,7 @@
       "title": "诗歌 22",
       "category": "poesy",
       "sourceName": "Poesy: 22.txt",
+      "excerpt": "The burial of sir John Moore at Corunna Not a drum was heard, not a funeral note, As his…",
       "file": "poesy/22.json",
       "characterCount": 1387,
       "byteSize": 1537
@@ -1603,6 +1777,7 @@
       "title": "诗歌 23",
       "category": "poesy",
       "sourceName": "Poesy: 23.txt",
+      "excerpt": "The fountain Into the sunshine, Full of the light, Leaping and flashing From morn till n…",
       "file": "poesy/23.json",
       "characterCount": 627,
       "byteSize": 776
@@ -1612,6 +1787,7 @@
       "title": "诗歌 24",
       "category": "poesy",
       "sourceName": "Poesy: 24.txt",
+      "excerpt": "Never A Day Don't go standin' there Blockin' my view And spoilin' my night You know why …",
       "file": "poesy/24.json",
       "characterCount": 1215,
       "byteSize": 1386
@@ -1621,6 +1797,7 @@
       "title": "诗歌 25",
       "category": "poesy",
       "sourceName": "Poesy: 25.txt",
+      "excerpt": "Waiting In Vain From the very first time I rest my eyes on you, boy, My heart said follo…",
       "file": "poesy/25.json",
       "characterCount": 1737,
       "byteSize": 1893
@@ -1630,6 +1807,7 @@
       "title": "诗歌 26",
       "category": "poesy",
       "sourceName": "Poesy: 26.txt",
+      "excerpt": "The Distance The sky has lost it's color The sun has turned to grey At least that's how …",
       "file": "poesy/26.json",
       "characterCount": 716,
       "byteSize": 857
@@ -1639,6 +1817,7 @@
       "title": "诗歌 27",
       "category": "poesy",
       "sourceName": "Poesy: 27.txt",
+      "excerpt": "He sees her coming, and begins to glow, Even as a dying coal revives with wind, And with…",
       "file": "poesy/27.json",
       "characterCount": 1028,
       "byteSize": 1168
@@ -1648,6 +1827,7 @@
       "title": "诗歌 28",
       "category": "poesy",
       "sourceName": "Poesy: 28.txt",
+      "excerpt": "When You Know When you know that you know who you love, you can't deny it. Or go back, o…",
       "file": "poesy/28.json",
       "characterCount": 887,
       "byteSize": 1020
@@ -1657,6 +1837,7 @@
       "title": "诗歌 29",
       "category": "poesy",
       "sourceName": "Poesy: 29.txt",
+      "excerpt": "Northern Sky I never felt magic crazy as this I never saw moons knew the meaning of the …",
       "file": "poesy/29.json",
       "characterCount": 826,
       "byteSize": 967
@@ -1666,6 +1847,7 @@
       "title": "诗歌 30",
       "category": "poesy",
       "sourceName": "Poesy: 30.txt",
+      "excerpt": "Till breathless he disjoined, and backward drew The heavenly moisture, that sweet coral …",
       "file": "poesy/30.json",
       "characterCount": 1119,
       "byteSize": 1259
@@ -1675,6 +1857,7 @@
       "title": "程序 DELPHI_ARRAY",
       "category": "program",
       "sourceName": "Program: DELPHI_ARRAY.txt",
+      "excerpt": "unit pcArray; interface uses pcCBase; type TpcArraySortCompare = function(Item1, Item2: …",
       "file": "program/DELPHI_ARRAY.json",
       "characterCount": 9918,
       "byteSize": 10441
@@ -1684,6 +1867,7 @@
       "title": "程序 DELPHI_ENCODE",
       "category": "program",
       "sourceName": "Program: DELPHI_ENCODE.txt",
+      "excerpt": "unit pcEncode; {Declare the compiler defines} {------Changeable compiler switches-------…",
       "file": "program/DELPHI_ENCODE.json",
       "characterCount": 12766,
       "byteSize": 13360
@@ -1693,6 +1877,7 @@
       "title": "程序 DELPHI_LIST",
       "category": "program",
       "sourceName": "Program: DELPHI_LIST.txt",
+      "excerpt": "unit pcList; interface uses ElContBase; type TpcListSortCompare = function(Item1, Item2:…",
       "file": "program/DELPHI_LIST.json",
       "characterCount": 9867,
       "byteSize": 10389
@@ -1702,6 +1887,7 @@
       "title": "程序 DELPHI_STACK",
       "category": "program",
       "sourceName": "Program: DELPHI_STACK.txt",
+      "excerpt": "unit pcStack; interface uses Classes, SysUtils; type EpcStackError = class(exception) en…",
       "file": "program/DELPHI_STACK.json",
       "characterCount": 2036,
       "byteSize": 2288
@@ -1711,6 +1897,7 @@
       "title": "程序 DELPHI_TREE",
       "category": "program",
       "sourceName": "Program: DELPHI_TREE.txt",
+      "excerpt": "unit pcTree; interface uses classes, pcList; type TpcTree = class; TpcTreeItem = ^RpcTre…",
       "file": "program/DELPHI_TREE.json",
       "characterCount": 8558,
       "byteSize": 9037
@@ -1720,6 +1907,7 @@
       "title": "程序 VB_COMMDLG",
       "category": "program",
       "sourceName": "Program: VB_COMMDLG.txt",
+      "excerpt": "Public Sub Action(mAction As Integer) Dim OFN As OPENFILENAME Dim CC As CHOOSECOLOR Dim …",
       "file": "program/VB_COMMDLG.json",
       "characterCount": 10314,
       "byteSize": 10749
@@ -1729,6 +1917,7 @@
       "title": "程序 VB_DDrawBitmap",
       "category": "program",
       "sourceName": "Program: VB_DDrawBitmap.txt",
+      "excerpt": "Option Explicit Private DirectX As DirectX7 Private DirectDraw As DirectDraw7 Private la…",
       "file": "program/VB_DDrawBitmap.json",
       "characterCount": 5918,
       "byteSize": 6318
@@ -1738,6 +1927,7 @@
       "title": "程序 VB_EncodeHTML",
       "category": "program",
       "sourceName": "Program: VB_EncodeHTML.txt",
+      "excerpt": "Option Explicit Private Sub Command1_Click() On Error GoTo fileError Dim a As Word.Appli…",
       "file": "program/VB_EncodeHTML.json",
       "characterCount": 4639,
       "byteSize": 5036
@@ -1747,6 +1937,7 @@
       "title": "程序 VB_OLEDROP",
       "category": "program",
       "sourceName": "Program: VB_OLEDROP.txt",
+      "excerpt": "Const SWP_NOSIZE = &H1 Const SWP_NOMOVE = &H2 Const HWND_TOPMOST = -1 Const SWP_SHOWWIND…",
       "file": "program/VB_OLEDROP.json",
       "characterCount": 5105,
       "byteSize": 5402
@@ -1756,6 +1947,7 @@
       "title": "程序 VB_REGISTER",
       "category": "program",
       "sourceName": "Program: VB_REGISTER.txt",
+      "excerpt": "Attribute VB_Name = \"Registry\" ' ----------------- ' ADVAPI32 ' ----------------- ' func…",
       "file": "program/VB_REGISTER.json",
       "characterCount": 4178,
       "byteSize": 4475
@@ -1765,6 +1957,7 @@
       "title": "程序 VC_BmpButton",
       "category": "program",
       "sourceName": "Program: VC_BmpButton.txt",
+      "excerpt": "// BitmapButtonDlg.cpp : implementation file // #include \"stdafx.h\" #include \"BitmapButt…",
       "file": "program/VC_BmpButton.json",
       "characterCount": 7465,
       "byteSize": 7897
@@ -1774,6 +1967,7 @@
       "title": "程序 VC_DDRAW",
       "category": "program",
       "sourceName": "Program: VC_DDRAW.txt",
+      "excerpt": "// ddHello.cpp : Defines the entry point for the application. // #include \"stdafx.h\" #in…",
       "file": "program/VC_DDRAW.json",
       "characterCount": 7628,
       "byteSize": 8062
@@ -1783,6 +1977,7 @@
       "title": "程序 VC_IMAGEVIEW",
       "category": "program",
       "sourceName": "Program: VC_IMAGEVIEW.txt",
+      "excerpt": "// ImageViewView.cpp : implementation of the CImageViewView class // #include \"stdafx.h\"…",
       "file": "program/VC_IMAGEVIEW.json",
       "characterCount": 4212,
       "byteSize": 4533
@@ -1792,6 +1987,7 @@
       "title": "程序 VC_PEFORMAT",
       "category": "program",
       "sourceName": "Program: VC_PEFORMAT.txt",
+      "excerpt": "// Write PE format files #include <windows.h> #include <stdio.h> #include <io.h> #includ…",
       "file": "program/VC_PEFORMAT.json",
       "characterCount": 6780,
       "byteSize": 7307
@@ -1801,6 +1997,7 @@
       "title": "程序 VC_SOCKT",
       "category": "program",
       "sourceName": "Program: VC_SOCKT.txt",
+      "excerpt": "// SocktClientDlg.cpp : implementation file // #include \"stdafx.h\" #include \"SocktClient…",
       "file": "program/VC_SOCKT.json",
       "characterCount": 3614,
       "byteSize": 3924
