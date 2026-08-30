@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import TypingPracticePage from '@/features/typing/pages/TypingPracticePage.vue'
 import WordPracticePage from '@/features/typing/pages/WordPracticePage.vue'
 import ArticlePracticePage from '@/features/typing/pages/ArticlePracticePage.vue'
+import SyllablePracticePage from '@/features/typing/pages/SyllablePracticePage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,6 +36,11 @@ const router = createRouter({
       path: '/practice/english/articles/:articleId?',
       name: 'english-article-practice',
       component: ArticlePracticePage,
+    },
+    {
+      path: '/practice/chinese/syllables/:lessonId?',
+      name: 'chinese-syllable-practice',
+      component: SyllablePracticePage,
     },
   ],
 })

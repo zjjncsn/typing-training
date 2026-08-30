@@ -14,10 +14,15 @@ import {
 
 export interface WordPracticeSession {
   words: string[]
+  separator: string
   wordIndex: number
   completedCharacterCount: number
   totalCharacterCount: number
   typing: TypingSession
+}
+
+export interface WordPracticeOptions {
+  separator?: string
 }
 
 const wordOptions: Partial<TypingEngineOptions> = {
@@ -29,29 +34,33 @@ function characterCount(value: string): number {
   return Array.from(value).length
 }
 
-function wordContent(words: readonly string[], wordIndex: number): string {
-  return `${words[wordIndex]!}${wordIndex < words.length - 1 ? ' ' : ''}`
+function wordContent(words: readonly string[], wordIndex: number, separator: string): string {
+  return `${words[wordIndex]!}${wordIndex < words.length - 1 ? separator : ''}`
 }
 
 export function createWordPracticeSession(
   words: readonly string[],
   initialWordIndex = 0,
+  options: WordPracticeOptions = {},
 ): WordPracticeSession {
   const safeWords = words.filter((word) => word.length > 0)
   if (safeWords.length === 0) throw new Error('Word practice requires at least one word')
 
   const normalizedIndex = Number.isFinite(initialWordIndex) ? Math.trunc(initialWordIndex) : 0
   const wordIndex = Math.min(Math.max(0, normalizedIndex), safeWords.length - 1)
+  const separator = options.separator ?? ' '
 
   return {
     words: [...safeWords],
+    separator,
     wordIndex,
     completedCharacterCount: safeWords
       .slice(0, wordIndex)
-      .reduce((sum, word) => sum + characterCount(word) + 1, 0),
+      .reduce((sum, word) => sum + characterCount(word) + characterCount(separator), 0),
     totalCharacterCount:
-      safeWords.reduce((sum, word) => sum + characterCount(word), 0) + safeWords.length - 1,
-    typing: createTypingSession(wordContent(safeWords, wordIndex), wordOptions),
+      safeWords.reduce((sum, word) => sum + characterCount(word), 0) +
+      Math.max(0, safeWords.length - 1) * characterCount(separator),
+    typing: createTypingSession(wordContent(safeWords, wordIndex, separator), wordOptions),
   }
 }
 
@@ -75,7 +84,7 @@ export function typeWordPracticeCharacter(
       session.completedCharacterCount + characterCount(session.typing.content),
     typing: {
       ...typing,
-      content: wordContent(session.words, nextWordIndex),
+      content: wordContent(session.words, nextWordIndex, session.separator),
       status: 'running',
       position: 0,
       activeStartedAt: timestamp,
@@ -110,7 +119,7 @@ export function restartWordPractice(session: WordPracticeSession): WordPracticeS
     completedCharacterCount: 0,
     typing: restartTypingSession({
       ...session.typing,
-      content: wordContent(session.words, 0),
+      content: wordContent(session.words, 0, session.separator),
     }),
   }
 }

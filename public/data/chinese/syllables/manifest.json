@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "defaultLessonId": "liaison-1",
+  "categories": [
+    {
+      "id": "liaison",
+      "name": "连音词和异读词"
+    },
+    {
+      "id": "regional",
+      "name": "模糊音和地区方言"
+    },
+    {
+      "id": "hsk",
+      "name": "HSK 汉语水平考试"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "liaison-1",
+      "title": "连音词练习",
+      "category": "liaison",
+      "sourceName": "连音词和异读词: 1.txt",
+      "file": "liaison/1.json",
+      "entryCount": 74,
+      "characterCount": 450,
+      "byteSize": 5187
+    },
+    {
+      "id": "liaison-2",
+      "title": "普通话异读词",
+      "category": "liaison",
+      "sourceName": "连音词和异读词: 2.TXT",
+      "file": "liaison/2.json",
+      "entryCount": 367,
+      "characterCount": 2371,
+      "byteSize": 25709
+    },
+    {
+      "id": "regional-3",
+      "title": "模糊音：n，l",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 3.TXT",
+      "file": "regional/3.json",
+      "entryCount": 282,
+      "characterCount": 1780,
+      "byteSize": 19494
+    },
+    {
+      "id": "regional-4",
+      "title": "模糊音：zh，ch，sh和z，c，s",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 4.TXT",
+      "file": "regional/4.json",
+      "entryCount": 92,
+      "characterCount": 580,
+      "byteSize": 6475
+    },
+    {
+      "id": "regional-5",
+      "title": "模糊音：zh，ch，sh和j，q，x",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 5.TXT",
+      "file": "regional/5.json",
+      "entryCount": 66,
+      "characterCount": 389,
+      "byteSize": 4639
+    },
+    {
+      "id": "regional-6",
+      "title": "模糊音：f，h",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 6.TXT",
+      "file": "regional/6.json",
+      "entryCount": 36,
+      "characterCount": 228,
+      "byteSize": 2619
+    },
+    {
+      "id": "regional-7",
+      "title": "模糊音：f，sh",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 7.TXT",
+      "file": "regional/7.json",
+      "entryCount": 26,
+      "characterCount": 167,
+      "byteSize": 1937
+    },
+    {
+      "id": "regional-8",
+      "title": "模糊音：i，u",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 8.TXT",
+      "file": "regional/8.json",
+      "entryCount": 24,
+      "characterCount": 107,
+      "byteSize": 1701
+    },
+    {
+      "id": "regional-9",
+      "title": "音节练习：o，e，uo",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 9.TXT",
+      "file": "regional/9.json",
+      "entryCount": 24,
+      "characterCount": 111,
+      "byteSize": 1715
+    },
+    {
+      "id": "regional-10",
+      "title": "模糊音：uan，an",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 10.TXT",
+      "file": "regional/10.json",
+      "entryCount": 29,
+      "characterCount": 197,
+      "byteSize": 2170
+    },
+    {
+      "id": "regional-11",
+      "title": "模糊音：ian，in",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 11.TXT",
+      "file": "regional/11.json",
+      "entryCount": 30,
+      "characterCount": 213,
+      "byteSize": 2258
+    },
+    {
+      "id": "regional-12",
+      "title": "模糊音： l，r",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 12.TXT",
+      "file": "regional/12.json",
+      "entryCount": 39,
+      "characterCount": 219,
+      "byteSize": 2771
+    },
+    {
+      "id": "regional-13",
+      "title": "模糊音：an，ang",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 13.TXT",
+      "file": "regional/13.json",
+      "entryCount": 34,
+      "characterCount": 246,
+      "byteSize": 2546
+    },
+    {
+      "id": "regional-14",
+      "title": "模糊音：en，eng",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 14.TXT",
+      "file": "regional/14.json",
+      "entryCount": 46,
+      "characterCount": 352,
+      "byteSize": 3430
+    },
+    {
+      "id": "regional-15",
+      "title": "模糊音：in，ing",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 15.TXT",
+      "file": "regional/15.json",
+      "entryCount": 42,
+      "characterCount": 289,
+      "byteSize": 3082
+    },
+    {
+      "id": "regional-16",
+      "title": "模糊音：ian，iang",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 16.TXT",
+      "file": "regional/16.json",
+      "entryCount": 24,
+      "characterCount": 210,
+      "byteSize": 1918
+    },
+    {
+      "id": "regional-17",
+      "title": "模糊音：uan，uang",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 17.TXT",
+      "file": "regional/17.json",
+      "entryCount": 24,
+      "characterCount": 210,
+      "byteSize": 1915
+    },
+    {
+      "id": "regional-18",
+      "title": "模糊音：i，ü",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 18.TXT",
+      "file": "regional/18.json",
+      "entryCount": 44,
+      "characterCount": 208,
+      "byteSize": 3028
+    },
+    {
+      "id": "regional-19",
+      "title": "模糊音：ai，ei",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 19.TXT",
+      "file": "regional/19.json",
+      "entryCount": 25,
+      "characterCount": 151,
+      "byteSize": 1849
+    },
+    {
+      "id": "regional-20",
+      "title": "模糊音：ao，ou",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 20.TXT",
+      "file": "regional/20.json",
+      "entryCount": 24,
+      "characterCount": 157,
+      "byteSize": 1809
+    },
+    {
+      "id": "regional-21",
+      "title": "模糊音：ie，üe",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 21.TXT",
+      "file": "regional/21.json",
+      "entryCount": 24,
+      "characterCount": 143,
+      "byteSize": 1781
+    },
+    {
+      "id": "regional-22",
+      "title": "模糊音：ua，uo，üe，o",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 22.TXT",
+      "file": "regional/22.json",
+      "entryCount": 24,
+      "characterCount": 143,
+      "byteSize": 1788
+    },
+    {
+      "id": "regional-23",
+      "title": "模糊音：iao，iu",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 23.TXT",
+      "file": "regional/23.json",
+      "entryCount": 24,
+      "characterCount": 162,
+      "byteSize": 1820
+    },
+    {
+      "id": "regional-24",
+      "title": "模糊音：uai，ui",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 24.TXT",
+      "file": "regional/24.json",
+      "entryCount": 24,
+      "characterCount": 166,
+      "byteSize": 1828
+    },
+    {
+      "id": "regional-25",
+      "title": "模糊音：双音节",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 25.TXT",
+      "file": "regional/25.json",
+      "entryCount": 20,
+      "characterCount": 99,
+      "byteSize": 1471
+    },
+    {
+      "id": "regional-26",
+      "title": "模糊音：轻声",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 26.TXT",
+      "file": "regional/26.json",
+      "entryCount": 35,
+      "characterCount": 205,
+      "byteSize": 2485
+    },
+    {
+      "id": "regional-27",
+      "title": "模糊音：儿化韵",
+      "category": "regional",
+      "sourceName": "模糊音和地区方言: 27.TXT",
+      "file": "regional/27.json",
+      "entryCount": 20,
+      "characterCount": 178,
+      "byteSize": 1659
+    },
+    {
+      "id": "hsk-1",
+      "title": "HSK一级字",
+      "category": "hsk",
+      "sourceName": "HSK_汉语水平考试: HSK_W1.txt",
+      "file": "hsk/HSK_W1.json",
+      "entryCount": 788,
+      "characterCount": 2439,
+      "byteSize": 45984
+    },
+    {
+      "id": "hsk-2",
+      "title": "HSK二级字",
+      "category": "hsk",
+      "sourceName": "HSK_汉语水平考试: HSK_W2.txt",
+      "file": "hsk/HSK_W2.json",
+      "entryCount": 684,
+      "characterCount": 2147,
+      "byteSize": 39995
+    },
+    {
+      "id": "hsk-3",
+      "title": "HSK三级字",
+      "category": "hsk",
+      "sourceName": "HSK_汉语水平考试: HSK_W3.txt",
+      "file": "hsk/HSK_W3.json",
+      "entryCount": 537,
+      "characterCount": 1700,
+      "byteSize": 31458
+    },
+    {
+      "id": "hsk-4",
+      "title": "HSK四级字",
+      "category": "hsk",
+      "sourceName": "HSK_汉语水平考试: HSK_W4.txt",
+      "file": "hsk/HSK_W4.json",
+      "entryCount": 436,
+      "characterCount": 1386,
+      "byteSize": 25579
+    }
+  ]
+}

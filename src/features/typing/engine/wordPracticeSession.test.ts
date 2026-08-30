@@ -75,3 +75,15 @@ test('can resume at a saved word while preserving whole-dictionary progress', ()
   assert.equal(session.completedCharacterCount, 4)
   assert.equal(getWordPracticeStats(session, 0).progress, (4 / 13) * 100)
 })
+
+test('can advance between sequential items without requiring a separator', () => {
+  let session = createWordPracticeSession(['bian', 'bingan'], 0, { separator: '' })
+
+  for (const character of 'bian') session = typeWordPracticeCharacter(session, character, 100)
+
+  assert.equal(session.wordIndex, 1)
+  assert.equal(session.typing.position, 0)
+  assert.equal(getWordPracticeExpectedCharacter(session), 'b')
+  assert.equal(session.completedCharacterCount, 4)
+  assert.equal(session.totalCharacterCount, 10)
+})

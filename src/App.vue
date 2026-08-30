@@ -7,7 +7,7 @@ import PanelMenu from 'primevue/panelmenu'
 const route = useRoute()
 const router = useRouter()
 const menuCollapsed = ref(true)
-const expandedMenuKeys = ref<Record<string, boolean>>({ english: true })
+const expandedMenuKeys = ref<Record<string, boolean>>({ english: true, chinese: true })
 
 const menuItems = computed(() => [
   {
@@ -56,6 +56,33 @@ const menuItems = computed(() => [
         icon: 'pi pi-file-edit',
         class: route.name === 'english-article-practice' ? 'active-menu-item' : undefined,
         command: () => router.push({ name: 'english-article-practice' }),
+      },
+    ],
+  },
+  {
+    key: 'chinese',
+    label: '拼音打字',
+    icon: 'pi pi-language',
+    items: [
+      {
+        label: '音节练习',
+        icon: 'pi pi-volume-up',
+        class: route.name === 'chinese-syllable-practice' ? 'active-menu-item' : undefined,
+        command: () =>
+          router.push({
+            name: 'chinese-syllable-practice',
+            params: { lessonId: 'liaison-1' },
+          }),
+      },
+      {
+        label: '词汇练习',
+        icon: 'pi pi-list-check',
+        disabled: true,
+      },
+      {
+        label: '文章练习',
+        icon: 'pi pi-file-edit',
+        disabled: true,
       },
     ],
   },

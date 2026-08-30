@@ -9,6 +9,7 @@ import {
   restartWordPractice,
   resumeWordPractice,
   typeWordPracticeCharacter,
+  type WordPracticeOptions,
   type WordPracticeSession,
 } from '../engine/wordPracticeSession'
 import type { TypingStats } from '../engine/typingEngine'
@@ -28,6 +29,7 @@ const emptyStats: TypingStats = {
 export function useWordPracticeEngine(
   words: MaybeRefOrGetter<readonly string[]>,
   initialWordIndex: MaybeRefOrGetter<number> = 0,
+  options: WordPracticeOptions = {},
 ) {
   const practice = ref<WordPracticeSession | null>(null)
   const clock = ref(Date.now())
@@ -80,7 +82,9 @@ export function useWordPracticeEngine(
     [() => toValue(words), () => toValue(initialWordIndex)],
     ([nextWords, nextInitialWordIndex]) => {
       practice.value =
-        nextWords.length > 0 ? createWordPracticeSession(nextWords, nextInitialWordIndex) : null
+        nextWords.length > 0
+          ? createWordPracticeSession(nextWords, nextInitialWordIndex, options)
+          : null
       clock.value = Date.now()
     },
     { immediate: true },
