@@ -6,12 +6,31 @@ import {
   type ArticleProgressEntry,
   type ArticleProgressState,
 } from '../articles/articleProgress'
-import type { ArticleCategory, ArticleCategorySummary, ArticleSummary } from '../articles/types'
+import type { ArticleCategory } from '../articles/types'
+import type { ChineseArticleCategory } from '../chineseArticles/types'
+
+type DrawerArticleCategoryId = ArticleCategory | ChineseArticleCategory
+
+interface DrawerArticleCategory {
+  id: DrawerArticleCategoryId
+  name: string
+}
+
+interface DrawerArticleSummary {
+  id: string
+  title: string
+  category: DrawerArticleCategoryId
+  sourceName: string
+  excerpt: string
+  file: string
+  characterCount: number
+  byteSize: number
+}
 
 const props = defineProps<{
   open: boolean
-  categories: ArticleCategorySummary[]
-  articles: ArticleSummary[]
+  categories: DrawerArticleCategory[]
+  articles: DrawerArticleSummary[]
   progress: ArticleProgressState
   activeArticleId: string | null
   loadingArticleId?: string | null
@@ -19,11 +38,11 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   'update:open': [open: boolean]
-  select: [article: ArticleSummary]
+  select: [articleId: string]
 }>()
 
 const searchQuery = ref('')
-const expandedCategories = ref<ArticleCategory[]>([])
+const expandedCategories = ref<DrawerArticleCategoryId[]>([])
 const normalizedQuery = computed(() => searchQuery.value.trim().toLocaleLowerCase('zh-CN'))
 const searching = computed(() => normalizedQuery.value.length > 0)
 
@@ -55,18 +74,18 @@ function close() {
   emit('update:open', false)
 }
 
-function selectArticle(article: ArticleSummary) {
-  emit('select', article)
+function selectArticle(article: DrawerArticleSummary) {
+  emit('select', article.id)
   close()
 }
 
-function toggleCategory(category: ArticleCategory) {
+function toggleCategory(category: DrawerArticleCategoryId) {
   expandedCategories.value = expandedCategories.value.includes(category)
     ? expandedCategories.value.filter((item) => item !== category)
     : [...expandedCategories.value, category]
 }
 
-function isExpanded(category: ArticleCategory): boolean {
+function isExpanded(category: DrawerArticleCategoryId): boolean {
   return searching.value || expandedCategories.value.includes(category)
 }
 
@@ -78,11 +97,11 @@ function progressEntry(articleId: string): ArticleProgressEntry | undefined {
   return props.progress.articles[articleId]
 }
 
-function progressPercent(article: ArticleSummary): number {
+function progressPercent(article: DrawerArticleSummary): number {
   return articleProgressPercentage(progressEntry(article.id), article.characterCount)
 }
 
-function progressLabel(article: ArticleSummary): string {
+function progressLabel(article: DrawerArticleSummary): string {
   const entry = progressEntry(article.id)
   if (entry?.completed) return '已完成'
   if (entry && entry.position > 0)
@@ -90,7 +109,7 @@ function progressLabel(article: ArticleSummary): string {
   return '未开始'
 }
 
-function progressClass(article: ArticleSummary): string {
+function progressClass(article: DrawerArticleSummary): string {
   const entry = progressEntry(article.id)
   if (entry?.completed) return 'completed'
   if (entry && entry.position > 0) return 'in-progress'

@@ -14,6 +14,8 @@ const props = defineProps<{
   content: string
   position: number
   hasCurrentError: boolean
+  language?: 'english' | 'chinese'
+  compositionText?: string
   scale?: 'small' | 'medium' | 'large'
   attemptResults?: Readonly<Record<number, ArticleAttempt>>
 }>()
@@ -33,6 +35,7 @@ const currentLine = computed(() => lines.value[currentLineIndex.value])
 const previewLines = computed(() =>
   lines.value.slice(currentLineIndex.value + 1, currentLineIndex.value + 5),
 )
+const measureCharacter = computed(() => (props.language === 'chinese' ? '汉' : 'M'))
 
 const currentCharacters = computed(() => {
   const line = currentLine.value
@@ -86,10 +89,13 @@ onBeforeUnmount(() => resizeObserver?.disconnect())
   <div
     ref="root"
     class="article-typing-text"
+    :class="{ chinese: language === 'chinese' }"
     :data-scale="scale ?? 'medium'"
     aria-label="文章训练文本"
   >
-    <span ref="characterMeasure" class="character-measure" aria-hidden="true">M</span>
+    <span ref="characterMeasure" class="character-measure" aria-hidden="true">{{
+      measureCharacter
+    }}</span>
 
     <TypingInputPanel v-if="currentLine" emphasized>
       <template #prompt>
@@ -119,9 +125,19 @@ onBeforeUnmount(() => resizeObserver?.disconnect())
             incorrect: !echoCharacter(entry.character, entry.index).correct,
             'caret-before': entry.index === position,
           }"
-          >{{ echoCharacter(entry.character, entry.index).received }}</span
         >
-        <span v-if="newlineIsCurrent" class="echo-newline-caret" aria-hidden="true" />
+          <span v-if="entry.index === position" class="ime-anchor">
+            <slot name="ime-anchor" />
+            <span v-if="compositionText" class="composition-preview">{{ compositionText }}</span>
+          </span>
+          <span class="echo-glyph">{{ echoCharacter(entry.character, entry.index).received }}</span>
+        </span>
+        <span v-if="newlineIsCurrent" class="echo-newline-position" aria-hidden="true">
+          <span class="ime-anchor">
+            <slot name="ime-anchor" />
+            <span v-if="compositionText" class="composition-preview">{{ compositionText }}</span>
+          </span>
+        </span>
       </template>
     </TypingInputPanel>
 
@@ -131,7 +147,15 @@ onBeforeUnmount(() => resizeObserver?.disconnect())
       class="preview-line-card"
       aria-hidden="true"
     >
-      {{ displayPreview(line.text) }}
+      <template v-if="line.text">
+        <span
+          v-for="(character, index) in Array.from(line.text)"
+          :key="index"
+          class="preview-character"
+          >{{ character }}</span
+        >
+      </template>
+      <span v-else>{{ displayPreview(line.text) }}</span>
     </section>
   </div>
 </template>
@@ -139,6 +163,7 @@ onBeforeUnmount(() => resizeObserver?.disconnect())
 <style scoped>
 .article-typing-text {
   --article-font-size: 1.24rem;
+  --article-character-width: 1ch;
 
   position: relative;
   display: grid;
@@ -151,12 +176,31 @@ onBeforeUnmount(() => resizeObserver?.disconnect())
   -webkit-user-select: none;
 }
 
+.article-typing-text.chinese {
+  --article-font-size: 1.42rem;
+  --article-character-width: 1em;
+
+  font-family: 'Microsoft YaHei', sans-serif;
+}
+
 .article-typing-text[data-scale='small'] {
   --article-font-size: 1.02rem;
 }
 
 .article-typing-text[data-scale='large'] {
   --article-font-size: 1.5rem;
+}
+
+.article-typing-text.chinese[data-scale='small'] {
+  --article-font-size: 1.18rem;
+}
+
+.article-typing-text.chinese[data-scale='large'] {
+  --article-font-size: 1.68rem;
+}
+
+.article-typing-text.chinese :deep(.typing-prompt-character) {
+  width: var(--article-character-width);
 }
 
 .character-measure {
@@ -184,13 +228,48 @@ onBeforeUnmount(() => resizeObserver?.disconnect())
   align-items: center;
 }
 
+.preview-character {
+  display: inline-flex;
+  width: var(--article-character-width);
+  align-items: center;
+  flex: 0 0 var(--article-character-width);
+  justify-content: center;
+  white-space: pre;
+}
+
 .echo-character {
   position: relative;
-  display: inline-block;
-  flex: 0 0 auto;
-  width: 1ch;
+  display: inline-flex;
+  width: var(--article-character-width);
+  align-items: center;
+  flex: 0 0 var(--article-character-width);
+  justify-content: center;
   white-space: pre;
   text-align: center;
+}
+
+.ime-anchor {
+  position: absolute;
+  inset: 0;
+}
+
+.composition-preview {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 0;
+  min-width: max-content;
+  padding: 0 0.16em;
+  color: #08796c;
+  font-family: 'Cascadia Mono', Consolas, monospace;
+  font-size: 0.76em;
+  line-height: 1.45;
+  white-space: nowrap;
+  pointer-events: none;
+  background: #e7f7f4;
+  border-bottom: 2px solid #168e80;
+  border-radius: 4px 4px 1px 1px;
+  transform: translateY(-50%);
 }
 
 .newline-character {
@@ -203,7 +282,7 @@ onBeforeUnmount(() => resizeObserver?.disconnect())
 }
 
 .echo-character.caret-before::before,
-.echo-newline-caret {
+.echo-newline-position::before {
   width: 2px;
   background: #0e7267;
   animation: caret-blink 1.1s step-end infinite;
@@ -217,9 +296,20 @@ onBeforeUnmount(() => resizeObserver?.disconnect())
   content: '';
 }
 
-.echo-newline-caret {
-  align-self: center;
-  height: 1.2em;
+.echo-newline-position {
+  position: relative;
+  display: inline-flex;
+  width: var(--article-character-width);
+  align-self: stretch;
+  flex: 0 0 var(--article-character-width);
+}
+
+.echo-newline-position::before {
+  position: absolute;
+  top: 0.18em;
+  bottom: 0.18em;
+  left: -1px;
+  content: '';
 }
 
 @keyframes caret-blink {
@@ -230,7 +320,7 @@ onBeforeUnmount(() => resizeObserver?.disconnect())
 
 @media (prefers-reduced-motion: reduce) {
   .echo-character.caret-before::before,
-  .echo-newline-caret {
+  .echo-newline-position::before {
     animation: none;
   }
 }

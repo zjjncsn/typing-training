@@ -1,0 +1,1832 @@
+{
+  "schemaVersion": 1,
+  "defaultArticleId": "adage-1",
+  "categories": [
+    {
+      "id": "adage",
+      "name": "格言"
+    },
+    {
+      "id": "essay",
+      "name": "散文"
+    },
+    {
+      "id": "poetry",
+      "name": "诗歌"
+    },
+    {
+      "id": "novel",
+      "name": "小说"
+    },
+    {
+      "id": "joke",
+      "name": "笑话"
+    },
+    {
+      "id": "other",
+      "name": "杂项"
+    }
+  ],
+  "articles": [
+    {
+      "id": "adage-1",
+      "title": "格言 1",
+      "category": "adage",
+      "sourceName": "格言: 1.txt",
+      "excerpt": "少而好学，如日出之阳；壮而好学，如日中之光；老而好学，如炳烛之明。 骐骥一跃，不能十步；驽马十驾，功在不舍； 锲而舍之，朽木不折…",
+      "file": "adage/1.json",
+      "characterCount": 473,
+      "byteSize": 1522
+    },
+    {
+      "id": "adage-2",
+      "title": "格言 2",
+      "category": "adage",
+      "sourceName": "格言: 2.txt",
+      "excerpt": "有谦和、愉快、诚恳的态度，而同时又加上忍耐精神的人，是非常幸运的。 思而后行，以免做出蠢事。因为草率的动作和言语，均是卑劣的特征…",
+      "file": "adage/2.json",
+      "characterCount": 302,
+      "byteSize": 1011
+    },
+    {
+      "id": "adage-3",
+      "title": "格言 3",
+      "category": "adage",
+      "sourceName": "格言: 3.txt",
+      "excerpt": "要使人成为真正有教养的人，必须具备三个品质：渊博的知识、逻辑的思维和高尚的情操。 知识不多，就是愚昧；没有逻辑思维，就是粗鲁或蠢…",
+      "file": "adage/3.json",
+      "characterCount": 380,
+      "byteSize": 1242
+    },
+    {
+      "id": "adage-4",
+      "title": "格言 4",
+      "category": "adage",
+      "sourceName": "格言: 4.txt",
+      "excerpt": "人生如同故事。重要的并不在有多长，而是在有多好。 真正的人生，只有在经过艰难卓绝的斗争之后才能实现。 人生最终的价值在于觉醒和思…",
+      "file": "adage/4.json",
+      "characterCount": 370,
+      "byteSize": 1212
+    },
+    {
+      "id": "adage-5",
+      "title": "格言 5",
+      "category": "adage",
+      "sourceName": "格言: 5.txt",
+      "excerpt": "为了在生活中努力发挥自己的作用，热爱人生吧！ 工作就是人生的价值，人生的欢乐，也是幸福之所在。 人生犹如一本书，愚蠢者草草翻过，…",
+      "file": "adage/5.json",
+      "characterCount": 638,
+      "byteSize": 2008
+    },
+    {
+      "id": "adage-6",
+      "title": "格言 6",
+      "category": "adage",
+      "sourceName": "格言: 6.txt",
+      "excerpt": "谦卑并不意味着多顾他人少顾自己，也不意味着承认自己是个无能之辈，而是意味着从根本上把自己置之度外。 一个人应当一次只想一件东西，…",
+      "file": "adage/6.json",
+      "characterCount": 409,
+      "byteSize": 1329
+    },
+    {
+      "id": "adage-7",
+      "title": "格言 7",
+      "category": "adage",
+      "sourceName": "格言: 7.txt",
+      "excerpt": "对一个尚未成熟的少年来讲，坏的伙伴比好的老师起的作用要大得多。 那些背叛同伴的人，常常不知不觉地把自己也一起毁灭了。 应当在朋友…",
+      "file": "adage/7.json",
+      "characterCount": 358,
+      "byteSize": 1177
+    },
+    {
+      "id": "adage-8",
+      "title": "格言 8",
+      "category": "adage",
+      "sourceName": "格言: 8.txt",
+      "excerpt": "多听，少说，接受每一个人的责难，但是保留你的最后裁决。 对人要和气，但不要狎昵。 自己不能胜任的事情，切莫轻易答应别人，一旦答应…",
+      "file": "adage/8.json",
+      "characterCount": 284,
+      "byteSize": 959
+    },
+    {
+      "id": "adage-9",
+      "title": "格言 9",
+      "category": "adage",
+      "sourceName": "格言: 9.txt",
+      "excerpt": "书犹药也，善读可以医愚。 书籍是全世界的营养品。 人不能像走兽那样活着，应该追求知识和美德。 读书如饭，善吃饭者长精神，不善吃者…",
+      "file": "adage/9.json",
+      "characterCount": 378,
+      "byteSize": 1236
+    },
+    {
+      "id": "adage-10",
+      "title": "格言 10",
+      "category": "adage",
+      "sourceName": "格言: 10.txt",
+      "excerpt": "不去读书就没有真正的教养，同时也不可能有什么鉴别力。倘能生存，我当然仍要学习。 人的一生应当这样度过：当回首往事的时候，他不致于…",
+      "file": "adage/10.json",
+      "characterCount": 861,
+      "byteSize": 2639
+    },
+    {
+      "id": "adage-11",
+      "title": "格言 11",
+      "category": "adage",
+      "sourceName": "格言: 11.txt",
+      "excerpt": "婴儿是上帝从天国拂下来的宇宙尘埃，只有女人才有幸感知分娩的痛苦，因为她托着一个星体。 婴儿，在沉默中倾听着世界，游览着世界，发现…",
+      "file": "adage/11.json",
+      "characterCount": 309,
+      "byteSize": 1028
+    },
+    {
+      "id": "adage-12",
+      "title": "格言 12",
+      "category": "adage",
+      "sourceName": "格言: 12.txt",
+      "excerpt": "儿童喜欢泥土，他们的整个身心像花朵一样渴求阳光。 举杯祝贺那个无忧无虑的黄金般的孩提时代，它就像冬夜里的星星，五月的晨露；儿童是…",
+      "file": "adage/12.json",
+      "characterCount": 271,
+      "byteSize": 905
+    },
+    {
+      "id": "adage-13",
+      "title": "格言 13",
+      "category": "adage",
+      "sourceName": "格言: 13.txt",
+      "excerpt": "如果你不首先培养活泼的儿童，你就决不能教出聪明的人来。 青年时期是豁达的时期，应该利用这个时期养成自己豁达的性格。 青年，在任何…",
+      "file": "adage/13.json",
+      "characterCount": 356,
+      "byteSize": 1177
+    },
+    {
+      "id": "adage-14",
+      "title": "格言 14",
+      "category": "adage",
+      "sourceName": "格言: 14.txt",
+      "excerpt": "爱惜衣裳要从新的时候起，爱惜名誉要从幼小时候起。只有在童年时代人们才生活的幸福，因为孩子们的生活是无忧无虑的，成人们在为他们工作…",
+      "file": "adage/14.json",
+      "characterCount": 408,
+      "byteSize": 1298
+    },
+    {
+      "id": "adage-15",
+      "title": "格言 15",
+      "category": "adage",
+      "sourceName": "格言: 15.txt",
+      "excerpt": "青春是一个短暂的美梦，当你醒来时，它早已消失无踪。少年时期的放浪是晚年的汇票，大约在二十年后，即可加上利息支付。乐观的人永葆青春…",
+      "file": "adage/15.json",
+      "characterCount": 465,
+      "byteSize": 1478
+    },
+    {
+      "id": "adage-16",
+      "title": "格言 16",
+      "category": "adage",
+      "sourceName": "格言: 16.txt",
+      "excerpt": "青年时种下什么，老年时就收获什么。 当青春的光彩渐渐消逝，永不衰老的内在个性却在一个人的脸上和眼睛上更加明显的表露出来，好像是在…",
+      "file": "adage/16.json",
+      "characterCount": 401,
+      "byteSize": 1286
+    },
+    {
+      "id": "adage-17",
+      "title": "格言 17",
+      "category": "adage",
+      "sourceName": "格言: 17.txt",
+      "excerpt": "青春如初春，如朝日，如百卉之萌动，如利刃之新发于硎，人生最宝贵之时期也。青年之于社会，犹新鲜活泼细胞之在身。 生命的黎明是乐园，…",
+      "file": "adage/17.json",
+      "characterCount": 308,
+      "byteSize": 1007
+    },
+    {
+      "id": "adage-18",
+      "title": "格言 18",
+      "category": "adage",
+      "sourceName": "格言: 18.txt",
+      "excerpt": "自信和希望是青年的特权。谁都要讲求修养，青年正当发展成长的旺盛时期，尤其要讲求。作为新生力量的青年一代，应该成为时代的青年，每个…",
+      "file": "adage/18.json",
+      "characterCount": 520,
+      "byteSize": 1635
+    },
+    {
+      "id": "adage-19",
+      "title": "格言 19",
+      "category": "adage",
+      "sourceName": "格言: 19.txt",
+      "excerpt": "少年为未知的前途彷徨，老年为已知的寂寞发愁；独独中年，江山已定，前途在握，分分秒秒都可以自行支配，充分享受。 人到了四十岁，就必…",
+      "file": "adage/19.json",
+      "characterCount": 374,
+      "byteSize": 1214
+    },
+    {
+      "id": "adage-20",
+      "title": "格言 20",
+      "category": "adage",
+      "sourceName": "格言: 20.txt",
+      "excerpt": "智慧是老年人的精髓。老骥伏枥，志在千里，烈士暮年，壮心不已。莫道桑榆晚，微霞尚满天。犹如圣台上的白烛，年事虽高风采依旧。 懂得如…",
+      "file": "adage/20.json",
+      "characterCount": 334,
+      "byteSize": 1085
+    },
+    {
+      "id": "adage-21",
+      "title": "格言 21",
+      "category": "adage",
+      "sourceName": "格言: 21.txt",
+      "excerpt": "青春是相爱的佳期，晚年是从善的良辰。 一个真正具有生命力的天才，就是能将一片赤子之心带入老境的人。 路漫漫其修远兮，吾将上下而求…",
+      "file": "adage/21.json",
+      "characterCount": 343,
+      "byteSize": 1138
+    },
+    {
+      "id": "adage-22",
+      "title": "格言 22",
+      "category": "adage",
+      "sourceName": "格言: 22.txt",
+      "excerpt": "追求幸运的人应该是行李越轻越好。凡是追逐不依靠自身而依赖外界方能获得幸福的人，命运总是和他作对的。 希望是隐藏在群山后的星星，探…",
+      "file": "adage/22.json",
+      "characterCount": 418,
+      "byteSize": 1338
+    },
+    {
+      "id": "adage-23",
+      "title": "格言 23",
+      "category": "adage",
+      "sourceName": "格言: 23.txt",
+      "excerpt": "让每个人都把希望寄托在自己身上。 冬天来了，春天还会远吗？ 脚不能达到的地方，眼睛可以达到，眼睛不能到的地方，精神可以飞到。 在…",
+      "file": "adage/23.json",
+      "characterCount": 284,
+      "byteSize": 959
+    },
+    {
+      "id": "adage-24",
+      "title": "格言 24",
+      "category": "adage",
+      "sourceName": "格言: 24.txt",
+      "excerpt": "当人抛弃信仰时，迷信渴望搬进来。 信仰是人们所必须的，什么也不信仰的人不会有幸福。 信仰不是一门学问，信仰只是一种行为；它只在被…",
+      "file": "adage/24.json",
+      "characterCount": 321,
+      "byteSize": 1070
+    },
+    {
+      "id": "adage-25",
+      "title": "格言 25",
+      "category": "adage",
+      "sourceName": "格言: 25.txt",
+      "excerpt": "没有信仰，则没有名副其实的品行和生命；没有信仰，则没有名副其实的国土。 信仰是理性的延伸。 信仰是人类赖以生存的众多力量之一，若…",
+      "file": "adage/25.json",
+      "characterCount": 792,
+      "byteSize": 2471
+    },
+    {
+      "id": "adage-26",
+      "title": "格言 26",
+      "category": "adage",
+      "sourceName": "格言: 26.txt",
+      "excerpt": "追两只兔子，将会一无所获。一个人不能骑两匹马，骑上这匹，就要丢掉那匹。聪明人会把凡是分散精力的要求置之度外，只专心致志地去学一门…",
+      "file": "adage/26.json",
+      "characterCount": 853,
+      "byteSize": 2624
+    },
+    {
+      "id": "adage-27",
+      "title": "格言 27",
+      "category": "adage",
+      "sourceName": "格言: 27.txt",
+      "excerpt": "走自己的路，让人家说吧！伟大的精力只是为了伟大的目的而产生的。正确的道路是这样，吸取你的前辈所做的一切，然后再往前走。 奋斗这一…",
+      "file": "adage/27.json",
+      "characterCount": 255,
+      "byteSize": 857
+    },
+    {
+      "id": "adage-28",
+      "title": "格言 28",
+      "category": "adage",
+      "sourceName": "格言: 28.txt",
+      "excerpt": "做了好事受到指责而仍坚持下去，这才是奋斗者的本色。只有这样的人才配生活和自由，假如他每天为之而奋斗。 一个人必须经过一番刻苦奋斗…",
+      "file": "adage/28.json",
+      "characterCount": 264,
+      "byteSize": 902
+    },
+    {
+      "id": "adage-29",
+      "title": "格言 29",
+      "category": "adage",
+      "sourceName": "格言: 29.txt",
+      "excerpt": "我们所完成的任何科学工作，都是通过长期的考虑、忍耐和奋斗得来的。 为某个信念而死并不难，难的是实践信念。 只有勤勉、毅力才会使我…",
+      "file": "adage/29.json",
+      "characterCount": 669,
+      "byteSize": 2108
+    },
+    {
+      "id": "adage-30",
+      "title": "格言 30",
+      "category": "adage",
+      "sourceName": "格言: 30.txt",
+      "excerpt": "走你的路吧。不要去理会别人怎么说。 劳动一日，可得一夜安眠；勤劳一生，可得幸福的长眠。 昨天的不可能，成为今天的可能；前个世纪的…",
+      "file": "adage/30.json",
+      "characterCount": 750,
+      "byteSize": 2347
+    },
+    {
+      "id": "essay-1",
+      "title": "散文 1",
+      "category": "essay",
+      "sourceName": "散文: 1.txt",
+      "excerpt": "曲曲折折的荷塘上面，弥望的是田田的叶子。叶子出水很高，像亭亭的舞女的裙。层层的叶子中间，零星地点缀着些白花，有袅娜地开着的，有羞…",
+      "file": "essay/1.json",
+      "characterCount": 760,
+      "byteSize": 2346
+    },
+    {
+      "id": "essay-2",
+      "title": "散文 2",
+      "category": "essay",
+      "sourceName": "散文: 2.txt",
+      "excerpt": "盼望着，盼望着，东风来了，春天脚步近了。一切都像刚睡醒的样子，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。小草偷…",
+      "file": "essay/2.json",
+      "characterCount": 785,
+      "byteSize": 2398
+    },
+    {
+      "id": "essay-3",
+      "title": "散文 3",
+      "category": "essay",
+      "sourceName": "散文: 3.txt",
+      "excerpt": "我第二次到仙岩的时候，我惊诧于梅雨潭的绿了。 梅雨潭是一个瀑布潭。仙瀑有三个瀑布，梅雨瀑最低。走到山边，便听见花花花花的声音；抬…",
+      "file": "essay/3.json",
+      "characterCount": 1108,
+      "byteSize": 3376
+    },
+    {
+      "id": "essay-4",
+      "title": "散文 4",
+      "category": "essay",
+      "sourceName": "散文: 4.txt",
+      "excerpt": "我与父亲不相见已有二年余了，我最不能忘记的是他的背影。 那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子，我从北京到徐…",
+      "file": "essay/4.json",
+      "characterCount": 1375,
+      "byteSize": 4149
+    },
+    {
+      "id": "essay-5",
+      "title": "散文 5",
+      "category": "essay",
+      "sourceName": "散文: 5.txt",
+      "excerpt": "燕子去了，有再来的时候；杨柳枯了，有再青的时候；桃花谢了，有再开的时候。但是，聪明的，你告诉我，我们的日子为什么一去不复返呢？是…",
+      "file": "essay/5.json",
+      "characterCount": 615,
+      "byteSize": 1925
+    },
+    {
+      "id": "essay-6",
+      "title": "散文 6",
+      "category": "essay",
+      "sourceName": "散文: 6.txt",
+      "excerpt": "昨晚中西音乐歌舞大会里“中西丝竹和唱”的三曲清歌，真令我神迷心醉了。仿佛一个暮春的早晨。霏霏的毛雨默然洒在我脸上，引起润泽、轻松…",
+      "file": "essay/6.json",
+      "characterCount": 492,
+      "byteSize": 1556
+    },
+    {
+      "id": "essay-7",
+      "title": "散文 7",
+      "category": "essay",
+      "sourceName": "散文: 7.txt",
+      "excerpt": "说起冬天，忽然想到豆腐。是一“小洋锅”（铝锅）白煮豆腐，热腾腾的。水滚着，象好些鱼眼睛，一小块一小块豆腐养在里面，嫩而滑，仿佛反…",
+      "file": "essay/7.json",
+      "characterCount": 1154,
+      "byteSize": 3510
+    },
+    {
+      "id": "essay-8",
+      "title": "散文 8",
+      "category": "essay",
+      "sourceName": "散文: 8.txt",
+      "excerpt": "正面意义的“幸福”，其实也未尝没有。正如谁所说，小的总是可爱，孩子们的小模样，小心眼儿，确有些教人舍不得的。阿毛现在五个月了，你…",
+      "file": "essay/8.json",
+      "characterCount": 2394,
+      "byteSize": 7195
+    },
+    {
+      "id": "essay-9",
+      "title": "散文 9",
+      "category": "essay",
+      "sourceName": "散文: 9.txt",
+      "excerpt": "生长在大江北岸一个城市里，那儿的园林本是著名的，但近来却很少；似乎自幼就不曾听见过“我们今天看花去”一类话，可见花事是不盛的。 …",
+      "file": "essay/9.json",
+      "characterCount": 2650,
+      "byteSize": 7937
+    },
+    {
+      "id": "essay-10",
+      "title": "散文 10",
+      "category": "essay",
+      "sourceName": "散文: 10.txt",
+      "excerpt": "生命本来不应该有价格的；而竟有了价格！人贩子，老鸨，以至近来的绑票土匪，都就他们的所有物，标上参差的价格，出卖于人；我想将来许还…",
+      "file": "essay/10.json",
+      "characterCount": 1883,
+      "byteSize": 5687
+    },
+    {
+      "id": "essay-11",
+      "title": "散文 11",
+      "category": "essay",
+      "sourceName": "散文: 11.txt",
+      "excerpt": "那是我十二三岁时的事，隔壁豆腐店里的王囡囡是当时我的小伴侣中的大阿哥。他是独子，他的母亲、祖母和大伯，都很疼爱他，给他很多的钱和…",
+      "file": "essay/11.json",
+      "characterCount": 1025,
+      "byteSize": 3158
+    },
+    {
+      "id": "essay-12",
+      "title": "散文 12",
+      "category": "essay",
+      "sourceName": "散文: 12.txt",
+      "excerpt": "回想四个月以前，我犹似押送囚犯，突然地把小燕子似的一群儿女从上海的租寓中拖出，载上火车，送回乡间，关进低小的平屋中。自己仍回到上…",
+      "file": "essay/12.json",
+      "characterCount": 2426,
+      "byteSize": 7288
+    },
+    {
+      "id": "essay-13",
+      "title": "散文 13",
+      "category": "essay",
+      "sourceName": "散文: 13.txt",
+      "excerpt": "我的年岁上冠用了“三十”二字，至今已两年了。不解达观的我，从这两个字上受到了不少的暗示与影响。虽然明明觉得自己的体格与精力比二十…",
+      "file": "essay/13.json",
+      "characterCount": 2079,
+      "byteSize": 6300
+    },
+    {
+      "id": "essay-14",
+      "title": "散文 14",
+      "category": "essay",
+      "sourceName": "散文: 14.txt",
+      "excerpt": "第二天上书的时候，父亲，也就是我的先生，他就骂，几乎要打手心；被母亲不知大姐劝住了，终于没有打。我哭了一顿，把颜料盅子藏在扶梯底…",
+      "file": "essay/14.json",
+      "characterCount": 3548,
+      "byteSize": 10709
+    },
+    {
+      "id": "essay-15",
+      "title": "散文 15",
+      "category": "essay",
+      "sourceName": "散文: 15.txt",
+      "excerpt": "从前听人说：中国人人人具有三种博士的资格：拿筷子博士、吹煤头纸博士、吃瓜子博士。 拿筷子，吹煤头纸，吃瓜子，的确是中国人独得的技…",
+      "file": "essay/15.json",
+      "characterCount": 3831,
+      "byteSize": 11512
+    },
+    {
+      "id": "essay-16",
+      "title": "散文 16",
+      "category": "essay",
+      "sourceName": "散文: 16.txt",
+      "excerpt": "我躺在船榻上休息的时候，恰好从船窗中望见这副剃头担的全部。起初剃头司务独自坐在凳上吸烟，后来把凳让给另一个人坐了，就剃这个人的头…",
+      "file": "essay/16.json",
+      "characterCount": 1905,
+      "byteSize": 5797
+    },
+    {
+      "id": "essay-17",
+      "title": "散文 17",
+      "category": "essay",
+      "sourceName": "散文: 17.txt",
+      "excerpt": "抗战胜利后八个月零十天，我卖脱了三年前在重庆沙坪坝庙湾地方自建的小屋，迁居城中去等候归舟。 除了托庇三年的情感以外，我对这小屋实…",
+      "file": "essay/17.json",
+      "characterCount": 2973,
+      "byteSize": 8946
+    },
+    {
+      "id": "essay-18",
+      "title": "散文 18",
+      "category": "essay",
+      "sourceName": "散文: 18.txt",
+      "excerpt": "假如这时候窗子外有雪，在街上，城墙上，屋脊上，都是雪，胡同口一家屋檐下偎着一个戴黑兜帽的巡警，半拢着睡眼，看棉团似的雪花在半空中…",
+      "file": "essay/18.json",
+      "characterCount": 2276,
+      "byteSize": 6830
+    },
+    {
+      "id": "essay-19",
+      "title": "散文 19",
+      "category": "essay",
+      "sourceName": "散文: 19.txt",
+      "excerpt": "我们在泰山顶上看出太阳。在航过海的人，看太阳从地平线下爬上来，本不是奇事；而且我个人是曾饱饫过江海与印度洋无比的日彩的。但在高山…",
+      "file": "essay/19.json",
+      "characterCount": 984,
+      "byteSize": 2990
+    },
+    {
+      "id": "essay-20",
+      "title": "散文 20",
+      "category": "essay",
+      "sourceName": "散文: 20.txt",
+      "excerpt": "他们都到海边去了。我为左眼发炎不曾去。我独坐在前廊，偎坐在一张安适的大椅内，袒着胸怀，赤着脚，一头的散发，不时有风来撩拂。清晨的…",
+      "file": "essay/20.json",
+      "characterCount": 1825,
+      "byteSize": 5541
+    },
+    {
+      "id": "essay-21",
+      "title": "散文 21",
+      "category": "essay",
+      "sourceName": "散文: 21.txt",
+      "excerpt": "青年是透明的，身与心都是透明的。嫩而薄的皮肤之下，好像可以看出鲜红血液的运行，这就形成他或她容颜之春花的娇，朝霞的艳。所谓“吹弹…",
+      "file": "essay/21.json",
+      "characterCount": 1259,
+      "byteSize": 3860
+    },
+    {
+      "id": "essay-22",
+      "title": "散文 22",
+      "category": "essay",
+      "sourceName": "散文: 22.txt",
+      "excerpt": "青年生活于将来，老年生活于过去，中年则生活于现在。所以中年又大都是实际主义者。人在青年，谁没有一片雄心壮志，谁没有一番宏济苍生的…",
+      "file": "essay/22.json",
+      "characterCount": 1527,
+      "byteSize": 4673
+    },
+    {
+      "id": "essay-23",
+      "title": "散文 23",
+      "category": "essay",
+      "sourceName": "散文: 23.txt",
+      "excerpt": "自从慈母弃我去后，我这颗心，就悬空挂起，无所依傍。幸而我实际上虽然没有母亲，我精神还有一位母亲。 这位母亲究竟在哪里，我说不明白…",
+      "file": "essay/23.json",
+      "characterCount": 951,
+      "byteSize": 2954
+    },
+    {
+      "id": "essay-24",
+      "title": "散文 24",
+      "category": "essay",
+      "sourceName": "散文: 24.txt",
+      "excerpt": "实际上，家的好处还是生活的随便和自由。你在社会上与人周旋，必须衣冠整齐，举止彬彬有礼，否则人家就要笑你是名士派。在家你口衔烟卷，…",
+      "file": "essay/24.json",
+      "characterCount": 1894,
+      "byteSize": 5765
+    },
+    {
+      "id": "essay-25",
+      "title": "散文 25",
+      "category": "essay",
+      "sourceName": "散文: 25.txt",
+      "excerpt": "我的家中成员只有我独自一个，这样当然不能称为家了，可是十余年前是有一位同胞姊姊同我同住，组成了别具一格的“姊妹家庭”。从民国21…",
+      "file": "essay/25.json",
+      "characterCount": 1142,
+      "byteSize": 3472
+    },
+    {
+      "id": "essay-26",
+      "title": "散文 26",
+      "category": "essay",
+      "sourceName": "散文: 26.txt",
+      "excerpt": "人应该在老得不能动弹之前死掉。中国虽说是个讲究养老的国家，其实对于老人常怀迫害之意。原壤老而不死，干孔子甚事，孔子要拿起手杖来敲…",
+      "file": "essay/26.json",
+      "characterCount": 1230,
+      "byteSize": 3778
+    },
+    {
+      "id": "essay-27",
+      "title": "散文 27",
+      "category": "essay",
+      "sourceName": "散文: 27.txt",
+      "excerpt": "从新加坡上来了一班中国人，种类很多。大约分别起来：也可归之于男的，女的，老的，少的，蠢的，我也想在他们之中挑选几个归于俏的一类，…",
+      "file": "essay/27.json",
+      "characterCount": 999,
+      "byteSize": 3073
+    },
+    {
+      "id": "essay-28",
+      "title": "散文 28",
+      "category": "essay",
+      "sourceName": "散文: 28.txt",
+      "excerpt": "人生像游山。山要亲自游过，才能知道山中风景的实况。旁人的讲说，纸上的卧游，究竟隔膜。即如画图，摄影，银幕，算比较亲切了，也不是那…",
+      "file": "essay/28.json",
+      "characterCount": 2028,
+      "byteSize": 6131
+    },
+    {
+      "id": "essay-29",
+      "title": "散文 29",
+      "category": "essay",
+      "sourceName": "散文: 29.txt",
+      "excerpt": "老人也有老人独享的清福。朋友，想你也有过趁早凉出门的经验。早起出门，雾深露重，身上穿得很多，走一程，热一程，衣服便一件一件沿途脱…",
+      "file": "essay/29.json",
+      "characterCount": 927,
+      "byteSize": 2864
+    },
+    {
+      "id": "essay-30",
+      "title": "散文 30",
+      "category": "essay",
+      "sourceName": "散文: 30.txt",
+      "excerpt": "地球已有百万万年的生命，人类也已有百万年左右的历史。但人类之有文化只不过五六千年或三四千年。以前人类在冰期洪水，严寒酷热，长蛇巨…",
+      "file": "essay/30.json",
+      "characterCount": 1086,
+      "byteSize": 3358
+    },
+    {
+      "id": "poetry-1",
+      "title": "诗歌 1",
+      "category": "poetry",
+      "sourceName": "诗歌: 1.txt",
+      "excerpt": "长相思 花似伊，柳似伊。花柳青春人别离，低头双泪垂。 长江东，长江西。两岸鸳鸯两处飞，相逢知几时。 望江南 江南蝶，斜日一双双。…",
+      "file": "poetry/1.json",
+      "characterCount": 200,
+      "byteSize": 704
+    },
+    {
+      "id": "poetry-2",
+      "title": "诗歌 2",
+      "category": "poetry",
+      "sourceName": "诗歌: 2.txt",
+      "excerpt": "曲玉管 陇首云飞，江边日晚，烟波满目凭阑久。 一望关河萧索，千里清秋。 忍凝眸？ 杳杳神京，盈盈仙子，别来锦字终难偶。 断雁无凭…",
+      "file": "poetry/2.json",
+      "characterCount": 337,
+      "byteSize": 1103
+    },
+    {
+      "id": "poetry-3",
+      "title": "诗歌 3",
+      "category": "poetry",
+      "sourceName": "诗歌: 3.txt",
+      "excerpt": "采莲令 月华收，云淡霜天曙。西征客，此时情苦。 翠娥执手，送临歧，轧轧开朱户。 千娇面，盈盈伫立，无言有泪，断肠争忍回顾。 一叶…",
+      "file": "poetry/3.json",
+      "characterCount": 346,
+      "byteSize": 1134
+    },
+    {
+      "id": "poetry-4",
+      "title": "诗歌 4",
+      "category": "poetry",
+      "sourceName": "诗歌: 4.txt",
+      "excerpt": "浣溪沙 堤上游人逐画船，拍堤春水四垂天。 绿杨楼外出秋千。 白发戴花君莫笑，六幺摧拍盏频传。 人生何处似樽前。 渔家傲 为爱莲房…",
+      "file": "poetry/4.json",
+      "characterCount": 430,
+      "byteSize": 1376
+    },
+    {
+      "id": "poetry-5",
+      "title": "诗歌 5",
+      "category": "poetry",
+      "sourceName": "诗歌: 5.txt",
+      "excerpt": "甘草子 秋暮。乱洒荷前，颗颗真珠雨。 雨过月华生，冷彻鸳鸯浦。 池上凭栏愁无侣。 奈此个单栖情绪。却傍金笼共鹦鹉。 念粉郎言语。…",
+      "file": "poetry/5.json",
+      "characterCount": 542,
+      "byteSize": 1700
+    },
+    {
+      "id": "poetry-6",
+      "title": "诗歌 6",
+      "category": "poetry",
+      "sourceName": "诗歌: 6.txt",
+      "excerpt": "破阵子 露华倒影，烟芜蘸碧，灵沼波暖。 金柳摇风树树，系彩舫龙舟遥岸。 千步虹桥，参差雁齿，直趋水殿。 绕金堤，曼衍鱼龙戏，簇娇…",
+      "file": "poetry/6.json",
+      "characterCount": 558,
+      "byteSize": 1753
+    },
+    {
+      "id": "poetry-7",
+      "title": "诗歌 7",
+      "category": "poetry",
+      "sourceName": "诗歌: 7.txt",
+      "excerpt": "鹊踏枝 槛菊愁烟兰泣露。 罗幕轻寒，燕子双飞去。 明月不谙离恨苦，斜光到晓穿朱户。 昨夜西风凋碧树，独上高楼，望尽天涯路。 欲寄…",
+      "file": "poetry/7.json",
+      "characterCount": 401,
+      "byteSize": 1290
+    },
+    {
+      "id": "poetry-8",
+      "title": "诗歌 8",
+      "category": "poetry",
+      "sourceName": "诗歌: 8.txt",
+      "excerpt": "踏莎行 细草愁烟，幽花怯露。 凭栏总是销魂处。 日高深院静无人，时时海燕双飞去。 带缓罗衣，香残蕙炷。 天长不禁迢迢路。 垂杨只…",
+      "file": "poetry/8.json",
+      "characterCount": 367,
+      "byteSize": 1190
+    },
+    {
+      "id": "poetry-9",
+      "title": "诗歌 9",
+      "category": "poetry",
+      "sourceName": "诗歌: 9.txt",
+      "excerpt": "捣练子令 深院静，小庭空，断续寒砧断续风。 无奈夜长人不寐，数声和月到帘栊。 阮郎归 东风吹水日衔山，春来长是闲。 落花狼籍酒阑…",
+      "file": "poetry/9.json",
+      "characterCount": 447,
+      "byteSize": 1424
+    },
+    {
+      "id": "poetry-10",
+      "title": "诗歌 10",
+      "category": "poetry",
+      "sourceName": "诗歌: 10.txt",
+      "excerpt": "水调歌头 瑶草一何碧，春入武陵溪。 溪上桃花无数，花上有黄鹂。 我欲穿花寻路，直入白云深处，浩气展虹霓。 只恐花深里，红露湿人衣…",
+      "file": "poetry/10.json",
+      "characterCount": 716,
+      "byteSize": 2213
+    },
+    {
+      "id": "poetry-11",
+      "title": "诗歌 11",
+      "category": "poetry",
+      "sourceName": "诗歌: 11.txt",
+      "excerpt": "如梦令 常记溪亭日暮， 沉醉不知归路。 兴尽晚回舟， 误入藕花深处。 争渡，争渡， 惊起一滩鸥鹭。 点绛唇 寂寞深闺， 柔肠一寸…",
+      "file": "poetry/11.json",
+      "characterCount": 244,
+      "byteSize": 816
+    },
+    {
+      "id": "poetry-12",
+      "title": "诗歌 12",
+      "category": "poetry",
+      "sourceName": "诗歌: 12.txt",
+      "excerpt": "忆秦娥 临高阁， 乱山平野烟光薄。 烟光薄， 栖鸦归後， 暮天闻角。 断香残香情怀恶， 西风催衬梧桐落。 梧桐落， 又还秋色， …",
+      "file": "poetry/12.json",
+      "characterCount": 289,
+      "byteSize": 948
+    },
+    {
+      "id": "poetry-13",
+      "title": "诗歌 13",
+      "category": "poetry",
+      "sourceName": "诗歌: 13.txt",
+      "excerpt": "怨王孙 湖上风来波浩渺， 秋已暮、红稀香少。 水光山色与人亲， 说不尽、无穷好。 莲子已成荷叶老， 青露洗、苹花汀草。 眠沙鸥鹭…",
+      "file": "poetry/13.json",
+      "characterCount": 321,
+      "byteSize": 1045
+    },
+    {
+      "id": "poetry-14",
+      "title": "诗歌 14",
+      "category": "poetry",
+      "sourceName": "诗歌: 14.txt",
+      "excerpt": "後亭梅开有感 玉瘦香浓， 檀深雪散， 今年恨探梅又晚。 江楼楚馆， 云间水远。 清昼永， 凭栏翠帘低卷。 坐上客来， 尊前酒满，…",
+      "file": "poetry/14.json",
+      "characterCount": 343,
+      "byteSize": 1100
+    },
+    {
+      "id": "poetry-15",
+      "title": "诗歌 15",
+      "category": "poetry",
+      "sourceName": "诗歌: 15.txt",
+      "excerpt": "凤凰台上忆吹箫 香冷金猊， 被翻红浪， 起来慵自梳头。 任宝奁尘满， 日上帘钩。 生怕离怀别苦， 多少事、欲说还休。 新来瘦， …",
+      "file": "poetry/15.json",
+      "characterCount": 432,
+      "byteSize": 1353
+    },
+    {
+      "id": "poetry-16",
+      "title": "诗歌 16",
+      "category": "poetry",
+      "sourceName": "诗歌: 16.txt",
+      "excerpt": "多丽 咏白菊 小楼寒， 夜长帘幕低垂。 恨潇潇、无情风雨， 夜来揉损琼肌。 也不似、贵妃醉脸， 也不似、孙寿愁眉。 韩令偷香， …",
+      "file": "poetry/16.json",
+      "characterCount": 453,
+      "byteSize": 1415
+    },
+    {
+      "id": "poetry-17",
+      "title": "诗歌 17",
+      "category": "poetry",
+      "sourceName": "诗歌: 17.txt",
+      "excerpt": "锦瑟 锦瑟无端五十弦，一弦一柱思华年。 庄生晓梦迷蝴蝶，望帝春心托杜鹃。 沧海月明珠有泪，蓝田日暖玉生烟。 此情可待成追忆，只是…",
+      "file": "poetry/17.json",
+      "characterCount": 706,
+      "byteSize": 2190
+    },
+    {
+      "id": "poetry-18",
+      "title": "诗歌 18",
+      "category": "poetry",
+      "sourceName": "诗歌: 18.txt",
+      "excerpt": "宿骆氏亭寄怀崔雍 竹坞无尘水槛清，相思迢递隔重城。 秋阴不散霜飞晚，留得残荷听雨声。 风雨 凄凉宝剑篇，羁泊欲穷年。 黄叶仍风雨…",
+      "file": "poetry/18.json",
+      "characterCount": 550,
+      "byteSize": 1728
+    },
+    {
+      "id": "poetry-19",
+      "title": "诗歌 19",
+      "category": "poetry",
+      "sourceName": "诗歌: 19.txt",
+      "excerpt": "端居 远书归梦两悠悠，只有空床敌素秋。 阶下青苔与红树，雨中寥落月中愁。 日射 日射纱窗风撼扉，香罗拭手春事违。 回廊四合掩寂寞…",
+      "file": "poetry/19.json",
+      "characterCount": 647,
+      "byteSize": 2012
+    },
+    {
+      "id": "poetry-20",
+      "title": "诗歌 20",
+      "category": "poetry",
+      "sourceName": "诗歌: 20.txt",
+      "excerpt": "细雨 帷飘白玉堂，簟卷碧牙床。 楚女当时意，萧萧发彩凉。 微雨 初随林霭动，稍共夜凉分。 窗迥侵灯冷，庭虚近水闻。 为有 为有云…",
+      "file": "poetry/20.json",
+      "characterCount": 678,
+      "byteSize": 2101
+    },
+    {
+      "id": "poetry-21",
+      "title": "诗歌 21",
+      "category": "poetry",
+      "sourceName": "诗歌: 21.txt",
+      "excerpt": "南海乱石山作 涨海积稽天，群山高（上山下业）地。 相传称乱石，图典失其事。 悬危悉可惊，大小都不类。 乍将云岛极，还与星河次。 …",
+      "file": "poetry/21.json",
+      "characterCount": 418,
+      "byteSize": 1342
+    },
+    {
+      "id": "poetry-22",
+      "title": "诗歌 22",
+      "category": "poetry",
+      "sourceName": "诗歌: 22.txt",
+      "excerpt": "岁夜安乐公主满月侍宴应制 戚里生昌胤，天杯宴重臣。 画楼初满月，香殿早迎春。 睿作尧君宝，孙谋梁国珍。 明朝元会日，万寿乐章陈。…",
+      "file": "poetry/22.json",
+      "characterCount": 398,
+      "byteSize": 1282
+    },
+    {
+      "id": "poetry-23",
+      "title": "诗歌 23",
+      "category": "poetry",
+      "sourceName": "诗歌: 23.txt",
+      "excerpt": "和晋陵陆丞早春游望 独有宦游人，偏惊物候新。 云霞出海曙，梅柳渡江春。 淑气催黄鸟，晴光转绿萍。 忽闻歌古调，归思欲沾巾。 秋夜…",
+      "file": "poetry/23.json",
+      "characterCount": 370,
+      "byteSize": 1199
+    },
+    {
+      "id": "poetry-24",
+      "title": "诗歌 24",
+      "category": "poetry",
+      "sourceName": "诗歌: 24.txt",
+      "excerpt": "代张侍御伤美人 二八泉扉掩，帷屏宠爱空。 泪痕消夜烛，愁绪乱春风。 巧笑人疑在，新妆曲未终。 应怜脂粉气，留著舞衣中。 送高郎中…",
+      "file": "poetry/24.json",
+      "characterCount": 416,
+      "byteSize": 1333
+    },
+    {
+      "id": "poetry-25",
+      "title": "诗歌 25",
+      "category": "poetry",
+      "sourceName": "诗歌: 25.txt",
+      "excerpt": "晦日宴游 日晦随荚，春情著杏花。 解绅宜就水，张幕会连沙。 歌管风轻度，池台日半斜。 更看金谷骑，争向石崇家。 七夕 白露含明月…",
+      "file": "poetry/25.json",
+      "characterCount": 661,
+      "byteSize": 2052
+    },
+    {
+      "id": "poetry-26",
+      "title": "诗歌 26",
+      "category": "poetry",
+      "sourceName": "诗歌: 26.txt",
+      "excerpt": "度石门山 石门千仞断，迸水落遥空。 道束悬崖半，桥欹绝涧中。 仰攀人屡息，直下骑才通。 泥拥奔蛇径，云埋伏兽丛。 星躔牛斗北，地…",
+      "file": "poetry/26.json",
+      "characterCount": 1168,
+      "byteSize": 3534
+    },
+    {
+      "id": "poetry-27",
+      "title": "诗歌 27",
+      "category": "poetry",
+      "sourceName": "诗歌: 27.txt",
+      "excerpt": "行宫 寥落古行宫，宫花寂寞红。 白头宫女在，闲坐说玄宗。 会真记 待月西厢下，迎风户半开。 拂墙花影动，疑是玉人来。 遣悲怀 闲…",
+      "file": "poetry/27.json",
+      "characterCount": 311,
+      "byteSize": 1030
+    },
+    {
+      "id": "poetry-28",
+      "title": "诗歌 28",
+      "category": "poetry",
+      "sourceName": "诗歌: 28.txt",
+      "excerpt": "气出唱（三首） 驾六龙，乘风而行。 行四海，路下之八邦。 历登高山临溪谷，乘云而行。 行四海外，东到泰山。 仙人玉女，下来翱游。…",
+      "file": "poetry/28.json",
+      "characterCount": 932,
+      "byteSize": 2834
+    },
+    {
+      "id": "poetry-29",
+      "title": "诗歌 29",
+      "category": "poetry",
+      "sourceName": "诗歌: 29.txt",
+      "excerpt": "蒿里行 关东有义士，兴兵讨群凶。 初期会盟津，乃心在咸阳。 军合力不齐，踌躇而雁行。 势利使人争，嗣还自相戕。 淮南弟称号，刻玺…",
+      "file": "poetry/29.json",
+      "characterCount": 1311,
+      "byteSize": 3945
+    },
+    {
+      "id": "poetry-30",
+      "title": "诗歌 30",
+      "category": "poetry",
+      "sourceName": "诗歌: 30.txt",
+      "excerpt": "善哉行（三首） 太伯仲雍，王德之仁。 行施百世，断发文身。 伯夷叔齐，古之遗贤。 让国不用，饿殂首山。 智哉山甫，相彼宣王。 何…",
+      "file": "poetry/30.json",
+      "characterCount": 1350,
+      "byteSize": 4053
+    },
+    {
+      "id": "novel-1",
+      "title": "小说 1",
+      "category": "novel",
+      "sourceName": "小说: 1.txt",
+      "excerpt": "我想，我眼见你慢慢倒地，怎么会摔坏呢，装腔作势罢了，这真可憎恶。车夫多事，也正是自讨苦吃，现在你自己想法去。车夫听了这老女人的话…",
+      "file": "novel/1.json",
+      "characterCount": 539,
+      "byteSize": 1689
+    },
+    {
+      "id": "novel-2",
+      "title": "小说 2",
+      "category": "novel",
+      "sourceName": "小说: 2.txt",
+      "excerpt": "孔乙己是这样的使人快活，可是没有他，别人也便这么过。 有一天，大约是中秋前的两三天，掌柜正在慢慢的结账，取下粉板，忽然说，“孔乙…",
+      "file": "novel/2.json",
+      "characterCount": 820,
+      "byteSize": 2522
+    },
+    {
+      "id": "novel-3",
+      "title": "小说 3",
+      "category": "novel",
+      "sourceName": "小说: 3.txt",
+      "excerpt": "我于是日日盼望新年，新年到，闰土也就到了。好容易到了年末，有一日，母亲告诉我，闰土来了，我便飞跑的去看。他正在厨房里，紫色的圆脸…",
+      "file": "novel/3.json",
+      "characterCount": 866,
+      "byteSize": 2668
+    },
+    {
+      "id": "novel-4",
+      "title": "小说 4",
+      "category": "novel",
+      "sourceName": "小说: 4.txt",
+      "excerpt": "阿Q此后倒得意了许多年。有一年的春天，他醉醺醺的在街上走，在墙根的日光下，看见王胡在那里赤着膊捉虱子，他忽然觉得身上也痒起来了。…",
+      "file": "novel/4.json",
+      "characterCount": 815,
+      "byteSize": 2510
+    },
+    {
+      "id": "novel-5",
+      "title": "小说 5",
+      "category": "novel",
+      "sourceName": "小说: 5.txt",
+      "excerpt": "我的很重的心忽而轻松了，身体也似乎舒展到说不出的大。一出门，便望见月下的平桥内泊着一只白篷的航船，大家跳下船，双喜拔前篙，阿发拔…",
+      "file": "novel/5.json",
+      "characterCount": 600,
+      "byteSize": 1898
+    },
+    {
+      "id": "novel-6",
+      "title": "小说 6",
+      "category": "novel",
+      "sourceName": "小说: 6.txt",
+      "excerpt": "她大约从他们的笑容和声调上，也知道是在嘲笑她，所以总是瞪着眼睛，不说一句话，后来连头也不回了。她整日紧闭了嘴唇，头上带着大家以为…",
+      "file": "novel/6.json",
+      "characterCount": 816,
+      "byteSize": 2528
+    },
+    {
+      "id": "novel-7",
+      "title": "小说 7",
+      "category": "novel",
+      "sourceName": "小说: 7.txt",
+      "excerpt": "但我们也曾经有过一个很不平安的时期。 那是第二年，听说学校就要裁撤了。这也无怪，这学堂的设立，原是因为两江总督（大约是刘坤一罢）…",
+      "file": "novel/7.json",
+      "characterCount": 761,
+      "byteSize": 2354
+    },
+    {
+      "id": "novel-8",
+      "title": "小说 8",
+      "category": "novel",
+      "sourceName": "小说: 8.txt",
+      "excerpt": "那时我惟一的希望，就在这雷峰塔的倒掉。后来我长大了，到杭州，看见这破破烂烂的塔，心里就不舒服。后来我看看书，说杭州人又叫这塔作“…",
+      "file": "novel/8.json",
+      "characterCount": 726,
+      "byteSize": 2249
+    },
+    {
+      "id": "novel-9",
+      "title": "小说 9",
+      "category": "novel",
+      "sourceName": "小说: 9.txt",
+      "excerpt": "有一天，颖铭替父亲去应酬一个饭局，回来便悄悄的对颖贞说：“姊姊，今天我在道上，遇见我们学校干事部里的几个同学，都骑着自行车，带着…",
+      "file": "novel/9.json",
+      "characterCount": 1090,
+      "byteSize": 3341
+    },
+    {
+      "id": "novel-10",
+      "title": "小说 10",
+      "category": "novel",
+      "sourceName": "小说: 10.txt",
+      "excerpt": "英云是我在中学时候的一个同班友，年纪不过比我大两岁，要论到她的道德和学问，真是一个绝特的青年。性情更是十分的清高活泼，志向也极其…",
+      "file": "novel/10.json",
+      "characterCount": 779,
+      "byteSize": 2438
+    },
+    {
+      "id": "novel-11",
+      "title": "小说 11",
+      "category": "novel",
+      "sourceName": "小说: 11.txt",
+      "excerpt": "这是十几年以前的事了。在一个春节前一天的下午，我到重庆郊外去看一位朋友。她住在那个乡村的乡公所楼上。走上一段阴暗的仄仄的楼梯，进…",
+      "file": "novel/11.json",
+      "characterCount": 1681,
+      "byteSize": 5046
+    },
+    {
+      "id": "novel-12",
+      "title": "小说 12",
+      "category": "novel",
+      "sourceName": "小说: 12.txt",
+      "excerpt": "我的心猛然地跳了一下，像点着的焰火一样，从心灵深处喷出了感激的漫天灿烂的火花。 清晨的山路上，没有别的车辆，只有我们这十一辆汽车…",
+      "file": "novel/12.json",
+      "characterCount": 978,
+      "byteSize": 2972
+    },
+    {
+      "id": "novel-13",
+      "title": "小说 13",
+      "category": "novel",
+      "sourceName": "小说: 13.txt",
+      "excerpt": "我深深知道这种情绪，因为每逢国庆，我都会极其深切地想到我们海外的亲人。 在新秋的爽风和微温的朝阳下，我登上天安门前的观礼台，迎面…",
+      "file": "novel/13.json",
+      "characterCount": 1767,
+      "byteSize": 5323
+    },
+    {
+      "id": "novel-14",
+      "title": "小说 14",
+      "category": "novel",
+      "sourceName": "小说: 14.txt",
+      "excerpt": "雨声渐渐的住了，窗帘后隐隐的透进清光来，推开窗户一看，呀！凉云散了，树叶上的残滴，映着月儿，好似萤光千点，闪闪烁烁的动着，真没想…",
+      "file": "novel/14.json",
+      "characterCount": 645,
+      "byteSize": 2025
+    },
+    {
+      "id": "novel-15",
+      "title": "小说 15",
+      "category": "novel",
+      "sourceName": "小说: 15.txt",
+      "excerpt": "怎么独自站在河边上？这朦胧的天色，是黎明还是黄昏？ 何处寻问，只觉得眼前竟是花的世界。中间杂着几条白蔷薇。 她来了，她从山上下来…",
+      "file": "novel/15.json",
+      "characterCount": 291,
+      "byteSize": 911
+    },
+    {
+      "id": "novel-16",
+      "title": "小说 16",
+      "category": "novel",
+      "sourceName": "小说: 16.txt",
+      "excerpt": "爱情自古时候就是好出轨的事。不过，古年间没有报纸和杂志，所以不象现在闹得这么血花。不用往很古远里说，就以我小时候说吧，人们闹恋爱…",
+      "file": "novel/16.json",
+      "characterCount": 485,
+      "byteSize": 1556
+    },
+    {
+      "id": "novel-17",
+      "title": "小说 17",
+      "category": "novel",
+      "sourceName": "小说: 17.txt",
+      "excerpt": "她和我全不说话了，都心里制造着黑云；雷闪暂时休息，可是大雨快到了。谁也不肯再先放个休战的口号，两个人的战事，因为关系不大，所以更…",
+      "file": "novel/17.json",
+      "characterCount": 1090,
+      "byteSize": 3299
+    },
+    {
+      "id": "novel-18",
+      "title": "小说 18",
+      "category": "novel",
+      "sourceName": "小说: 18.txt",
+      "excerpt": "我，老王，和老邱，凑了点钱，开了个小医院。 老王的夫人作护士主任，她本是由看护而高升为医生太太的。老邱的岳父是庶务兼会计。我和老…",
+      "file": "novel/18.json",
+      "characterCount": 949,
+      "byteSize": 2902
+    },
+    {
+      "id": "novel-19",
+      "title": "小说 19",
+      "category": "novel",
+      "sourceName": "小说: 19.txt",
+      "excerpt": "还就是我们爷儿俩和王家可以算作老住户，都住了一年多了。早就想搬家，可是我这间屋子下雨还算不十分漏；这个世界哪去找不十分漏水的屋子…",
+      "file": "novel/19.json",
+      "characterCount": 869,
+      "byteSize": 2681
+    },
+    {
+      "id": "novel-20",
+      "title": "小说 20",
+      "category": "novel",
+      "sourceName": "小说: 20.txt",
+      "excerpt": "自慰的话是苦的，外面包了层糖皮。刘兴仁不再说这种话。 失败有的是因为自己没用，有的是外方的压迫；刘兴仁不是没用的人，他自己知道，…",
+      "file": "novel/20.json",
+      "characterCount": 739,
+      "byteSize": 2291
+    },
+    {
+      "id": "novel-21",
+      "title": "小说 21",
+      "category": "novel",
+      "sourceName": "小说: 21.txt",
+      "excerpt": "明先生的小孩偷了邻居的葡萄。界墙很矮，孩子们不断的过去偷花草。邻居是对姓杨的小夫妇，向来也没说过什么，虽然他们很爱花草。明先生和…",
+      "file": "novel/21.json",
+      "characterCount": 1591,
+      "byteSize": 4688
+    },
+    {
+      "id": "novel-22",
+      "title": "小说 22",
+      "category": "novel",
+      "sourceName": "小说: 22.txt",
+      "excerpt": "是的，我又看见月牙儿了，带着点寒气的一钩儿浅金。多少次了，我看见跟现在这个月牙儿一样的月牙儿；多少次了。它带着种种不同的感情，种…",
+      "file": "novel/22.json",
+      "characterCount": 1281,
+      "byteSize": 3908
+    },
+    {
+      "id": "novel-23",
+      "title": "小说 23",
+      "category": "novel",
+      "sourceName": "小说: 23.txt",
+      "excerpt": "想起幼年来，我便想到一株细条而开着朵大花的牡丹，在春晴的阳光下，放着明艳的红瓣儿与金黄的蕊。我便是那朵牡丹。偶尔有一点愁恼，不过…",
+      "file": "novel/23.json",
+      "characterCount": 1002,
+      "byteSize": 3070
+    },
+    {
+      "id": "novel-24",
+      "title": "小说 24",
+      "category": "novel",
+      "sourceName": "小说: 24.txt",
+      "excerpt": "茶房，有四十多岁，脖子很细很长，似乎可以随时把脑袋摘下来，再安上去，一点也不费事，总是攥着满手的热毛巾，很想热心服务，可是委屈太…",
+      "file": "novel/24.json",
+      "characterCount": 1084,
+      "byteSize": 3326
+    },
+    {
+      "id": "novel-25",
+      "title": "小说 25",
+      "category": "novel",
+      "sourceName": "小说: 25.txt",
+      "excerpt": "城陷后，胡同口上好几天没有好妈妈的影儿。大家似乎没理到这件事，因为大家也都没敢出来呀；即使大着胆出来，谁还顾得注意她：国土已丢失…",
+      "file": "novel/25.json",
+      "characterCount": 852,
+      "byteSize": 2657
+    },
+    {
+      "id": "novel-26",
+      "title": "小说 26",
+      "category": "novel",
+      "sourceName": "小说: 26.txt",
+      "excerpt": "鸿渐回家第五天，就上华美新闻社拜见总编辑，辛楣在香港早通信替他约定了。他不愿找丈人做引导，一个人到报馆所在的大楼。报馆在三层楼，…",
+      "file": "novel/26.json",
+      "characterCount": 1092,
+      "byteSize": 3350
+    },
+    {
+      "id": "novel-27",
+      "title": "小说 27",
+      "category": "novel",
+      "sourceName": "小说: 27.txt",
+      "excerpt": "有那么一个有名望的作家，我们竟不知道他的姓名叫什么。这并非因为他是未名、废名、无名氏，或者莫名其妙。缘故很简单：他的声名太响了，…",
+      "file": "novel/27.json",
+      "characterCount": 965,
+      "byteSize": 2969
+    },
+    {
+      "id": "novel-28",
+      "title": "小说 28",
+      "category": "novel",
+      "sourceName": "小说: 28.txt",
+      "excerpt": "一切宗教的圣经宝典关于黄土搏人的记载，在此时上帝的梦里才算证实了是预言。上帝并不明白自己在作梦，或者梦在作弄自己。他不知道这团水…",
+      "file": "novel/28.json",
+      "characterCount": 938,
+      "byteSize": 2906
+    },
+    {
+      "id": "novel-29",
+      "title": "小说 29",
+      "category": "novel",
+      "sourceName": "小说: 29.txt",
+      "excerpt": "我们牵着手在园里团团走了一转，这园的景物便都了然在心了。园的面积，约有四亩大小，一座坐北朝南，半中半西的屋子，位置于园的后边。屋…",
+      "file": "novel/29.json",
+      "characterCount": 919,
+      "byteSize": 2821
+    },
+    {
+      "id": "novel-30",
+      "title": "小说 30",
+      "category": "novel",
+      "sourceName": "小说: 30.txt",
+      "excerpt": "我们园外那片大空场于暑假前便租给人种山芋了。因为围墙为风、雨、顽童所侵袭，往往东塌一口，西缺一角。地是荒废着，学校却每年要拿出许…",
+      "file": "novel/30.json",
+      "characterCount": 2329,
+      "byteSize": 6997
+    },
+    {
+      "id": "joke-1",
+      "title": "笑话 1",
+      "category": "joke",
+      "sourceName": "笑话: 1.txt",
+      "excerpt": "缝补高手 某地正在举行缝补有奖大赛，主持人在一件衣服上开了三个洞，他宣布：谁要是能在三分钟内把这三个洞补好，就能获得一万元的奖金…",
+      "file": "joke/1.json",
+      "characterCount": 413,
+      "byteSize": 1316
+    },
+    {
+      "id": "joke-2",
+      "title": "笑话 2",
+      "category": "joke",
+      "sourceName": "笑话: 2.txt",
+      "excerpt": "白发 小女孩问妈妈说：“妈妈，你头上为什么长出白发来呢？”回答道：“因为女儿不听话，妈妈的头上才会长出白头发呗！”这时，小女孩心…",
+      "file": "joke/2.json",
+      "characterCount": 183,
+      "byteSize": 634
+    },
+    {
+      "id": "joke-3",
+      "title": "笑话 3",
+      "category": "joke",
+      "sourceName": "笑话: 3.txt",
+      "excerpt": "毛料 一位主妇来到百货商店问售货员：“昨天，我在你们这里买了条毛毯，你们告诉我说是全毛的，可我回到家才发现，上面的标签上怎么说是…",
+      "file": "joke/3.json",
+      "characterCount": 270,
+      "byteSize": 889
+    },
+    {
+      "id": "joke-4",
+      "title": "笑话 4",
+      "category": "joke",
+      "sourceName": "笑话: 4.txt",
+      "excerpt": "银行家的算术 教算术课的老师问：“有人借出了五元，每月利息一分，两年后，能收多少利息？” 全班学生纷纷运算，忙个不休。只有银行家…",
+      "file": "joke/4.json",
+      "characterCount": 318,
+      "byteSize": 994
+    },
+    {
+      "id": "joke-5",
+      "title": "笑话 5",
+      "category": "joke",
+      "sourceName": "笑话: 5.txt",
+      "excerpt": "我也不会游泳 溺水者绝望地朝着江边走过的一男人喊道：“救命啊！救命啊！我不会游泳啊！” “这有什么了不起的！我也不会游泳，”那个…",
+      "file": "joke/5.json",
+      "characterCount": 186,
+      "byteSize": 643
+    },
+    {
+      "id": "joke-6",
+      "title": "笑话 6",
+      "category": "joke",
+      "sourceName": "笑话: 6.txt",
+      "excerpt": "讨价还价 一位苏格兰人到巴黎的咖啡馆问一杯白兰地酒要多少钱。 “在凉台上喝是两法朗，”服务员答道， “如果您在柜台旁边喝，交一个…",
+      "file": "joke/6.json",
+      "characterCount": 216,
+      "byteSize": 715
+    },
+    {
+      "id": "joke-7",
+      "title": "笑话 7",
+      "category": "joke",
+      "sourceName": "笑话: 7.txt",
+      "excerpt": "走调 “我是来给钢琴调音的，先生。”站在门前的人说。 “可是我并没有请人来调音啊。”先生说。 “是的，你没有，先生，但是你的邻居…",
+      "file": "joke/7.json",
+      "characterCount": 202,
+      "byteSize": 673
+    },
+    {
+      "id": "joke-8",
+      "title": "笑话 8",
+      "category": "joke",
+      "sourceName": "笑话: 8.txt",
+      "excerpt": "浓度 8岁的玛玛多把一杯葡萄酒喝得精光。父亲生气地说：“不应该这样，我的儿子。这酒对你来说是太浓了，含有11度的酒精。 “这没什…",
+      "file": "joke/8.json",
+      "characterCount": 169,
+      "byteSize": 583
+    },
+    {
+      "id": "joke-9",
+      "title": "笑话 9",
+      "category": "joke",
+      "sourceName": "笑话: 9.txt",
+      "excerpt": "妙答 一名顾客对帽店经理嚷道：“这么一顶帽子竟要七十美元？你是不是发疯了！用这些钱足可以买一双上等的皮靴。” “您说得不错，先生…",
+      "file": "joke/9.json",
+      "characterCount": 266,
+      "byteSize": 883
+    },
+    {
+      "id": "joke-10",
+      "title": "笑话 10",
+      "category": "joke",
+      "sourceName": "笑话: 10.txt",
+      "excerpt": "丈夫的狡辩 妻子睡眼惺松地问丈夫：“你回来的时候是不是已经很晚了？我仿佛听见挂钟刚好打两点。” “挂钟是打了两下，亲爱的，”丈夫…",
+      "file": "joke/10.json",
+      "characterCount": 328,
+      "byteSize": 1072
+    },
+    {
+      "id": "joke-11",
+      "title": "笑话 11",
+      "category": "joke",
+      "sourceName": "笑话: 11.txt",
+      "excerpt": "聪明的骡子 一天，扎克带着他的骡子去市场。他的一个朋友开车路过，让他上来搭一程。卡车开了，扎克的骡子跟在后面。开了一段，车速开始…",
+      "file": "joke/11.json",
+      "characterCount": 295,
+      "byteSize": 973
+    },
+    {
+      "id": "joke-12",
+      "title": "笑话 12",
+      "category": "joke",
+      "sourceName": "笑话: 12.txt",
+      "excerpt": "成功的医生 当医生的丈夫常常在妻子面前夸耀自己的医术。 “我知道你是个非常成功的医生，病人没什么毛病，你也有办法告诉他有什么毛病…",
+      "file": "joke/12.json",
+      "characterCount": 223,
+      "byteSize": 748
+    },
+    {
+      "id": "joke-13",
+      "title": "笑话 13",
+      "category": "joke",
+      "sourceName": "笑话: 13.txt",
+      "excerpt": "购房 报纸上登载了一则征购住宅启事，全文如下：“本人急需一套住宅，比较宽敞，使我的妻子住进去再不会总想回娘家；但它又不能太大，以…",
+      "file": "joke/13.json",
+      "characterCount": 228,
+      "byteSize": 753
+    },
+    {
+      "id": "joke-14",
+      "title": "笑话 14",
+      "category": "joke",
+      "sourceName": "笑话: 14.txt",
+      "excerpt": "职业性的回答 编辑问一位想得到校对职务的人，他是否知道这一工作的重大。 “啊，是的，”这位申请者回答，“我知道，如果一旦您出了错…",
+      "file": "joke/14.json",
+      "characterCount": 186,
+      "byteSize": 610
+    },
+    {
+      "id": "joke-15",
+      "title": "笑话 15",
+      "category": "joke",
+      "sourceName": "笑话: 15.txt",
+      "excerpt": "迷路 一位游客在原始森林里迷路了，走了3天总算碰到了一个人，他激动地说：“谢天谢地，整整3天了，总算遇到了你！” “这有什么值得…",
+      "file": "joke/15.json",
+      "characterCount": 266,
+      "byteSize": 860
+    },
+    {
+      "id": "joke-16",
+      "title": "笑话 16",
+      "category": "joke",
+      "sourceName": "笑话: 16.txt",
+      "excerpt": "打赌 比尔坐在一家酒吧里吹嘘他的力气。一个挑战者说：“我和你打赌，我能用一辆独轮车把一件东西推出巷口，你却不能把它推回来。” 两…",
+      "file": "joke/16.json",
+      "characterCount": 255,
+      "byteSize": 844
+    },
+    {
+      "id": "joke-17",
+      "title": "笑话 17",
+      "category": "joke",
+      "sourceName": "笑话: 17.txt",
+      "excerpt": "防水的硬盘 我做水下换能器时要用到防水密封胶，问之于师兄，他说最好问问昆腾或者希捷。我大奇，它们和密封胶有什么关系？师兄慢条斯理…",
+      "file": "joke/17.json",
+      "characterCount": 403,
+      "byteSize": 1306
+    },
+    {
+      "id": "joke-18",
+      "title": "笑话 18",
+      "category": "joke",
+      "sourceName": "笑话: 18.txt",
+      "excerpt": "选婿如选股 老同学聚会，当年的女生们多已嫁作人妇，言谈间最津津乐道的就是“相夫术”：什么样的男人华而不实、什么样的男人物美价廉、…",
+      "file": "joke/18.json",
+      "characterCount": 1597,
+      "byteSize": 4834
+    },
+    {
+      "id": "joke-19",
+      "title": "笑话 19",
+      "category": "joke",
+      "sourceName": "笑话: 19.txt",
+      "excerpt": "希望结婚 一位日本的年轻女子向某工程公司申请职位，表格前几栏很快填妥了，到“婚姻情况”一栏时，她却犹疑一会儿，才写上“有希望”。…",
+      "file": "joke/19.json",
+      "characterCount": 172,
+      "byteSize": 613
+    },
+    {
+      "id": "joke-20",
+      "title": "笑话 20",
+      "category": "joke",
+      "sourceName": "笑话: 20.txt",
+      "excerpt": "钓鱼 祖父听说我要带女朋友去钓鱼，也想去会会她。我带了女朋友先去，等候祖父的时候，我已经钓到了一条一公斤重的鲈鱼。祖父到了，我把…",
+      "file": "joke/20.json",
+      "characterCount": 206,
+      "byteSize": 715
+    },
+    {
+      "id": "joke-21",
+      "title": "笑话 21",
+      "category": "joke",
+      "sourceName": "笑话: 21.txt",
+      "excerpt": "自讨没趣 一名落第秀才在村中常常向人炫耀自己的才华以显示自己的实力不凡。有一天秀才在村口遇见目不识丁的菜贩正提著一篮甘蓝菜于是便…",
+      "file": "joke/21.json",
+      "characterCount": 253,
+      "byteSize": 847
+    },
+    {
+      "id": "joke-22",
+      "title": "笑话 22",
+      "category": "joke",
+      "sourceName": "笑话: 22.txt",
+      "excerpt": "迟到 某职员上班迟到了，经理问他为什么迟到时，他说：“今天早晨刷牙的时候，一着急，把牙膏挤出了40多公分长的一段，等我把它慢慢再…",
+      "file": "joke/22.json",
+      "characterCount": 186,
+      "byteSize": 642
+    },
+    {
+      "id": "joke-23",
+      "title": "笑话 23",
+      "category": "joke",
+      "sourceName": "笑话: 23.txt",
+      "excerpt": "打赌 阿富看电影时转过头去问他旁边的朋友：“你要不要跟我打赌，我敢去打那个秃子一下？” “你打他而他不还手？我赌五十元。” 阿富…",
+      "file": "joke/23.json",
+      "characterCount": 418,
+      "byteSize": 1287
+    },
+    {
+      "id": "joke-24",
+      "title": "笑话 24",
+      "category": "joke",
+      "sourceName": "笑话: 24.txt",
+      "excerpt": "克亲 有一家新生了一个儿子，一个具有天份的小贝贝。小孩生下后就会说话了，也认得自己的亲人。可悲的是，这个小孩一喊自己的什么亲人，…",
+      "file": "joke/24.json",
+      "characterCount": 560,
+      "byteSize": 1777
+    },
+    {
+      "id": "joke-25",
+      "title": "笑话 25",
+      "category": "joke",
+      "sourceName": "笑话: 25.txt",
+      "excerpt": "丢钱 一干部去商店买东西，回家后发现找的零钱丢失，于是返回找营业员。“同志，刚找我的钱丢了，你看到了吗？”营业员从胸前的兜里拿出…",
+      "file": "joke/25.json",
+      "characterCount": 475,
+      "byteSize": 1510
+    },
+    {
+      "id": "joke-26",
+      "title": "笑话 26",
+      "category": "joke",
+      "sourceName": "笑话: 26.txt",
+      "excerpt": "不可理喻 上星期五我闹了一个笑话。我去伦敦买了点东西。我是去买圣诞节礼物的，也想为我大学的专业课找几本书，由此可见我是个学生。那…",
+      "file": "joke/26.json",
+      "characterCount": 730,
+      "byteSize": 2273
+    },
+    {
+      "id": "joke-27",
+      "title": "笑话 27",
+      "category": "joke",
+      "sourceName": "笑话: 27.txt",
+      "excerpt": "健忘 玛丽安和韦伯是一对恩爱的老年夫妇。一天清晨，玛丽安对韦伯说：“亲爱的，我有点饿了，我想在床上吃些东西。” “你想吃什么呢？…",
+      "file": "joke/27.json",
+      "characterCount": 415,
+      "byteSize": 1252
+    },
+    {
+      "id": "joke-28",
+      "title": "笑话 28",
+      "category": "joke",
+      "sourceName": "笑话: 28.txt",
+      "excerpt": "董事局决议 董事局会议开了一天，董事们围绕“所有员工在工作岗位不得饮酒”议案，展开热烈争论。最后，还是通过了这个“禁酒令”。这时…",
+      "file": "joke/28.json",
+      "characterCount": 273,
+      "byteSize": 906
+    },
+    {
+      "id": "joke-29",
+      "title": "笑话 29",
+      "category": "joke",
+      "sourceName": "笑话: 29.txt",
+      "excerpt": "贵房子 女儿：“妈妈，我们为什么不能住比较贵的房子？” 母亲：“别着急，我们马上就要住贵房子了，房东告诉我，他从明天起就给我们提…",
+      "file": "joke/29.json",
+      "characterCount": 169,
+      "byteSize": 577
+    },
+    {
+      "id": "joke-30",
+      "title": "笑话 30",
+      "category": "joke",
+      "sourceName": "笑话: 30.txt",
+      "excerpt": "真正的程序员从来不写注释，难写的程序必定也难读。 真正的程序员不写应用程序，他们直接从最底层的裸机开始编程。 真正的程序员他们认…",
+      "file": "joke/30.json",
+      "characterCount": 318,
+      "byteSize": 1052
+    },
+    {
+      "id": "other-1",
+      "title": "杂项 1",
+      "category": "other",
+      "sourceName": "杂项: 1.txt",
+      "excerpt": "人只有掌握自己方可自由。",
+      "file": "other/1.json",
+      "characterCount": 12,
+      "byteSize": 151
+    },
+    {
+      "id": "other-2",
+      "title": "杂项 2",
+      "category": "other",
+      "sourceName": "杂项: 2.txt",
+      "excerpt": "直到后悔取代了梦想，一个人才是老了。",
+      "file": "other/2.json",
+      "characterCount": 18,
+      "byteSize": 169
+    },
+    {
+      "id": "other-3",
+      "title": "杂项 3",
+      "category": "other",
+      "sourceName": "杂项: 3.txt",
+      "excerpt": "生命只有回头看时才了解，而生活必须向前。",
+      "file": "other/3.json",
+      "characterCount": 20,
+      "byteSize": 175
+    },
+    {
+      "id": "other-4",
+      "title": "杂项 4",
+      "category": "other",
+      "sourceName": "杂项: 4.txt",
+      "excerpt": "人们更多埋怨的是太少，而不是没有。",
+      "file": "other/4.json",
+      "characterCount": 17,
+      "byteSize": 166
+    },
+    {
+      "id": "other-5",
+      "title": "杂项 5",
+      "category": "other",
+      "sourceName": "杂项: 5.txt",
+      "excerpt": "生命的价值不在于时间的长短，而在于我们对它的使用。",
+      "file": "other/5.json",
+      "characterCount": 25,
+      "byteSize": 190
+    },
+    {
+      "id": "other-6",
+      "title": "杂项 6",
+      "category": "other",
+      "sourceName": "杂项: 6.txt",
+      "excerpt": "生活的悲剧不在于那么多人们所遭受的，而在于他们所未得到的。",
+      "file": "other/6.json",
+      "characterCount": 29,
+      "byteSize": 202
+    },
+    {
+      "id": "other-7",
+      "title": "杂项 7",
+      "category": "other",
+      "sourceName": "杂项: 7.txt",
+      "excerpt": "好的心情象一个充满阳光的日子，它把光明散播到四方。",
+      "file": "other/7.json",
+      "characterCount": 25,
+      "byteSize": 190
+    },
+    {
+      "id": "other-8",
+      "title": "杂项 8",
+      "category": "other",
+      "sourceName": "杂项: 8.txt",
+      "excerpt": "妒忌的人对别人是麻烦，对他们自己却是折磨。",
+      "file": "other/8.json",
+      "characterCount": 21,
+      "byteSize": 178
+    },
+    {
+      "id": "other-9",
+      "title": "杂项 9",
+      "category": "other",
+      "sourceName": "杂项: 9.txt",
+      "excerpt": "知道你想要什么，一半在于知道得到它之前必须放弃什么。",
+      "file": "other/9.json",
+      "characterCount": 26,
+      "byteSize": 193
+    },
+    {
+      "id": "other-10",
+      "title": "杂项 10",
+      "category": "other",
+      "sourceName": "杂项: 10.txt",
+      "excerpt": "奇迹有时候会发生，但一个人必须为它付出极其艰辛的劳动。",
+      "file": "other/10.json",
+      "characterCount": 27,
+      "byteSize": 199
+    },
+    {
+      "id": "other-11",
+      "title": "杂项 11",
+      "category": "other",
+      "sourceName": "杂项: 11.txt",
+      "excerpt": "天才是百分之一的灵感加上百分之九十九的汗水。",
+      "file": "other/11.json",
+      "characterCount": 22,
+      "byteSize": 184
+    },
+    {
+      "id": "other-12",
+      "title": "杂项 12",
+      "category": "other",
+      "sourceName": "杂项: 12.txt",
+      "excerpt": "说谎的人受到的惩罚一点儿也不在于没人信任他，而是他无法相信任何人。",
+      "file": "other/12.json",
+      "characterCount": 33,
+      "byteSize": 217
+    },
+    {
+      "id": "other-13",
+      "title": "杂项 13",
+      "category": "other",
+      "sourceName": "杂项: 13.txt",
+      "excerpt": "告诉朋友你自己的缺点是对朋友极大的信任；告诉朋友他的缺点是对他更大的信任。",
+      "file": "other/13.json",
+      "characterCount": 37,
+      "byteSize": 229
+    },
+    {
+      "id": "other-14",
+      "title": "杂项 14",
+      "category": "other",
+      "sourceName": "杂项: 14.txt",
+      "excerpt": "一次失足你也许很快可以弥补，一次失言你却可能永远无法补救。",
+      "file": "other/14.json",
+      "characterCount": 29,
+      "byteSize": 205
+    },
+    {
+      "id": "other-15",
+      "title": "杂项 15",
+      "category": "other",
+      "sourceName": "杂项: 15.txt",
+      "excerpt": "你该做的事就要下决心去做，决心去做的事就要毫不动摇地完成它。",
+      "file": "other/15.json",
+      "characterCount": 30,
+      "byteSize": 208
+    },
+    {
+      "id": "other-16",
+      "title": "杂项 16",
+      "category": "other",
+      "sourceName": "杂项: 16.txt",
+      "excerpt": "历史使人明智；诗歌使人灵秀；数学使人周密；哲学使人深刻；伦理学使人庄重；逻辑修辞学使人善辩。",
+      "file": "other/16.json",
+      "characterCount": 46,
+      "byteSize": 256
+    },
+    {
+      "id": "other-17",
+      "title": "杂项 17",
+      "category": "other",
+      "sourceName": "杂项: 17.txt",
+      "excerpt": "人最宝贵的东西是生命。生命属于我们只有一次。一个人的生命应该这样度过：当他回首往事，既不因虚度年华而悔恨，也不因碌碌无为而羞耻；…",
+      "file": "other/17.json",
+      "characterCount": 119,
+      "byteSize": 467
+    },
+    {
+      "id": "other-18",
+      "title": "杂项 18",
+      "category": "other",
+      "sourceName": "杂项: 18.txt",
+      "excerpt": "明月几时有，把酒问青天。 不知天上宫阙，今夕是何年。 我欲乘风归去。 又恐琼楼玉宇，高处不胜寒，起舞弄清影，何似在人间。 转朱阁…",
+      "file": "other/18.json",
+      "characterCount": 121,
+      "byteSize": 474
+    },
+    {
+      "id": "other-19",
+      "title": "杂项 19",
+      "category": "other",
+      "sourceName": "杂项: 19.txt",
+      "excerpt": "元夕 东风夜放花千树，更吹落、星如雨。 宝马雕车香满路。 凤箫声动，玉壶光转，一夜鱼龙舞。 蛾儿雪柳黄金缕，笑语盈盈暗香去。 众…",
+      "file": "other/19.json",
+      "characterCount": 87,
+      "byteSize": 374
+    },
+    {
+      "id": "other-20",
+      "title": "杂项 20",
+      "category": "other",
+      "sourceName": "杂项: 20.txt",
+      "excerpt": "帘外雨潺潺，春意阑珊。罗衾不耐五更寒。梦里不知身是客，一晌贪欢。独自莫凭栏，无限江山，别时容易见时难。流水落花春去也，天上人间。",
+      "file": "other/20.json",
+      "characterCount": 64,
+      "byteSize": 310
+    },
+    {
+      "id": "other-21",
+      "title": "杂项 21",
+      "category": "other",
+      "sourceName": "杂项: 21.txt",
+      "excerpt": "临高阁，乱山平野烟光薄。烟光薄，栖鸦归後，暮天闻角。断香残香情怀恶，西风催衬梧桐落。梧桐落，又还秋色，又还寂寞。",
+      "file": "other/21.json",
+      "characterCount": 56,
+      "byteSize": 286
+    },
+    {
+      "id": "other-22",
+      "title": "杂项 22",
+      "category": "other",
+      "sourceName": "杂项: 22.txt",
+      "excerpt": "君不见，黄河之水天上来，奔流到海不复回。君不见，高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月！天生我材必有用，…",
+      "file": "other/22.json",
+      "characterCount": 206,
+      "byteSize": 736
+    },
+    {
+      "id": "other-23",
+      "title": "杂项 23",
+      "category": "other",
+      "sourceName": "杂项: 23.txt",
+      "excerpt": "自从我离去，那些株枣树，曾几次成熟了，每个秋天，当露水湿透了我的襟袖，在泪光中，我似乎又看到了故乡的湖水，湖边我常坐的青石，石边…",
+      "file": "other/23.json",
+      "characterCount": 107,
+      "byteSize": 439
+    },
+    {
+      "id": "other-24",
+      "title": "杂项 24",
+      "category": "other",
+      "sourceName": "杂项: 24.txt",
+      "excerpt": "曲曲折折的荷塘上面，弥望的是田田的叶子。叶子出水很高，像亭亭的舞女的裙。层层的叶子中间，零星地点缀着些白花，有袅娜地开着的，有羞…",
+      "file": "other/24.json",
+      "characterCount": 222,
+      "byteSize": 776
+    },
+    {
+      "id": "other-25",
+      "title": "杂项 25",
+      "category": "other",
+      "sourceName": "杂项: 25.txt",
+      "excerpt": "你也许听过这个歌谣：傍晚的彩虹；旅行者的喜悦；清晨的彩虹，旅行者要当心。为什么这首歌谣蕴藏着真理呢？在温带，风向一般是从西向东，…",
+      "file": "other/25.json",
+      "characterCount": 325,
+      "byteSize": 1085
+    },
+    {
+      "id": "other-26",
+      "title": "杂项 26",
+      "category": "other",
+      "sourceName": "杂项: 26.txt",
+      "excerpt": "如果花永久地开放，满月每晚都升入空中，而我也永远地在大地上生存，那么，在这些偶然的相遇里，就不会有如此的感动吧。当我们在大地上短…",
+      "file": "other/26.json",
+      "characterCount": 235,
+      "byteSize": 815
+    },
+    {
+      "id": "other-27",
+      "title": "杂项 27",
+      "category": "other",
+      "sourceName": "杂项: 27.txt",
+      "excerpt": "在旧金山，即使住处只隔着一个街区的人们也不一定遇到同样的气候。在下雾天，一幢房子可能被包围在雾中，而一个街区外的另一幢房子却可能…",
+      "file": "other/27.json",
+      "characterCount": 407,
+      "byteSize": 1322
+    },
+    {
+      "id": "other-28",
+      "title": "杂项 28",
+      "category": "other",
+      "sourceName": "杂项: 28.txt",
+      "excerpt": "发明自行车的是柯克帕粹克·麦克米伦。这是1839年到四十年代初期发生的事，当时他的发明为他赢得了“自行车魔王”的称号。麦克米伦是…",
+      "file": "other/28.json",
+      "characterCount": 410,
+      "byteSize": 1311
+    },
+    {
+      "id": "other-29",
+      "title": "杂项 29",
+      "category": "other",
+      "sourceName": "杂项: 29.txt",
+      "excerpt": "正象人体病毒侵入活细胞并把它转变成制造病毒的工厂一样，计算机病毒是通过把自己的副本附加在另一个程序上进行复制的一些小程序。一旦附…",
+      "file": "other/29.json",
+      "characterCount": 313,
+      "byteSize": 1057
+    },
+    {
+      "id": "other-30",
+      "title": "杂项 30",
+      "category": "other",
+      "sourceName": "杂项: 30.txt",
+      "excerpt": "在人类重要的需要的列表中首要的是归属感。那意味着孩子知道他是家庭的一部分，是他所属的社会团体的一部分。继归属感之后是对爱的需要，…",
+      "file": "other/30.json",
+      "characterCount": 485,
+      "byteSize": 1556
+    }
+  ]
+}

@@ -127,7 +127,12 @@ const menuItems = computed(() => [
       {
         label: '文章练习',
         icon: 'pi pi-file-edit',
-        disabled: true,
+        class: route.name === 'chinese-article-practice' ? 'active-menu-item' : undefined,
+        command: () =>
+          router.push({
+            name: 'chinese-article-practice',
+            params: { articleId: 'adage-1' },
+          }),
       },
     ],
   },

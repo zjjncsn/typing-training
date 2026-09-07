@@ -52,6 +52,7 @@ const engineOptions = {
 const {
   session,
   stats,
+  expectedCharacter,
   inputCharacter: feedEngine,
   backspace,
   pause,
@@ -167,6 +168,11 @@ function retryLoading() {
   else void initializeArticles()
 }
 
+function selectArticleById(articleId: string) {
+  const summary = manifest.value?.articles.find((item) => item.id === articleId)
+  if (summary) void selectArticle(summary)
+}
+
 function recordAttempt() {
   const attempt = session.value.lastAttempt
   if (!attempt) return
@@ -205,6 +211,13 @@ function handlePageKeydown(event: KeyboardEvent) {
   }
 
   if (event.ctrlKey || event.metaKey || event.altKey) return
+
+  if (expectedCharacter.value === '\n' && event.key === ' ') {
+    event.preventDefault()
+    inputCharacter('\n')
+    return
+  }
+
   const received = keyboardKeyToCharacter(event.key)
   if (received === null) return
 
@@ -374,7 +387,7 @@ onBeforeUnmount(() => {
     :progress="articleProgress"
     :active-article-id="selectedSummary?.id ?? null"
     :loading-article-id="loadingArticleId"
-    @select="selectArticle"
+    @select="selectArticleById"
   />
 
   <TrainingSettingsDialog
