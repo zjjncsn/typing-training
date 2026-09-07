@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "defaultLessonId": "general-common",
+  "categories": [
+    {
+      "id": "general",
+      "name": "常用词汇"
+    },
+    {
+      "id": "hsk",
+      "name": "HSK 词汇"
+    },
+    {
+      "id": "professional",
+      "name": "专业词汇"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "general-common",
+      "title": "常用词",
+      "category": "general",
+      "sourceName": "常用词汇: 常用词.txt",
+      "file": "general/common.json",
+      "wordCount": 1069,
+      "characterCount": 2426,
+      "byteSize": 10621
+    },
+    {
+      "id": "hsk-1w",
+      "title": "一级字",
+      "category": "hsk",
+      "sourceName": "HSK词汇: HSK_1W.txt",
+      "file": "hsk/1w.json",
+      "wordCount": 789,
+      "characterCount": 789,
+      "byteSize": 4852
+    },
+    {
+      "id": "hsk-2w",
+      "title": "二级字",
+      "category": "hsk",
+      "sourceName": "HSK词汇: HSK_2W.txt",
+      "file": "hsk/2w.json",
+      "wordCount": 685,
+      "characterCount": 685,
+      "byteSize": 4228
+    },
+    {
+      "id": "hsk-3w",
+      "title": "三级字",
+      "category": "hsk",
+      "sourceName": "HSK词汇: HSK_3W.txt",
+      "file": "hsk/3w.json",
+      "wordCount": 537,
+      "characterCount": 537,
+      "byteSize": 3340
+    },
+    {
+      "id": "hsk-4w",
+      "title": "四级字",
+      "category": "hsk",
+      "sourceName": "HSK词汇: HSK_4W.txt",
+      "file": "hsk/4w.json",
+      "wordCount": 436,
+      "characterCount": 436,
+      "byteSize": 2734
+    },
+    {
+      "id": "hsk-p1",
+      "title": "甲级词",
+      "category": "hsk",
+      "sourceName": "HSK词汇: HSK_P1.txt",
+      "file": "hsk/p1.json",
+      "wordCount": 1019,
+      "characterCount": 1637,
+      "byteSize": 8072
+    },
+    {
+      "id": "hsk-p2",
+      "title": "乙级词",
+      "category": "hsk",
+      "sourceName": "HSK词汇: HSK_P2.txt",
+      "file": "hsk/p2.json",
+      "wordCount": 2013,
+      "characterCount": 3576,
+      "byteSize": 16867
+    },
+    {
+      "id": "hsk-p3",
+      "title": "丙级词",
+      "category": "hsk",
+      "sourceName": "HSK词汇: HSK_P3.txt",
+      "file": "hsk/p3.json",
+      "wordCount": 2164,
+      "characterCount": 4063,
+      "byteSize": 18783
+    },
+    {
+      "id": "hsk-p4",
+      "title": "丁级词",
+      "category": "hsk",
+      "sourceName": "HSK词汇: HSK_P4.txt",
+      "file": "hsk/p4.json",
+      "wordCount": 3547,
+      "characterCount": 7059,
+      "byteSize": 31934
+    },
+    {
+      "id": "professional-geography",
+      "title": "地理专业词汇",
+      "category": "professional",
+      "sourceName": "专业词汇: 地理CN.TXT",
+      "file": "professional/geography.json",
+      "wordCount": 1426,
+      "characterCount": 5438,
+      "byteSize": 20734
+    },
+    {
+      "id": "professional-electronics",
+      "title": "电子专业词汇",
+      "category": "professional",
+      "sourceName": "专业词汇: 电子CN.TXT",
+      "file": "professional/electronics.json",
+      "wordCount": 1361,
+      "characterCount": 5987,
+      "byteSize": 22159
+    },
+    {
+      "id": "professional-chemistry",
+      "title": "化学专业词汇",
+      "category": "professional",
+      "sourceName": "专业词汇: 化学CN.TXT",
+      "file": "professional/chemistry.json",
+      "wordCount": 1425,
+      "characterCount": 6209,
+      "byteSize": 22992
+    },
+    {
+      "id": "professional-computer",
+      "title": "计算机专业词汇",
+      "category": "professional",
+      "sourceName": "专业词汇: 计算机CN.TXT",
+      "file": "professional/computer.json",
+      "wordCount": 1589,
+      "characterCount": 6905,
+      "byteSize": 25630
+    },
+    {
+      "id": "professional-architecture",
+      "title": "建筑专业词汇",
+      "category": "professional",
+      "sourceName": "专业词汇: 建筑CN.TXT",
+      "file": "professional/architecture.json",
+      "wordCount": 1992,
+      "characterCount": 7399,
+      "byteSize": 28327
+    },
+    {
+      "id": "professional-agriculture",
+      "title": "农学专业词汇",
+      "category": "professional",
+      "sourceName": "专业词汇: 农学CN.TXT",
+      "file": "professional/agriculture.json",
+      "wordCount": 1520,
+      "characterCount": 5339,
+      "byteSize": 20722
+    },
+    {
+      "id": "professional-petroleum",
+      "title": "石油专业词汇",
+      "category": "professional",
+      "sourceName": "专业词汇: 石油CN.TXT",
+      "file": "professional/petroleum.json",
+      "wordCount": 1926,
+      "characterCount": 8877,
+      "byteSize": 32529
+    },
+    {
+      "id": "professional-mathematics",
+      "title": "数学专业词汇",
+      "category": "professional",
+      "sourceName": "专业词汇: 数学CN.txt",
+      "file": "professional/mathematics.json",
+      "wordCount": 1473,
+      "characterCount": 6296,
+      "byteSize": 23434
+    },
+    {
+      "id": "professional-physics",
+      "title": "物理专业词汇",
+      "category": "professional",
+      "sourceName": "专业词汇: 物理CN.txt",
+      "file": "professional/physics.json",
+      "wordCount": 1620,
+      "characterCount": 5974,
+      "byteSize": 22910
+    },
+    {
+      "id": "professional-psychology",
+      "title": "心理学专业词汇",
+      "category": "professional",
+      "sourceName": "专业词汇: 心理学CN.txt",
+      "file": "professional/psychology.json",
+      "wordCount": 1449,
+      "characterCount": 6085,
+      "byteSize": 22750
+    },
+    {
+      "id": "professional-medicine",
+      "title": "医学专业词汇",
+      "category": "professional",
+      "sourceName": "专业词汇: 医学CN.TXT",
+      "file": "professional/medicine.json",
+      "wordCount": 1578,
+      "characterCount": 7152,
+      "byteSize": 26320
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import TypingPracticePage from '@/features/typing/pages/TypingPracticePage.vue'
 import WordPracticePage from '@/features/typing/pages/WordPracticePage.vue'
 import ArticlePracticePage from '@/features/typing/pages/ArticlePracticePage.vue'
 import SyllablePracticePage from '@/features/typing/pages/SyllablePracticePage.vue'
+import ChineseWordPracticePage from '@/features/typing/pages/ChineseWordPracticePage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -41,6 +42,11 @@ const router = createRouter({
       path: '/practice/chinese/syllables/:lessonId?',
       name: 'chinese-syllable-practice',
       component: SyllablePracticePage,
+    },
+    {
+      path: '/practice/chinese/words/:lessonId?',
+      name: 'chinese-word-practice',
+      component: ChineseWordPracticePage,
     },
   ],
 })

@@ -94,6 +94,17 @@ export function typeWordPracticeCharacter(
   }
 }
 
+export function typeWordPracticeText(
+  session: WordPracticeSession,
+  received: string,
+  timestamp = Date.now(),
+): WordPracticeSession {
+  return Array.from(received).reduce(
+    (current, character) => typeWordPracticeCharacter(current, character, timestamp),
+    session,
+  )
+}
+
 export function backspaceWordPractice(session: WordPracticeSession): WordPracticeSession {
   return { ...session, typing: backspaceCharacter(session.typing) }
 }

@@ -188,6 +188,15 @@ test('backspace rewinds without updating accuracy counters', () => {
   assert.equal(getTypingStats(session).accuracy, (2 / 3) * 100)
 })
 
+test('backspace clears an error on the first character', () => {
+  const mistaken = typeCharacter(createTypingSession('abc'), 'x', 100)
+  const cleared = backspaceCharacter(mistaken)
+
+  assert.equal(cleared.position, 0)
+  assert.equal(cleared.lastAttempt, null)
+  assert.equal(cleared.errorCount, 1)
+})
+
 test('ignores backspace outside a running session and at the start', () => {
   const idle = createTypingSession('ab')
   assert.equal(backspaceCharacter(idle), idle)

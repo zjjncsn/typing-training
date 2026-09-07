@@ -203,7 +203,7 @@ export function typeKeyboardKey(
  * afterwards counts as a fresh correct keystroke.
  */
 export function backspaceCharacter(session: TypingSession): TypingSession {
-  if (session.status !== 'running' || session.position === 0) {
+  if (session.status !== 'running') {
     return session
   }
 
@@ -212,6 +212,10 @@ export function backspaceCharacter(session: TypingSession): TypingSession {
       ...session,
       lastAttempt: null,
     }
+  }
+
+  if (session.position === 0) {
+    return session
   }
 
   return {

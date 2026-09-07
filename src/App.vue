@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import Button from 'primevue/button'
 import PanelMenu from 'primevue/panelmenu'
@@ -8,6 +8,46 @@ const route = useRoute()
 const router = useRouter()
 const menuCollapsed = ref(true)
 const expandedMenuKeys = ref<Record<string, boolean>>({ english: true, chinese: true })
+const deviceCheckReady = ref(false)
+const narrowScreen = ref(false)
+const touchOnly = ref(false)
+const mobileAccessBypassed = ref(false)
+
+const mobileAccessStorageKey = 'typing-training:mobile-access-bypassed'
+let narrowScreenQuery: MediaQueryList | null = null
+let touchOnlyQuery: MediaQueryList | null = null
+
+const shouldShowMobileNotice = computed(
+  () =>
+    deviceCheckReady.value &&
+    !mobileAccessBypassed.value &&
+    (narrowScreen.value || touchOnly.value),
+)
+
+function updateDeviceCapabilities() {
+  narrowScreen.value = narrowScreenQuery?.matches ?? false
+  touchOnly.value = touchOnlyQuery?.matches ?? false
+}
+
+function continueOnMobile() {
+  mobileAccessBypassed.value = true
+  sessionStorage.setItem(mobileAccessStorageKey, 'true')
+}
+
+onMounted(() => {
+  mobileAccessBypassed.value = sessionStorage.getItem(mobileAccessStorageKey) === 'true'
+  narrowScreenQuery = window.matchMedia('(max-width: 767px)')
+  touchOnlyQuery = window.matchMedia('(hover: none) and (pointer: coarse)')
+  updateDeviceCapabilities()
+  narrowScreenQuery.addEventListener('change', updateDeviceCapabilities)
+  touchOnlyQuery.addEventListener('change', updateDeviceCapabilities)
+  deviceCheckReady.value = true
+})
+
+onBeforeUnmount(() => {
+  narrowScreenQuery?.removeEventListener('change', updateDeviceCapabilities)
+  touchOnlyQuery?.removeEventListener('change', updateDeviceCapabilities)
+})
 
 const menuItems = computed(() => [
   {
@@ -77,7 +117,12 @@ const menuItems = computed(() => [
       {
         label: '词汇练习',
         icon: 'pi pi-list-check',
-        disabled: true,
+        class: route.name === 'chinese-word-practice' ? 'active-menu-item' : undefined,
+        command: () =>
+          router.push({
+            name: 'chinese-word-practice',
+            params: { lessonId: 'general-common' },
+          }),
       },
       {
         label: '文章练习',
@@ -90,7 +135,21 @@ const menuItems = computed(() => [
 </script>
 
 <template>
-  <div class="app-shell" :class="{ 'menu-collapsed': menuCollapsed }">
+  <main v-if="shouldShowMobileNotice" class="mobile-access-gate">
+    <section class="mobile-access-card" aria-labelledby="mobile-access-title">
+      <img class="mobile-access-logo" src="/typing-logo.png" alt="" />
+      <span class="mobile-access-icon pi pi-desktop" aria-hidden="true" />
+      <h1 id="mobile-access-title">请在电脑端访问</h1>
+      <p>打字练习需要使用实体键盘，手机端暂不支持。</p>
+      <Button label="仍然访问" severity="secondary" outlined @click="continueOnMobile" />
+    </section>
+  </main>
+
+  <div
+    v-else-if="deviceCheckReady"
+    class="app-shell"
+    :class="{ 'menu-collapsed': menuCollapsed }"
+  >
     <aside class="app-sidebar" aria-label="训练导航">
       <div class="brand-row">
         <div class="brand-mark">
@@ -153,6 +212,59 @@ body {
 
 .app-shell {
   min-height: 100vh;
+}
+
+.mobile-access-gate {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 28px;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 18%, rgb(77 196 159 / 18%), transparent 38%),
+    linear-gradient(145deg, #edf8f5 0%, #edf3f8 58%, #f7fafc 100%);
+}
+
+.mobile-access-card {
+  display: flex;
+  width: min(100%, 390px);
+  padding: 38px 30px 32px;
+  align-items: center;
+  flex-direction: column;
+  color: #385367;
+  text-align: center;
+  background: rgb(255 255 255 / 88%);
+  border: 1px solid rgb(207 224 229 / 90%);
+  border-radius: 24px;
+  box-shadow: 0 24px 64px rgb(42 82 100 / 13%);
+  backdrop-filter: blur(12px);
+}
+
+.mobile-access-logo {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 24px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgb(22 142 128 / 20%);
+}
+
+.mobile-access-icon {
+  color: #168e80;
+  font-size: 2rem;
+}
+
+.mobile-access-card h1 {
+  margin: 16px 0 8px;
+  color: #19364d;
+  font-size: clamp(1.45rem, 7vw, 1.8rem);
+}
+
+.mobile-access-card p {
+  max-width: 18em;
+  margin: 0 0 26px;
+  color: #6c8190;
+  line-height: 1.7;
 }
 
 .app-sidebar {

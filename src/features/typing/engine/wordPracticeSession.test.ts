@@ -8,6 +8,7 @@ import {
   getWordPracticeStats,
   restartWordPractice,
   typeWordPracticeCharacter,
+  typeWordPracticeText,
 } from './wordPracticeSession.ts'
 
 test('advances to the next word and keeps cumulative statistics', () => {
@@ -86,4 +87,17 @@ test('can advance between sequential items without requiring a separator', () =>
   assert.equal(getWordPracticeExpectedCharacter(session), 'b')
   assert.equal(session.completedCharacterCount, 4)
   assert.equal(session.totalCharacterCount, 10)
+})
+
+test('accepts text committed by an input method across word boundaries', () => {
+  const session = typeWordPracticeText(
+    createWordPracticeSession(['中国', '人民'], 0, { separator: '' }),
+    '中国人',
+    100,
+  )
+
+  assert.equal(session.wordIndex, 1)
+  assert.equal(session.typing.position, 1)
+  assert.equal(getWordPracticeExpectedCharacter(session), '民')
+  assert.equal(session.typing.correctCount, 3)
 })

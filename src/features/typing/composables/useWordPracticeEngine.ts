@@ -9,6 +9,7 @@ import {
   restartWordPractice,
   resumeWordPractice,
   typeWordPracticeCharacter,
+  typeWordPracticeText,
   type WordPracticeOptions,
   type WordPracticeSession,
 } from '../engine/wordPracticeSession'
@@ -56,6 +57,12 @@ export function useWordPracticeEngine(
       timestamp,
       correctOverride,
     )
+    clock.value = timestamp
+  }
+
+  function inputText(text: string, timestamp = Date.now()) {
+    if (!practice.value) return
+    practice.value = typeWordPracticeText(practice.value, text, timestamp)
     clock.value = timestamp
   }
 
@@ -111,6 +118,7 @@ export function useWordPracticeEngine(
       practice.value ? getWordPracticeExpectedCharacter(practice.value) : null,
     ),
     inputCharacter,
+    inputText,
     backspace,
     pause,
     resume,
