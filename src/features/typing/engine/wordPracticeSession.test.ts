@@ -101,3 +101,12 @@ test('accepts text committed by an input method across word boundaries', () => {
   assert.equal(getWordPracticeExpectedCharacter(session), '民')
   assert.equal(session.typing.correctCount, 3)
 })
+
+test('accepts text committed by an input method with required word separators', () => {
+  const session = typeWordPracticeText(createWordPracticeSession(['中国', '人民']), '中国 人', 100)
+
+  assert.equal(session.wordIndex, 1)
+  assert.equal(session.typing.position, 1)
+  assert.equal(getWordPracticeExpectedCharacter(session), '民')
+  assert.equal(session.typing.correctCount, 4)
+})

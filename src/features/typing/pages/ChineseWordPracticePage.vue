@@ -40,7 +40,9 @@ const textScale = ref<TypingTextScale>('medium')
 const attemptLog = ref<Record<number, CharacterAttempt>>({})
 const pauseReason = ref<PauseReason | null>(null)
 const composing = ref(false)
+const compositionText = ref('')
 const imeInput = ref<HTMLTextAreaElement | null>(null)
+const typingText = ref<InstanceType<typeof ChineseWordTypingText> | null>(null)
 let loadGeneration = 0
 
 const words = computed(() => lesson.value?.words ?? [])
@@ -48,12 +50,13 @@ const {
   practice,
   session,
   stats,
+  expectedCharacter,
   inputCharacter: feedEngine,
   backspace,
   pause,
   resume,
   restart,
-} = useWordPracticeEngine(words, initialWordIndex, { separator: '' })
+} = useWordPracticeEngine(words, initialWordIndex)
 
 const currentWord = computed(() => words.value[practice.value?.wordIndex ?? 0] ?? null)
 const status = computed(() => session.value?.status ?? 'idle')
@@ -199,7 +202,7 @@ function inputCharacter(character: string, timestamp = Date.now()) {
 function commitText(text: string) {
   if (imeDisabled.value) return
   const timestamp = Date.now()
-  for (const character of Array.from(text.replace(/\s/gu, ''))) {
+  for (const character of Array.from(text)) {
     inputCharacter(character, timestamp)
   }
 }
@@ -214,22 +217,43 @@ function commitImeValue(target: HTMLTextAreaElement) {
   if (value) commitText(value)
 }
 
-function handleCompositionStart() {
+function handleCompositionStart(event: CompositionEvent) {
   composing.value = true
+  compositionText.value = (event.target as HTMLTextAreaElement).value
+}
+
+function handleCompositionUpdate(event: CompositionEvent) {
+  compositionText.value = event.data || (event.target as HTMLTextAreaElement).value
 }
 
 function handleCompositionEnd(event: CompositionEvent) {
   composing.value = false
+  compositionText.value = ''
   commitImeValue(event.target as HTMLTextAreaElement)
 }
 
 function handleImeInput(event: InputEvent) {
-  if (composing.value || event.isComposing) return
+  if (composing.value || event.isComposing) {
+    compositionText.value = (event.target as HTMLTextAreaElement).value
+    return
+  }
   commitImeValue(event.target as HTMLTextAreaElement)
 }
 
 function handleImeKeydown(event: KeyboardEvent) {
-  if (event.key !== 'Backspace' || event.isComposing || composing.value) return
+  if (event.isComposing || composing.value) return
+
+  if (
+    event.key === 'Enter' &&
+    expectedCharacter.value === ' ' &&
+    typingText.value?.isCurrentWordAtLineEnd()
+  ) {
+    event.preventDefault()
+    inputCharacter(' ')
+    return
+  }
+
+  if (event.key !== 'Backspace') return
   const target = event.target as HTMLTextAreaElement
   if (target.value) return
   event.preventDefault()
@@ -267,6 +291,7 @@ function pruneAttemptLog() {
 
 function clearAttemptLog() {
   attemptLog.value = {}
+  compositionText.value = ''
 }
 
 function pauseTraining(reason: PauseReason = 'keyboard') {
@@ -387,10 +412,12 @@ onBeforeUnmount(() => {
       </div>
       <div v-else-if="currentWord && session" class="ime-practice" @click="focusImeInput">
         <ChineseWordTypingText
+          ref="typingText"
           :words="words"
           :word-index="practice?.wordIndex ?? 0"
           :position="session.position"
           :has-current-error="hasCurrentError"
+          :composition-text="compositionText"
           :scale="textScale"
           :attempt-results="attemptLog"
         >
@@ -405,6 +432,7 @@ onBeforeUnmount(() => {
               spellcheck="false"
               :disabled="imeDisabled"
               @compositionstart="handleCompositionStart"
+              @compositionupdate="handleCompositionUpdate"
               @compositionend="handleCompositionEnd"
               @input="handleImeInput"
               @keydown="handleImeKeydown"

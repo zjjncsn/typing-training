@@ -19,6 +19,7 @@ const props = defineProps<{
   wordIndex: number
   position: number
   hasCurrentError: boolean
+  compositionText?: string
   scale?: 'small' | 'medium' | 'large'
   attemptResults?: Readonly<Record<number, CharacterAttempt>>
 }>()
@@ -64,9 +65,20 @@ function absoluteWordIndex(offset: number): number {
   return currentLine.value.start + offset
 }
 
-function wordStyle(word: string) {
-  return { width: `${Array.from(word).length}em` }
+function isAwaitingSeparator(word: string, wordOffset: number): boolean {
+  const index = absoluteWordIndex(wordOffset)
+  return (
+    index === props.wordIndex &&
+    index < props.words.length - 1 &&
+    props.position >= Array.from(word).length
+  )
 }
+
+function isCurrentWordAtLineEnd(): boolean {
+  return props.wordIndex === currentLine.value.start + currentLine.value.words.length - 1
+}
+
+defineExpose({ isCurrentWordAtLineEnd })
 
 function echoCharacter(word: string, wordOffset: number, characterIndex: number) {
   const index = absoluteWordIndex(wordOffset)
@@ -92,8 +104,11 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
             v-for="(word, wordOffset) in currentLine.words"
             :key="absoluteWordIndex(wordOffset)"
             class="word-block prompt-word"
-            :class="{ current: absoluteWordIndex(wordOffset) === wordIndex }"
-            :style="wordStyle(word)"
+            :class="{
+              current: absoluteWordIndex(wordOffset) === wordIndex,
+              'awaiting-separator': isAwaitingSeparator(word, wordOffset),
+              'separator-error': isAwaitingSeparator(word, wordOffset) && hasCurrentError,
+            }"
           >
             <TypingPromptCharacter
               v-for="(character, characterIndex) in Array.from(word)"
@@ -120,7 +135,7 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
             v-for="(word, wordOffset) in currentLine.words"
             :key="absoluteWordIndex(wordOffset)"
             class="word-block echo-word"
-            :style="wordStyle(word)"
+            :class="{ 'awaiting-separator': isAwaitingSeparator(word, wordOffset) }"
           >
             <span
               v-for="(_, characterIndex) in Array.from(word)"
@@ -132,13 +147,22 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
                   absoluteWordIndex(wordOffset) === wordIndex && characterIndex === position,
               }"
             >
-              <slot
+              <span
                 v-if="
                   absoluteWordIndex(wordOffset) === wordIndex && characterIndex === position
                 "
-                name="ime-anchor"
-              />
-              {{ echoCharacter(word, wordOffset, characterIndex).received }}
+                class="ime-anchor"
+              >
+                <slot name="ime-anchor" />
+                <span v-if="compositionText" class="composition-preview">{{ compositionText }}</span>
+              </span>
+              <span class="echo-glyph">{{
+                echoCharacter(word, wordOffset, characterIndex).received
+              }}</span>
+            </span>
+            <span v-if="isAwaitingSeparator(word, wordOffset)" class="separator-anchor">
+              <slot name="ime-anchor" />
+              <span v-if="compositionText" class="composition-preview">{{ compositionText }}</span>
             </span>
           </span>
         </div>
@@ -192,16 +216,73 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
   opacity: 1;
 }
 
+.prompt-word.awaiting-separator {
+  position: relative;
+}
+
+.prompt-word.awaiting-separator::after {
+  position: absolute;
+  bottom: -0.12em;
+  left: calc(100% + 0.14em);
+  width: 0.72em;
+  height: 3px;
+  background: #168e80;
+  border-radius: 999px;
+  content: '';
+}
+
+.prompt-word.awaiting-separator.separator-error::after {
+  background: #c0392b;
+}
+
 .echo-strip {
   color: #304f66;
 }
 
 .echo-character {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   width: 1em;
+  align-items: center;
+  flex: 0 0 1em;
+  justify-content: center;
   white-space: pre;
   text-align: center;
+}
+
+.echo-word {
+  position: relative;
+}
+
+.ime-anchor,
+.separator-anchor {
+  position: absolute;
+  inset: 0;
+}
+
+.separator-anchor {
+  right: auto;
+  left: 100%;
+  width: 1.2em;
+}
+
+.composition-preview {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 0;
+  min-width: max-content;
+  padding: 0 0.16em;
+  color: #08796c;
+  font-family: 'Cascadia Mono', Consolas, monospace;
+  font-size: 0.76em;
+  line-height: 1.45;
+  white-space: nowrap;
+  pointer-events: none;
+  background: #e7f7f4;
+  border-bottom: 2px solid #168e80;
+  border-radius: 4px 4px 1px 1px;
+  transform: translateY(-50%);
 }
 
 .echo-character.incorrect {
@@ -220,6 +301,17 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
   animation: caret-blink 1.1s step-end infinite;
 }
 
+.echo-word.awaiting-separator::after {
+  position: absolute;
+  top: 0.15em;
+  bottom: 0.15em;
+  left: calc(100% + 0.1em);
+  width: 2px;
+  background: #0e7267;
+  content: '';
+  animation: caret-blink 1.1s step-end infinite;
+}
+
 @keyframes caret-blink {
   50% {
     opacity: 0;
@@ -227,7 +319,8 @@ function echoCharacter(word: string, wordOffset: number, characterIndex: number)
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .echo-character.caret-before::before {
+  .echo-character.caret-before::before,
+  .echo-word.awaiting-separator::after {
     animation: none;
   }
 }
